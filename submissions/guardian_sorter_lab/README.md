@@ -20,8 +20,8 @@ AI tool: `Codex`
   samples by `train_guardian_policy.py`.
 - In-hand cap rotation over 200 degrees, five active contacts, slip recovery
   under 1.2 mm, sterile pod delivery, and audit confirmation.
-- Generated demo video with overlays for phase, active fingers, cap angle, slip,
-  residual error, grip force, and policy confidence.
+- Generated narrated demo video with overlays for phase, active fingers, cap
+  angle, slip, residual error, grip force, and policy confidence.
 - Machine-readable judge artifacts: metrics, policy card, contact timeline,
   stress replay, training report, SRT captions, rubric scorecard, and manifest.
 
@@ -67,6 +67,7 @@ submissions/guardian_sorter_lab/dataset/episode_trace.json
 submissions/guardian_sorter_lab/dataset/labels.csv
 submissions/guardian_sorter_lab/dataset/sensor_manifest.json
 submissions/guardian_sorter_lab/dataset/narration.srt
+submissions/guardian_sorter_lab/dataset/narration_script.txt
 ```
 
 ## Scoring Evidence

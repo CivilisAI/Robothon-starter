@@ -11,7 +11,7 @@ learned tactile residual grasp policy trained from randomized perturbation label
 
 ## Inspect First
 
-1. `media/demo.mp4` - video with five-finger contact, cap angle, slip, grip, residual, and confidence overlays.
+1. `media/demo.mp4` - narrated video with five-finger contact, cap angle, slip, grip, residual, and confidence overlays.
 2. `scene.xml` - five-finger MJCF hand, actuators, touch sensors, free vial/cap bodies, and audit button.
 3. `learned_policy_weights.json` and `dataset/training_report.json` - learned policy evidence.
 4. `dataset/contact_timeline.json` - five active fingers, balance score, and slip recovery samples.
@@ -24,12 +24,12 @@ learned tactile residual grasp policy trained from randomized perturbation label
 - Policy type: learned_tactile_residual_grasp_policy
 - Policy training samples: 6717
 - Policy validation MAE: 0.022843
-- Learned policy inference samples: 353
-- Five-finger stable contact samples: 186
+- Learned policy inference samples: 449
+- Five-finger stable contact samples: 237
 - Max cap rotation: 214.0 deg
-- Raw median visual-servo error: 0.0236 m
-- Post-residual median error: 0.0095 m
-- Error reduction: 59.72%
+- Raw median visual-servo error: 0.02415 m
+- Post-residual median error: 0.0097 m
+- Error reduction: 59.83%
 - Recovered slip: 0.35 mm
 - Stress rollouts: 64
 - Learned-policy stress success: 0.9844
@@ -43,5 +43,5 @@ learned tactile residual grasp policy trained from randomized perturbation label
 - Control: learned tactile residual policy outputs grip force, cap torque, recovery gain, correction gain, and confidence.
 - Dexterous manipulation: five-finger grasp, thumb opposition, contact balancing, in-hand cap rotation, and slip recovery.
 - Engineering quality: training report, structured artifacts, validator, UUID consistency, and fixed-seed evaluation.
-- Presentation: generated video includes concise overlays and SRT captions.
+- Presentation: generated video includes an AAC narration track, concise overlays, SRT captions, and a narration script.
 - Innovation: compact safety-critical dexterity benchmark with dataset export.

@@ -28,6 +28,7 @@ REQUIRED_FILES = [
     "dataset/labels.csv",
     "dataset/sensor_manifest.json",
     "dataset/narration.srt",
+    "dataset/narration_script.txt",
 ]
 
 
