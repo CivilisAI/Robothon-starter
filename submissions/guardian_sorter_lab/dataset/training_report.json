@@ -1,31 +1,36 @@
 {
-  "project": "Guardian DexTriage Lab",
+  "project": "Guardian Apothecary DexTriage",
   "uuid": "e9367728-67e3-4adc-9f3e-fc7a1a364a8d",
-  "policy_type": "learned_linear_residual_grasp_policy",
-  "training_method": "least-squares behavioral cloning from randomized perturbation labels",
-  "training_samples": 3276,
-  "validation_samples": 820,
+  "policy_type": "learned_tactile_residual_grasp_policy",
+  "training_method": "least-squares behavioral cloning from randomized tactile grasp perturbation labels",
+  "training_samples": 6717,
+  "validation_samples": 1475,
   "validation": {
-    "mean_absolute_error": 0.00153,
+    "mean_absolute_error": 0.022843,
     "per_output_mae": {
-      "correction_gain": 0.004589,
-      "policy_confidence": 0.0,
-      "contact_balance_score": 0.0
+      "palm_correction_gain": 0.006593,
+      "grip_force": 0.037353,
+      "cap_torque": 0.051307,
+      "recovery_gain": 0.013539,
+      "policy_confidence": 0.005422
     }
   },
   "feature_names": [
     "progress",
-    "raw_error_m",
-    "carrying",
-    "scanning",
+    "vial_error_m",
+    "cap_error_rad",
+    "slip_mm",
+    "active_fingers_norm",
+    "contact_balance",
     "disturbance",
-    "contact_tracks_norm",
     "sin_phase",
     "cos_phase"
   ],
   "output_names": [
-    "correction_gain",
-    "policy_confidence",
-    "contact_balance_score"
+    "palm_correction_gain",
+    "grip_force",
+    "cap_torque",
+    "recovery_gain",
+    "policy_confidence"
   ]
 }

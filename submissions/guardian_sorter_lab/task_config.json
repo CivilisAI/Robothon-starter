@@ -1,42 +1,41 @@
 {
-  "project_name": "Guardian DexTriage Lab",
-  "robot_platform": "FF Master humanoid",
-  "task": "Learned residual package grasping, hazard triage, disturbance recovery, and labeled data collection",
+  "project_name": "Guardian Apothecary DexTriage",
+  "robot_platform": "Procedural five-finger tactile hand in MuJoCo",
+  "task": "Medication triage with five-finger grasp, cap rotation, slip recovery, sterile pod delivery, and audit confirmation",
   "success_conditions": {
-    "hazard_case_to_quarantine_m": 0.12,
-    "medkit_to_delivery_m": 0.12,
-    "minimum_beacon_inspection_m": 0.45,
-    "minimum_residual_corrections": 50,
-    "minimum_stress_success_rate": 0.95,
-    "minimum_policy_training_samples": 3000
+    "minimum_active_fingers": 5,
+    "minimum_cap_rotation_deg": 200,
+    "maximum_recovered_slip_mm": 1.2,
+    "maximum_vial_to_pod_m": 0.08,
+    "minimum_policy_training_samples": 6000,
+    "minimum_stress_success_rate": 0.95
   },
   "objects": [
     {
-      "name": "hazard_case",
-      "label": "hazard",
-      "start": [-0.46, -0.34, 0.16],
-      "goal": [0.52, -0.36, 0.16]
+      "name": "vial",
+      "label": "fragile_medicine_vial"
     },
     {
-      "name": "medkit_case",
-      "label": "supply",
-      "start": [-0.42, 0.34, 0.15],
-      "goal": [0.54, 0.34, 0.15]
+      "name": "cap",
+      "label": "rotating_safety_cap"
     },
     {
-      "name": "inspection_beacon",
-      "label": "inspection_target",
-      "start": [0.18, 0.0, 0.22]
+      "name": "sterile_pod",
+      "label": "delivery_target"
+    },
+    {
+      "name": "audit_button",
+      "label": "post_delivery_confirmation"
     }
   ],
   "phases": [
-    "boot_and_sensor_check",
-    "navigate_to_hazard",
-    "pick_hazard_case",
-    "carry_to_quarantine",
-    "scan_center_beacon",
-    "retrieve_medkit",
-    "deliver_medkit",
-    "final_report"
+    "sensor_boot_and_scan",
+    "visual_servo_approach",
+    "five_finger_tactile_grasp",
+    "in_hand_cap_rotation",
+    "slip_disturbance_recovery",
+    "sterile_pod_delivery",
+    "audit_button_press",
+    "final_report_export"
   ]
 }
