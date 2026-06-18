@@ -1,0 +1,31 @@
+{
+  "project": "Guardian DexTriage Lab",
+  "uuid": "e9367728-67e3-4adc-9f3e-fc7a1a364a8d",
+  "policy_type": "learned_linear_residual_grasp_policy",
+  "training_method": "least-squares behavioral cloning from randomized perturbation labels",
+  "training_samples": 3276,
+  "validation_samples": 820,
+  "validation": {
+    "mean_absolute_error": 0.00153,
+    "per_output_mae": {
+      "correction_gain": 0.004589,
+      "policy_confidence": 0.0,
+      "contact_balance_score": 0.0
+    }
+  },
+  "feature_names": [
+    "progress",
+    "raw_error_m",
+    "carrying",
+    "scanning",
+    "disturbance",
+    "contact_tracks_norm",
+    "sin_phase",
+    "cos_phase"
+  ],
+  "output_names": [
+    "correction_gain",
+    "policy_confidence",
+    "contact_balance_score"
+  ]
+}

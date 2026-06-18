@@ -11,6 +11,8 @@ REQUIRED_FILES = [
     "task_config.json",
     "scene.xml",
     "run_guardian_sorter.py",
+    "train_guardian_policy.py",
+    "learned_policy_weights.json",
     "README.md",
     "JUDGE_BRIEF.md",
     "rubric_scorecard.json",
@@ -22,6 +24,7 @@ REQUIRED_FILES = [
     "dataset/sensor_manifest.json",
     "dataset/contact_timeline.json",
     "dataset/stress_eval.json",
+    "dataset/training_report.json",
     "dataset/policy_card.json",
     "dataset/narration.srt",
 ]
@@ -41,6 +44,8 @@ def main() -> int:
     scorecard = load_json("rubric_scorecard.json")
     manifest = load_json("submission_manifest.json")
     policy_card = load_json("dataset/policy_card.json")
+    weights = load_json("learned_policy_weights.json")
+    training_report = load_json("dataset/training_report.json")
     stress_eval = load_json("dataset/stress_eval.json")
     contact_timeline = load_json("dataset/contact_timeline.json")
 
@@ -50,6 +55,7 @@ def main() -> int:
         scorecard.get("registration_uuid"),
         manifest.get("uuid"),
         policy_card.get("uuid"),
+        training_report.get("uuid"),
     ]
     if uuid_values != [UUID] * len(uuid_values):
         raise SystemExit(f"UUID mismatch: {uuid_values}")
@@ -60,6 +66,10 @@ def main() -> int:
         raise SystemExit("Disturbance recovery evidence is missing")
     if metrics.get("closed_loop_summary", {}).get("residual_corrections", 0) < 50:
         raise SystemExit("Too few residual correction samples")
+    if metrics.get("closed_loop_summary", {}).get("policy_training_samples", 0) < 3000:
+        raise SystemExit("Learned policy training evidence is missing")
+    if weights.get("policy_type") != metrics.get("closed_loop_summary", {}).get("policy_type"):
+        raise SystemExit("Policy type mismatch between weights and metrics")
     if stress_eval.get("residual_policy_success_rate", 0.0) < 0.95:
         raise SystemExit("Stress replay residual success rate below target")
     if not any(row.get("stable_hold") for row in contact_timeline):
@@ -76,6 +86,8 @@ def main() -> int:
                 "uuid": UUID,
                 "video_bytes": video_path.stat().st_size,
                 "residual_corrections": metrics["closed_loop_summary"]["residual_corrections"],
+                "policy_type": metrics["closed_loop_summary"]["policy_type"],
+                "policy_training_samples": metrics["closed_loop_summary"]["policy_training_samples"],
                 "stress_success": stress_eval["residual_policy_success_rate"],
                 "stable_contact_samples": metrics["closed_loop_summary"]["stable_contact_samples"],
             },

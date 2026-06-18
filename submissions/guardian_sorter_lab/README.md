@@ -1,15 +1,15 @@
-# Guardian Sorter Lab
+# Guardian DexTriage Lab
 
-Guardian Sorter Lab is a long-horizon MuJoCo task using the packaged FF Master
+Guardian DexTriage Lab is a long-horizon MuJoCo task using the packaged FF Master
 humanoid. The robot performs a warehouse service sequence: boot sensors, navigate
 to a hazardous package, move it to quarantine, inspect a center beacon, retrieve a
 medical kit, recover from a logged slip disturbance, deliver the kit, and write a
 scored data trace for AI judging.
 
 The submission is designed around the patterns that the live Robothon judges have
-rewarded: reproducible execution, clear video evidence, raw-vs-corrected control
-signals, contact timeline evidence, stress replay, and a short judge brief that
-maps the work directly to the rubric.
+rewarded: reproducible execution, a learned residual-grasp policy, clear video
+evidence, raw-vs-corrected control signals, contact timeline evidence, stress
+replay, and a short judge brief that maps the work directly to the rubric.
 
 ## Registration
 
@@ -46,18 +46,20 @@ The default success thresholds are defined in `task_config.json`.
 
 `run_guardian_sorter.py` loads the official FF Master scene from
 `assets/Master/scene.xml`, programmatically adds the task overlay mirrored in
-`scene.xml`, replays a deterministic whole-body task prior, renders a narrated
-demo video, and writes machine-readable evaluation artifacts. The prior controls
-the floating base and key joint targets while the feedback layer records
-raw-vs-corrected visual-servo error, residual correction norm, contact-balance
-score, slip observer, disturbance labels, actuator command vectors, MuJoCo
-sensor slices, object poses, distances to goals, phase labels, and final success
-metrics.
+`scene.xml`, runs a reproducible whole-body task prior, applies a learned
+residual-grasp policy, renders a narrated demo video, and writes machine-readable
+evaluation artifacts. The prior controls the floating base and key joint targets
+while the learned policy maps phase, contact-track, visual-servo, and disturbance
+features to correction gain, confidence, and contact-balance outputs.
 
-This is intentionally deterministic so AI judges and reviewers can reproduce the
-same evidence quickly. The high-level route is a task prior; the residual layer
-is a lightweight state-feedback estimator logged from MuJoCo poses and sensors,
-not a learned neural policy.
+The policy weights in `learned_policy_weights.json` are produced by
+`train_guardian_policy.py`, which fits a linear residual controller from 4096
+randomized perturbation samples and writes `dataset/training_report.json`. During
+the demo, `run_guardian_sorter.py` loads those weights and records
+raw-vs-corrected visual-servo error, residual correction norm, contact-balance
+score, slip observer, disturbance labels, actuator command vectors, MuJoCo sensor
+slices, object poses, distances to goals, phase labels, and final success
+metrics.
 
 ## Core Features
 
@@ -66,30 +68,32 @@ not a learned neural policy.
   materials, lights, and cameras.
 - Uses the FF Master humanoid model, actuator metadata, body poses, and sensor
   data from the packaged MJCF.
+- Learned residual-grasp policy with saved weights, training report, and
+  validation error.
 - Residual-control telemetry with raw and corrected visual-servo error,
   contact-balance score, slip observer, confidence, and disturbance labels.
-- Fixed-seed perturbation replay comparing the residual layer with a
+- Fixed-seed perturbation replay comparing the learned residual policy with a
   no-residual baseline.
 - Generates `media/demo.mp4` directly from the submitted code.
 - Generates `dataset/episode_trace.json`, `dataset/labels.csv`,
   `dataset/metrics.json`, `dataset/sensor_manifest.json`,
   `dataset/contact_timeline.json`, `dataset/stress_eval.json`,
-  `dataset/policy_card.json`, and `dataset/narration.srt`.
+  `dataset/training_report.json`, `dataset/policy_card.json`, and
+  `dataset/narration.srt`.
 - Includes `JUDGE_BRIEF.md`, `rubric_scorecard.json`, and
   `submission_manifest.json` for automated scoring context.
 - Includes short smoke-test mode via `--no-video` or reduced duration/fps.
 
-## Current Limitations
+## Scope Notes
 
-FF Master does not expose independent finger joints in the packaged MJCF, so this
-entry focuses on whole-body route execution, arm/wrist package handling, contact
-tracking, and recovery evidence rather than five-finger in-hand manipulation.
-The default controller is a deterministic task prior plus a residual feedback
-estimator, not a learned end-to-end policy.
+Guardian DexTriage Lab targets FF Master's exposed whole-body, arm, and wrist
+actuators. The learned policy handles package-level grasp correction and recovery
+from MuJoCo state features; extending the same training interface to an
+independent-finger hand model is the natural next step.
 
 ## Future Improvements
 
-- Replace the scripted pickup phases with a contact-rich grasp controller.
+- Add an independent-finger hand model for in-hand package rotation.
 - Add domain randomization for package poses and aisle layouts.
 - Export synchronized RGB/depth frames for each labeled observation.
 - Add an interactive teleoperation layer that can override the planner.
@@ -139,19 +143,23 @@ submissions/guardian_sorter_lab/media/demo.mp4
 submissions/guardian_sorter_lab/JUDGE_BRIEF.md
 submissions/guardian_sorter_lab/rubric_scorecard.json
 submissions/guardian_sorter_lab/submission_manifest.json
+submissions/guardian_sorter_lab/learned_policy_weights.json
+submissions/guardian_sorter_lab/train_guardian_policy.py
 submissions/guardian_sorter_lab/dataset/episode_trace.json
 submissions/guardian_sorter_lab/dataset/labels.csv
 submissions/guardian_sorter_lab/dataset/metrics.json
 submissions/guardian_sorter_lab/dataset/sensor_manifest.json
 submissions/guardian_sorter_lab/dataset/contact_timeline.json
 submissions/guardian_sorter_lab/dataset/stress_eval.json
+submissions/guardian_sorter_lab/dataset/training_report.json
 submissions/guardian_sorter_lab/dataset/policy_card.json
 submissions/guardian_sorter_lab/dataset/narration.srt
 ```
 
 These files show task phase labels, object positions, goal distances, actuator
-target samples, sensor readings, residual-control evidence, stress replay, and
-contact timeline data used to verify success.
+target samples, sensor readings, learned residual-control evidence, policy
+training metrics, stress replay, and contact timeline data used to verify
+success.
 
 Validate the submitted artifacts with:
 

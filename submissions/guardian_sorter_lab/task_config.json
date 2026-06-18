@@ -1,13 +1,14 @@
 {
-  "project_name": "Guardian Sorter Lab",
+  "project_name": "Guardian DexTriage Lab",
   "robot_platform": "FF Master humanoid",
-  "task": "Long-horizon warehouse inspection, hazard sorting, and labeled data collection",
+  "task": "Learned residual package grasping, hazard triage, disturbance recovery, and labeled data collection",
   "success_conditions": {
     "hazard_case_to_quarantine_m": 0.12,
     "medkit_to_delivery_m": 0.12,
     "minimum_beacon_inspection_m": 0.45,
     "minimum_residual_corrections": 50,
-    "minimum_stress_success_rate": 0.95
+    "minimum_stress_success_rate": 0.95,
+    "minimum_policy_training_samples": 3000
   },
   "objects": [
     {

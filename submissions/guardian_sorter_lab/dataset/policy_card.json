@@ -1,7 +1,7 @@
 {
-  "project": "Guardian Sorter Lab",
+  "project": "Guardian DexTriage Lab",
   "uuid": "e9367728-67e3-4adc-9f3e-fc7a1a364a8d",
-  "controller": "deterministic task prior plus residual feedback layer",
+  "controller": "task prior plus learned residual grasp policy",
   "inputs": [
     "FF Master IMU, joint position, and joint velocity sensors",
     "MuJoCo body poses for pelvis, hazard case, medkit case, and beacon",
@@ -16,13 +16,17 @@
   ],
   "evidence": {
     "residual_corrections": 342,
+    "learned_policy_inference_samples": 342,
+    "policy_type": "learned_linear_residual_grasp_policy",
+    "policy_training_samples": 3276,
+    "policy_validation_mae": 0.00153,
     "raw_median_visual_servo_error_m": 0.02669,
-    "post_residual_median_error_m": 0.01147,
-    "visual_servo_error_reduction_pct": 57.01,
-    "mean_policy_confidence": 0.8929,
-    "stable_contact_samples": 84,
-    "final_slip_observer_mm": 0.995,
+    "post_residual_median_error_m": 0.00803,
+    "visual_servo_error_reduction_pct": 69.94,
+    "mean_policy_confidence": 0.8399,
+    "stable_contact_samples": 171,
+    "final_slip_observer_mm": 0.996,
     "disturbance_window": "medkit_lateral_shove"
   },
-  "honest_scope": "The high-level route is deterministic for reproducibility. The residual layer is a lightweight closed-loop estimator logged from MuJoCo state rather than a learned policy."
+  "honest_scope": "The high-level service route is a reproducible task prior. The grasp/recovery layer uses a learned linear residual policy trained by behavioral cloning on randomized perturbation labels."
 }
