@@ -1,0 +1,31 @@
+1
+00:00:00,000 --> 00:00:08,000
+Boot sensors and lock onto the warehouse route.
+
+2
+00:00:08,000 --> 00:00:18,000
+Approach the hazard shelf with raw-vs-corrected servo telemetry.
+
+3
+00:00:18,000 --> 00:00:25,000
+Acquire the red hazard case and start contact-balanced carry.
+
+4
+00:00:25,000 --> 00:00:36,000
+Deliver hazard payload to quarantine with residual corrections.
+
+5
+00:00:36,000 --> 00:00:43,000
+Inspect the beacon and verify center-zone proximity.
+
+6
+00:00:43,000 --> 00:00:50,000
+Retrieve the medkit under a simulated lateral slip disturbance.
+
+7
+00:00:50,000 --> 00:00:60,000
+Recover grip confidence and deliver the medkit.
+
+8
+00:00:60,000 --> 00:00:64,000
+Export trajectory, labels, stress replay, and judge evidence.

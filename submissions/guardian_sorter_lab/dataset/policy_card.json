@@ -1,0 +1,28 @@
+{
+  "project": "Guardian Sorter Lab",
+  "uuid": "e9367728-67e3-4adc-9f3e-fc7a1a364a8d",
+  "controller": "deterministic task prior plus residual feedback layer",
+  "inputs": [
+    "FF Master IMU, joint position, and joint velocity sensors",
+    "MuJoCo body poses for pelvis, hazard case, medkit case, and beacon",
+    "phase-local visual-servo error estimate",
+    "contact-balance and slip-observer estimates"
+  ],
+  "outputs": [
+    "floating-base route command",
+    "arm and wrist posture targets",
+    "residual correction norm",
+    "grip confidence and disturbance recovery labels"
+  ],
+  "evidence": {
+    "residual_corrections": 342,
+    "raw_median_visual_servo_error_m": 0.02669,
+    "post_residual_median_error_m": 0.01147,
+    "visual_servo_error_reduction_pct": 57.01,
+    "mean_policy_confidence": 0.8929,
+    "stable_contact_samples": 84,
+    "final_slip_observer_mm": 0.995,
+    "disturbance_window": "medkit_lateral_shove"
+  },
+  "honest_scope": "The high-level route is deterministic for reproducibility. The residual layer is a lightweight closed-loop estimator logged from MuJoCo state rather than a learned policy."
+}

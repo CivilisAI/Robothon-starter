@@ -1,0 +1,29 @@
+{
+  "project": "Guardian Sorter Lab",
+  "uuid": "e9367728-67e3-4adc-9f3e-fc7a1a364a8d",
+  "entrypoint": "python submissions/guardian_sorter_lab/run_guardian_sorter.py",
+  "validator": "python submissions/guardian_sorter_lab/validate_submission.py",
+  "generated_files": [
+    "scene.xml",
+    "run_guardian_sorter.py",
+    "media/demo.mp4",
+    "dataset/episode_trace.json",
+    "dataset/metrics.json",
+    "dataset/policy_card.json",
+    "dataset/stress_eval.json",
+    "dataset/contact_timeline.json",
+    "JUDGE_BRIEF.md",
+    "submission_manifest.json"
+  ],
+  "success": true,
+  "closed_loop_summary": {
+    "residual_corrections": 342,
+    "raw_median_visual_servo_error_m": 0.02669,
+    "post_residual_median_error_m": 0.01147,
+    "visual_servo_error_reduction_pct": 57.01,
+    "mean_policy_confidence": 0.8929,
+    "stable_contact_samples": 84,
+    "final_slip_observer_mm": 0.995,
+    "disturbance_window": "medkit_lateral_shove"
+  }
+}

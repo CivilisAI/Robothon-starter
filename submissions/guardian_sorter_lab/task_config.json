@@ -5,7 +5,9 @@
   "success_conditions": {
     "hazard_case_to_quarantine_m": 0.12,
     "medkit_to_delivery_m": 0.12,
-    "minimum_beacon_inspection_m": 0.45
+    "minimum_beacon_inspection_m": 0.45,
+    "minimum_residual_corrections": 50,
+    "minimum_stress_success_rate": 0.95
   },
   "objects": [
     {

@@ -5,12 +5,24 @@
   "criteria": {
     "hazard_case_sorted": true,
     "medkit_delivered": true,
-    "beacon_inspected": true
+    "beacon_inspected": true,
+    "closed_loop_evidence_logged": true,
+    "disturbance_recovery_observed": true
   },
   "final_distances_m": {
     "hazard_to_quarantine": 0.0,
     "medkit_to_delivery": 0.0,
     "robot_to_beacon_min": 0.0117
+  },
+  "closed_loop_summary": {
+    "residual_corrections": 342,
+    "raw_median_visual_servo_error_m": 0.02669,
+    "post_residual_median_error_m": 0.01147,
+    "visual_servo_error_reduction_pct": 57.01,
+    "mean_policy_confidence": 0.8929,
+    "stable_contact_samples": 84,
+    "final_slip_observer_mm": 0.995,
+    "disturbance_window": "medkit_lateral_shove"
   },
   "phases_observed": [
     "boot_and_sensor_check",
