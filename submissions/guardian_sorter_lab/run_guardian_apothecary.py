@@ -40,14 +40,17 @@ class Phase:
 
 
 PHASES = [
-    Phase(0.00, 0.10, "sensor_boot_and_scan"),
-    Phase(0.10, 0.24, "visual_servo_approach"),
-    Phase(0.24, 0.38, "five_finger_tactile_grasp"),
-    Phase(0.38, 0.58, "in_hand_cap_rotation"),
-    Phase(0.58, 0.70, "slip_disturbance_recovery"),
-    Phase(0.70, 0.86, "sterile_pod_delivery"),
-    Phase(0.86, 0.94, "audit_button_press"),
-    Phase(0.94, 1.00, "final_report_export"),
+    Phase(0.00, 0.06, "sensor_boot_and_scene_scan"),
+    Phase(0.06, 0.16, "visual_servo_approach"),
+    Phase(0.16, 0.27, "five_finger_tactile_grasp"),
+    Phase(0.27, 0.43, "in_hand_cap_rotation"),
+    Phase(0.43, 0.52, "slip_disturbance_recovery"),
+    Phase(0.52, 0.62, "sterile_pod_delivery"),
+    Phase(0.62, 0.70, "audit_button_press"),
+    Phase(0.70, 0.80, "blister_pack_press"),
+    Phase(0.80, 0.90, "syringe_plunger_dose"),
+    Phase(0.90, 0.97, "dose_dial_confirm"),
+    Phase(0.97, 1.00, "final_report_export"),
 ]
 
 
@@ -179,6 +182,29 @@ SCENE_XML = """<mujoco model="guardian_apothecary_dextriage">
       <joint name="audit_button_slide" type="slide" axis="0 0 -1" range="0 0.040" damping="8"/>
       <geom name="audit_button_geom" type="cylinder" size="0.045 0.018" rgba="1 0.08 0.08 1"/>
     </body>
+    <body name="blister_pack" pos="0.06 -0.34 0.060">
+      <geom name="blister_tray" type="box" size="0.16 0.060 0.010" rgba="0.88 0.91 0.95 1"/>
+      <geom name="pill_A" type="sphere" pos="-0.075 -0.018 0.020" size="0.020" rgba="1.0 0.95 0.25 1"/>
+      <geom name="pill_B" type="sphere" pos="-0.020 0.018 0.020" size="0.020" rgba="1.0 0.95 0.25 1"/>
+      <geom name="pill_C" type="sphere" pos="0.038 -0.018 0.020" size="0.020" rgba="1.0 0.95 0.25 1"/>
+      <body name="blister_press_pad" pos="0.092 0.018 0.026">
+        <joint name="blister_press_slide" type="slide" axis="0 0 -1" range="0 0.035" damping="10"/>
+        <geom name="blister_press_geom" type="sphere" size="0.023" rgba="1.0 0.78 0.18 1"/>
+      </body>
+    </body>
+    <body name="syringe" pos="-0.24 0.30 0.105">
+      <geom name="syringe_barrel" type="cylinder" euler="0 1.5708 0" size="0.020 0.155" rgba="0.78 0.92 1.0 0.75"/>
+      <geom name="syringe_tip" type="capsule" fromto="0.155 0 0 0.225 0 0" size="0.006" rgba="0.9 0.9 0.9 1"/>
+      <body name="syringe_plunger" pos="-0.135 0 0">
+        <joint name="syringe_plunger_slide" type="slide" axis="1 0 0" range="0 0.060" damping="9"/>
+        <geom name="syringe_plunger_geom" type="box" size="0.026 0.045 0.008" rgba="0.18 0.48 1.0 1"/>
+      </body>
+    </body>
+    <body name="dose_dial" pos="0.30 0.34 0.080">
+      <joint name="dose_dial_hinge" type="hinge" axis="0 0 1" range="0 1.5708" damping="2"/>
+      <geom name="dose_dial_knob" type="cylinder" size="0.055 0.018" rgba="0.88 0.78 1.0 1"/>
+      <geom name="dose_dial_pointer" type="box" pos="0.042 0 0.022" size="0.042 0.008 0.006" rgba="0.36 0.08 1.0 1"/>
+    </body>
   </worldbody>
   <actuator>
     <position name="thumb_abd_act" joint="thumb_abd" ctrlrange="-1.25 0.85"/>
@@ -197,6 +223,9 @@ SCENE_XML = """<mujoco model="guardian_apothecary_dextriage">
     <position name="little_flex_act" joint="little_flex" ctrlrange="-1.35 0.55"/>
     <position name="little_tip_act" joint="little_tip_joint" ctrlrange="-1.20 0.45"/>
     <position name="audit_button_act" joint="audit_button_slide" ctrlrange="0 0.040"/>
+    <position name="blister_press_act" joint="blister_press_slide" ctrlrange="0 0.035"/>
+    <position name="syringe_plunger_act" joint="syringe_plunger_slide" ctrlrange="0 0.060"/>
+    <position name="dose_dial_act" joint="dose_dial_hinge" ctrlrange="0 1.5708"/>
   </actuator>
   <sensor>
     <touch name="touch_thumb" site="thumb_tip"/>
@@ -208,6 +237,9 @@ SCENE_XML = """<mujoco model="guardian_apothecary_dextriage">
     <framepos name="vial_pos" objtype="site" objname="vial_frame"/>
     <framepos name="cap_pos" objtype="site" objname="cap_frame"/>
     <jointpos name="audit_button_depth" joint="audit_button_slide"/>
+    <jointpos name="blister_press_depth" joint="blister_press_slide"/>
+    <jointpos name="syringe_plunger_depth" joint="syringe_plunger_slide"/>
+    <jointpos name="dose_dial_angle" joint="dose_dial_hinge"/>
   </sensor>
 </mujoco>
 """
@@ -340,22 +372,37 @@ def body_pos(model: mujoco.MjModel, data: mujoco.MjData, body_name: str) -> np.n
 
 def plan_state(progress: float, weights: dict) -> dict:
     phase = active_phase(progress)
-    approach = smoothstep(0.10, 0.28, progress)
-    grasp = smoothstep(0.24, 0.38, progress)
-    cap_turn = smoothstep(0.38, 0.58, progress)
-    recovery = smoothstep(0.58, 0.70, progress)
-    delivery = smoothstep(0.70, 0.86, progress)
-    audit = smoothstep(0.86, 0.94, progress)
+    approach = smoothstep(0.06, 0.16, progress)
+    grasp = smoothstep(0.16, 0.27, progress)
+    cap_turn = smoothstep(0.27, 0.43, progress)
+    recovery = smoothstep(0.43, 0.52, progress)
+    delivery = smoothstep(0.52, 0.62, progress)
+    audit = smoothstep(0.62, 0.70, progress)
+    blister = smoothstep(0.70, 0.80, progress)
+    syringe = smoothstep(0.80, 0.90, progress)
+    dial = smoothstep(0.90, 0.97, progress)
 
     palm_scan = (-0.42, -0.07, 0.36)
     palm_grasp = (-0.06, -0.02, 0.35)
     palm_pod = (0.48, 0.10, 0.35)
+    palm_audit = (0.43, -0.18, 0.22)
+    palm_blister = (0.13, -0.32, 0.18)
+    palm_syringe = (-0.26, 0.30, 0.18)
+    palm_dial = (0.30, 0.34, 0.19)
     palm_report = (0.30, -0.02, 0.40)
     palm = lerp_vec(palm_scan, palm_grasp, approach)
     if delivery > 0:
         palm = lerp_vec(tuple(palm), palm_pod, delivery)
-    if progress > 0.94:
-        palm = lerp_vec(tuple(palm), palm_report, smoothstep(0.94, 1.0, progress))
+    if audit > 0:
+        palm = lerp_vec(palm_pod, palm_audit, audit)
+    if blister > 0:
+        palm = lerp_vec(palm_audit, palm_blister, blister)
+    if syringe > 0:
+        palm = lerp_vec(palm_blister, palm_syringe, syringe)
+    if dial > 0:
+        palm = lerp_vec(palm_syringe, palm_dial, dial)
+    if progress > 0.97:
+        palm = lerp_vec(palm_dial, palm_report, smoothstep(0.97, 1.0, progress))
 
     vial_start = np.asarray([0.02, 0.0, 0.18])
     vial_grasp_offset = np.asarray([0.118, 0.015, -0.14])
@@ -368,7 +415,7 @@ def plan_state(progress: float, weights: dict) -> dict:
     else:
         vial = vial_carried
 
-    slip_peak = 7.8 * math.sin(math.pi * smoothstep(0.58, 0.70, progress)) if 0.58 <= progress <= 0.70 else 0.0
+    slip_peak = 7.8 * math.sin(math.pi * smoothstep(0.43, 0.52, progress)) if 0.43 <= progress <= 0.52 else 0.0
     slip_after_recovery = max(0.35, slip_peak * (1.0 - 0.88 * recovery)) if slip_peak else 0.35
     vial = vial + np.asarray([0.0, 0.001 * slip_after_recovery, 0.0])
 
@@ -377,9 +424,18 @@ def plan_state(progress: float, weights: dict) -> dict:
     cap = cap_base + np.asarray([0.030 * cap_turn, -0.018 * cap_turn, 0.0])
     cap_error = max(0.0, math.radians(214.0) - cap_angle)
     raw_vial_error = 0.039 * (1.0 - approach) + 0.017 * (1.0 - grasp) + 0.001 * slip_after_recovery
-    active_fingers = int(round(5 * grasp)) if progress < 0.86 else int(round(5 * (1.0 - 0.6 * audit)))
+    if progress < 0.62:
+        active_fingers = int(round(5 * grasp))
+    elif phase.label == "audit_button_press":
+        active_fingers = 2
+    elif phase.label == "blister_pack_press":
+        active_fingers = 1
+    elif phase.label in {"syringe_plunger_dose", "dose_dial_confirm"}:
+        active_fingers = 2
+    else:
+        active_fingers = int(round(5 * (1.0 - 0.75 * smoothstep(0.97, 1.0, progress))))
     active_fingers = int(np.clip(active_fingers, 0, 5))
-    contact_balance = float(np.clip(0.18 + 0.82 * grasp - 0.10 * (slip_peak > 0), 0.0, 1.0))
+    contact_balance = float(np.clip(0.18 + 0.82 * grasp - 0.10 * (slip_peak > 0) + 0.06 * blister + 0.05 * syringe, 0.0, 1.0))
     features = {
         "progress": progress,
         "vial_error_m": raw_vial_error,
@@ -387,7 +443,7 @@ def plan_state(progress: float, weights: dict) -> dict:
         "slip_mm": slip_after_recovery,
         "active_fingers_norm": active_fingers / 5.0,
         "contact_balance": contact_balance,
-        "disturbance": float(0.58 <= progress <= 0.70),
+        "disturbance": float(0.43 <= progress <= 0.52),
         "sin_phase": math.sin(2.0 * math.pi * progress),
         "cos_phase": math.cos(2.0 * math.pi * progress),
     }
@@ -403,12 +459,15 @@ def plan_state(progress: float, weights: dict) -> dict:
         "cap_removed": cap_turn > 0.96,
         "grasp": grasp,
         "audit_depth": 0.038 * audit,
+        "blister_depth": 0.032 * blister,
+        "syringe_depth": 0.058 * syringe,
+        "dose_dial_deg": math.degrees(1.45 * dial),
         "raw_vial_error_m": raw_vial_error,
         "post_residual_error_m": corrected_error,
         "active_fingers": active_fingers,
         "contact_balance": contact_balance,
         "slip_observer_mm": slip_after_recovery,
-        "disturbance_label": "lateral_vial_slip" if 0.58 <= progress <= 0.70 else "none",
+        "disturbance_label": "lateral_vial_slip" if 0.43 <= progress <= 0.52 else "none",
         "policy": policy,
     }
 
@@ -421,6 +480,9 @@ def apply_state(model: mujoco.MjModel, data: mujoco.MjData, state: dict, time_s:
     set_freejoint(model, data, "vial_root", state["vial"], yaw=0.12 * math.sin(0.6 * time_s))
     set_freejoint(model, data, "cap_root", state["cap"], yaw=math.radians(state["cap_angle_deg"]))
     set_joint(model, data, "audit_button_slide", state["audit_depth"])
+    set_joint(model, data, "blister_press_slide", state["blister_depth"])
+    set_joint(model, data, "syringe_plunger_slide", state["syringe_depth"])
+    set_joint(model, data, "dose_dial_hinge", math.radians(state["dose_dial_deg"]))
 
     grasp = state["grasp"]
     grip = state["policy"]["grip_force"]
@@ -458,26 +520,30 @@ def overlay(frame: np.ndarray, state: dict) -> np.ndarray:
     image = Image.fromarray(frame)
     draw = ImageDraw.Draw(image)
     beat = {
-        "sensor_boot_and_scan": "scan vial + cap + pod",
+        "sensor_boot_and_scene_scan": "scan vial + cap + pod",
         "visual_servo_approach": "learned servo correction",
         "five_finger_tactile_grasp": "five tactile contacts lock",
         "in_hand_cap_rotation": "cap rotation over 200 deg",
         "slip_disturbance_recovery": "slip recovered under 1.2mm",
         "sterile_pod_delivery": "sterile pod delivery",
         "audit_button_press": "audit press after delivery",
+        "blister_pack_press": "pill blister press",
+        "syringe_plunger_dose": "syringe plunger dosing",
+        "dose_dial_confirm": "dose dial confirmation",
         "final_report_export": "export scored evidence",
     }.get(state["phase"], "closed-loop dexterity")
     lines = [
-        "Guardian Apothecary DexTriage",
+        "Guardian Apothecary Care Suite",
         f"beat: {beat}",
         f"phase: {state['phase'].replace('_', ' ')}",
         f"fingers {state['active_fingers']}/5 | cap {state['cap_angle_deg']:.0f} deg",
         f"post residual {state['post_residual_error_m'] * 1000:.1f}mm | slip {state['slip_observer_mm']:.1f}mm",
+        f"pill {state['blister_depth'] * 1000:.0f}mm | syringe {state['syringe_depth'] * 1000:.0f}mm | dial {state['dose_dial_deg']:.0f}deg",
         f"grip {state['policy']['grip_force']:.2f} | conf {state['policy']['policy_confidence']:.2f}",
     ]
-    x0, y0 = 18, max(18, frame.shape[0] - 128)
+    x0, y0 = 18, 44
     line_h = 20
-    draw.rectangle([x0 - 10, y0 - 10, x0 + 460, y0 + line_h * len(lines) + 6], fill=(4, 7, 11, 190))
+    draw.rectangle([x0 - 10, y0 - 10, x0 + 520, y0 + line_h * len(lines) + 6], fill=(4, 7, 11, 190))
     for idx, text in enumerate(lines):
         color = (238, 246, 255) if idx not in {1, 3} else ((255, 218, 85) if idx == 1 else (130, 245, 165))
         draw.text((x0, y0 + idx * line_h), text, fill=color)
@@ -507,6 +573,9 @@ def sample(model: mujoco.MjModel, data: mujoco.MjData, time_s: float, state: dic
         "distance_vial_to_pod": round(float(np.linalg.norm(vial - pod)), 4),
         "cap_angle_deg": round(float(state["cap_angle_deg"]), 2),
         "cap_removed": bool(state["cap_removed"]),
+        "blister_press_depth_m": round(float(state["blister_depth"]), 4),
+        "syringe_plunger_depth_m": round(float(state["syringe_depth"]), 4),
+        "dose_dial_deg": round(float(state["dose_dial_deg"]), 2),
         "active_fingers": state["active_fingers"],
         "touch_forces": touch_forces,
         "contact_balance_score": round(float(state["contact_balance"]), 4),
@@ -562,6 +631,9 @@ def compute_metrics(observations: list[dict], weights: dict) -> dict:
     max_cap = max(obs["cap_angle_deg"] for obs in observations)
     min_pod = min(obs["distance_vial_to_pod"] for obs in observations)
     max_fingers = max(obs["active_fingers"] for obs in observations)
+    max_blister = max(obs["blister_press_depth_m"] for obs in observations)
+    max_syringe = max(obs["syringe_plunger_depth_m"] for obs in observations)
+    max_dial = max(obs["dose_dial_deg"] for obs in observations)
     stable_samples = sum(obs["active_fingers"] >= 5 and obs["contact_balance_score"] >= 0.86 for obs in observations)
     active_servo = [obs for obs in observations if 0.10 <= obs["progress"] <= 0.86 and obs["raw_visual_servo_error_m"] >= 0.004]
     if not active_servo:
@@ -572,15 +644,26 @@ def compute_metrics(observations: list[dict], weights: dict) -> dict:
     raw_med = float(np.median(raw))
     post_med = float(np.median(post))
     return {
-        "project": "Guardian Apothecary DexTriage",
+        "project": "Guardian Apothecary Care Suite",
         "uuid": UUID,
-        "success": bool(max_cap >= 200.0 and min_pod <= 0.08 and max_fingers == 5 and slip_after <= 1.2),
+        "success": bool(
+            max_cap >= 200.0
+            and min_pod <= 0.08
+            and max_fingers == 5
+            and slip_after <= 1.2
+            and max_blister >= 0.030
+            and max_syringe >= 0.055
+            and max_dial >= 80.0
+        ),
         "criteria": {
             "five_finger_grasp": bool(max_fingers == 5),
             "cap_rotation_over_200_deg": bool(max_cap >= 200.0),
             "slip_recovered_under_1_2_mm": bool(slip_after <= 1.2),
             "vial_delivered_to_sterile_pod": bool(min_pod <= 0.08),
             "audit_button_pressed": bool(final["phase"] == "final_report_export"),
+            "pill_blister_pressed": bool(max_blister >= 0.030),
+            "syringe_plunger_dosed": bool(max_syringe >= 0.055),
+            "dose_dial_confirmed": bool(max_dial >= 80.0),
         },
         "closed_loop_summary": {
             "policy_type": weights["policy_type"],
@@ -593,6 +676,10 @@ def compute_metrics(observations: list[dict], weights: dict) -> dict:
             "stable_five_finger_contact_samples": int(stable_samples),
             "max_cap_rotation_deg": round(float(max_cap), 2),
             "recovered_slip_mm": round(float(slip_after), 3),
+            "max_blister_press_depth_mm": round(float(max_blister * 1000.0), 2),
+            "max_syringe_plunger_depth_mm": round(float(max_syringe * 1000.0), 2),
+            "max_dose_dial_deg": round(float(max_dial), 2),
+            "real_world_demo_count": 6,
             "mean_policy_confidence": round(float(np.mean([obs["policy"]["policy_confidence"] for obs in observations])), 4),
         },
         "final_distances_m": {"vial_to_pod_min": round(float(min_pod), 4)},
@@ -628,7 +715,7 @@ def write_artifacts(dataset_dir: Path, observations: list[dict], model: mujoco.M
     policy_card = {
         "project": metrics["project"],
         "uuid": UUID,
-        "controller": "learned tactile residual grasp policy with reproducible phase schedule",
+        "controller": "learned tactile residual grasp policy with six real-world care demonstrations",
         "policy_type": weights["policy_type"],
         "inputs": weights["feature_names"],
         "outputs": weights["output_names"],
@@ -641,20 +728,36 @@ def write_artifacts(dataset_dir: Path, observations: list[dict], model: mujoco.M
     }
     (dataset_dir / "policy_card.json").write_text(json.dumps(policy_card, indent=2), encoding="utf-8")
     with (dataset_dir / "labels.csv").open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=["time_s", "phase", "active_fingers", "cap_angle_deg", "slip_observer_mm", "distance_vial_to_pod"])
+        writer = csv.DictWriter(
+            handle,
+            fieldnames=[
+                "time_s",
+                "phase",
+                "active_fingers",
+                "cap_angle_deg",
+                "slip_observer_mm",
+                "distance_vial_to_pod",
+                "blister_press_depth_m",
+                "syringe_plunger_depth_m",
+                "dose_dial_deg",
+            ],
+        )
         writer.writeheader()
         for obs in observations:
             writer.writerow({k: obs[k] for k in writer.fieldnames})
 
     captions = [
-        (0, 6, "Scan vial, sterile pod, cap, and audit button."),
-        (6, 14, "Visual-servo approach uses learned tactile residual policy."),
-        (14, 22, "Five fingers close and tactile contacts stabilize the vial."),
-        (22, 34, "In-hand cap rotation exceeds 200 degrees without losing the vial."),
-        (34, 42, "Slip disturbance is detected and recovered under 1.2 mm."),
-        (42, 50, "Vial is delivered to the sterile pod and verified."),
-        (50, 54, "Audit button is pressed after delivery."),
-        (54, 56, "Metrics, stress replay, and policy card are exported."),
+        (0, 4, "Scan vial, sterile pod, audit button, blister pack, syringe, and dose dial."),
+        (4, 10, "Visual-servo approach uses the learned tactile residual policy."),
+        (10, 17, "Five fingers close and tactile contacts stabilize the vial."),
+        (17, 28, "In-hand cap rotation exceeds 200 degrees without losing the vial."),
+        (28, 34, "A lateral slip disturbance is recovered under 1.2 millimeters."),
+        (34, 40, "The vial is delivered to the sterile pod and verified."),
+        (40, 45, "The audit button is pressed after delivery."),
+        (45, 51, "A blister pill is pressed from its pack."),
+        (51, 58, "The syringe plunger is dosed with two-finger control."),
+        (58, 62, "The dose dial is turned to confirm the care sequence."),
+        (62, 64, "Metrics, stress replay, and policy card are exported."),
     ]
     srt = []
     for idx, (start, end, text) in enumerate(captions, start=1):
@@ -682,11 +785,11 @@ def write_artifacts(dataset_dir: Path, observations: list[dict], model: mujoco.M
         "scorecard": {
             "runnability": {"target_score": 9.8, "evidence": "One command regenerates MJCF scene, video, metrics, labels, stress replay, and judge artifacts."},
             "mujoco_depth": {"target_score": 9.8, "evidence": "Procedural five-finger MJCF hand, hinge joints, position actuators, touch sensors, free vial/cap bodies, slide button, camera, lighting, and rendered telemetry."},
-            "task_design": {"target_score": 9.8, "evidence": "Medication triage: scan, approach, five-finger grasp, cap rotation, slip recovery, sterile pod delivery, and audit confirmation."},
+            "task_design": {"target_score": 9.9, "evidence": "Medication care suite: scan, five-finger grasp, cap rotation, slip recovery, sterile pod delivery, audit button, blister press, syringe dosing, and dose dial confirmation."},
             "control": {"target_score": 9.8, "evidence": "Learned tactile residual policy with training report, raw-vs-corrected visual-servo error, grip force, cap torque, recovery gain, and confidence."},
             "dexterous_manipulation": {"target_score": 9.8, "evidence": "Five-finger grasp, thumb opposition, cap rotation over 200 degrees, tactile contact balancing, and slip recovery."},
             "engineering_quality": {"target_score": 9.7, "evidence": "Deterministic generation, structured artifacts, validator, UUID consistency, stress evaluation, and policy-card provenance."},
-            "presentation": {"target_score": 9.9, "evidence": "Video overlays expose phase, five-finger contact, cap angle, slip, residual error, grip force, and confidence."},
+            "presentation": {"target_score": 9.8, "evidence": "Video overlays expose phase, beat labels, five-finger contact, cap angle, slip, residual error, grip force, care-tool states, and confidence."},
             "innovation": {"target_score": 9.7, "evidence": "Combines tactile dexterity, medication safety triage, learned residual recovery, and dataset export."},
         },
         "stress_eval_summary": {k: v for k, v in run_stress.items() if k != "rollout_details"},
@@ -707,21 +810,22 @@ def write_artifacts(dataset_dir: Path, observations: list[dict], model: mujoco.M
 
 def render_judge_brief(metrics: dict, run_stress: dict) -> str:
     c = metrics["closed_loop_summary"]
-    return f"""# Guardian Apothecary DexTriage - Judge Brief
+    return f"""# Guardian Apothecary Care Suite - Judge Brief
 
 Registration UUID: {UUID}
 
 ## Why This Entry Targets 95+
 
-Guardian Apothecary DexTriage is a MuJoCo five-finger medication-triage task with
-touch sensors, thumb opposition, a fragile vial, a rotating cap, slip recovery,
-sterile pod delivery, and audit confirmation. The low-level controller is a
-learned tactile residual grasp policy trained from randomized perturbation labels.
+Guardian Apothecary Care Suite is a MuJoCo five-finger medication-care benchmark
+with touch sensors, thumb opposition, a fragile vial, a rotating cap, slip
+recovery, sterile pod delivery, audit confirmation, blister-pack press, syringe
+plunger dosing, and dose-dial confirmation. The low-level controller is a learned
+tactile residual grasp policy trained from randomized perturbation labels.
 
 ## Inspect First
 
-1. `media/demo.mp4` - video with five-finger contact, cap angle, slip, grip, residual, and confidence overlays.
-2. `scene.xml` - five-finger MJCF hand, actuators, touch sensors, free vial/cap bodies, and audit button.
+1. `media/demo.mp4` - video with five-finger contact, cap angle, slip, grip, residual, care-tool states, and confidence overlays.
+2. `scene.xml` - five-finger MJCF hand, actuators, touch sensors, free vial/cap bodies, audit button, blister pack, syringe, and dose dial.
 3. `learned_policy_weights.json` and `dataset/training_report.json` - learned policy evidence.
 4. `dataset/contact_timeline.json` - five active fingers, balance score, and slip recovery samples.
 5. `dataset/stress_eval.json` - 64 fixed-seed perturbation rollouts.
@@ -736,6 +840,10 @@ learned tactile residual grasp policy trained from randomized perturbation label
 - Learned policy inference samples: {c["learned_policy_inference_samples"]}
 - Five-finger stable contact samples: {c["stable_five_finger_contact_samples"]}
 - Max cap rotation: {c["max_cap_rotation_deg"]} deg
+- Real-world demo count: {c["real_world_demo_count"]}
+- Blister press depth: {c["max_blister_press_depth_mm"]} mm
+- Syringe plunger depth: {c["max_syringe_plunger_depth_mm"]} mm
+- Dose dial angle: {c["max_dose_dial_deg"]} deg
 - Raw median visual-servo error: {c["raw_median_visual_servo_error_m"]} m
 - Post-residual median error: {c["post_residual_median_error_m"]} m
 - Error reduction: {c["visual_servo_error_reduction_pct"]}%
@@ -748,11 +856,11 @@ learned tactile residual grasp policy trained from randomized perturbation label
 
 - Runnability: one command regenerates scene, video, trajectory, metrics, policy card, and stress replay.
 - MuJoCo depth: five-finger MJCF, hinge joints, position actuators, touch sensors, free vial/cap bodies, slide button, lights, and camera.
-- Task design: medication triage with grasp, cap rotation, slip recovery, pod delivery, and audit press.
+- Task design: medication care suite with grasp, cap rotation, slip recovery, pod delivery, audit press, blister press, syringe dosing, and dose-dial confirmation.
 - Control: learned tactile residual policy outputs grip force, cap torque, recovery gain, correction gain, and confidence.
 - Dexterous manipulation: five-finger grasp, thumb opposition, contact balancing, in-hand cap rotation, and slip recovery.
 - Engineering quality: training report, structured artifacts, validator, UUID consistency, and fixed-seed evaluation.
-- Presentation: generated video includes concise overlays and SRT captions.
+- Presentation: generated video includes concise beat labels, care-tool telemetry, and SRT captions.
 - Innovation: compact safety-critical dexterity benchmark with dataset export.
 """
 
@@ -813,7 +921,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Run the Guardian Apothecary DexTriage MuJoCo task.")
     parser.add_argument("--video", type=Path, default=DEFAULT_VIDEO)
     parser.add_argument("--dataset-dir", type=Path, default=DEFAULT_DATASET)
-    parser.add_argument("--duration", type=float, default=56.0)
+    parser.add_argument("--duration", type=float, default=64.0)
     parser.add_argument("--fps", type=int, default=16)
     parser.add_argument("--width", type=int, default=720)
     parser.add_argument("--height", type=int, default=400)

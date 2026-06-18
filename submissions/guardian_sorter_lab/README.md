@@ -1,10 +1,11 @@
-# Guardian Apothecary DexTriage
+# Guardian Apothecary Care Suite
 
-Guardian Apothecary DexTriage is a MuJoCo five-finger medication-triage task for
-FFAI Robothon Summer 2026. A dexterous hand scans a fragile vial, performs a
+Guardian Apothecary Care Suite is a MuJoCo five-finger medication-care benchmark
+for FFAI Robothon Summer 2026. A dexterous hand scans a fragile vial, performs a
 five-finger tactile grasp with thumb opposition, rotates the cap beyond 200
 degrees, recovers from a lateral slip disturbance, delivers the vial to a sterile
-pod, presses an audit button, and exports the full evidence pack for judging.
+pod, presses an audit button, presses a blister pill, doses a syringe plunger,
+turns a dose dial, and exports the full evidence pack for judging.
 
 Registration UUID: `e9367728-67e3-4adc-9f3e-fc7a1a364a8d`
 
@@ -19,9 +20,10 @@ AI tool: `Codex`
 - Learned tactile residual grasp policy trained from 8192 randomized perturbation
   samples by `train_guardian_policy.py`.
 - In-hand cap rotation over 200 degrees, five active contacts, slip recovery
-  under 1.2 mm, sterile pod delivery, and audit confirmation.
+  under 1.2 mm, sterile pod delivery, audit confirmation, blister press,
+  syringe plunger dosing, and dose-dial confirmation.
 - Generated demo video with overlays for phase, active fingers, cap angle, slip,
-  residual error, grip force, and policy confidence.
+  residual error, grip force, care-tool states, and policy confidence.
 - Machine-readable judge artifacts: metrics, policy card, contact timeline,
   stress replay, training report, SRT captions, rubric scorecard, and manifest.
 

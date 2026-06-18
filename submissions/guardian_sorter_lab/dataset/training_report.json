@@ -1,5 +1,5 @@
 {
-  "project": "Guardian Apothecary DexTriage",
+  "project": "Guardian Apothecary Care Suite",
   "uuid": "e9367728-67e3-4adc-9f3e-fc7a1a364a8d",
   "policy_type": "learned_tactile_residual_grasp_policy",
   "training_method": "least-squares behavioral cloning from randomized tactile grasp perturbation labels",

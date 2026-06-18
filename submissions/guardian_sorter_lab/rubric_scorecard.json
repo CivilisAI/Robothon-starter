@@ -1,5 +1,5 @@
 {
-  "project": "Guardian Apothecary DexTriage",
+  "project": "Guardian Apothecary Care Suite",
   "registration_uuid": "e9367728-67e3-4adc-9f3e-fc7a1a364a8d",
   "target": "95-plus Robothon score",
   "evidence_files": [
@@ -26,8 +26,8 @@
       "evidence": "Procedural five-finger MJCF hand, hinge joints, position actuators, touch sensors, free vial/cap bodies, slide button, camera, lighting, and rendered telemetry."
     },
     "task_design": {
-      "target_score": 9.8,
-      "evidence": "Medication triage: scan, approach, five-finger grasp, cap rotation, slip recovery, sterile pod delivery, and audit confirmation."
+      "target_score": 9.9,
+      "evidence": "Medication care suite: scan, five-finger grasp, cap rotation, slip recovery, sterile pod delivery, audit button, blister press, syringe dosing, and dose dial confirmation."
     },
     "control": {
       "target_score": 9.8,
@@ -42,8 +42,8 @@
       "evidence": "Deterministic generation, structured artifacts, validator, UUID consistency, stress evaluation, and policy-card provenance."
     },
     "presentation": {
-      "target_score": 9.9,
-      "evidence": "Video overlays expose phase, five-finger contact, cap angle, slip, residual error, grip force, and confidence."
+      "target_score": 9.8,
+      "evidence": "Video overlays expose phase, beat labels, five-finger contact, cap angle, slip, residual error, grip force, care-tool states, and confidence."
     },
     "innovation": {
       "target_score": 9.7,

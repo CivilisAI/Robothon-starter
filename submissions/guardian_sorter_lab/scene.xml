@@ -126,6 +126,29 @@
       <joint name="audit_button_slide" type="slide" axis="0 0 -1" range="0 0.040" damping="8"/>
       <geom name="audit_button_geom" type="cylinder" size="0.045 0.018" rgba="1 0.08 0.08 1"/>
     </body>
+    <body name="blister_pack" pos="0.06 -0.34 0.060">
+      <geom name="blister_tray" type="box" size="0.16 0.060 0.010" rgba="0.88 0.91 0.95 1"/>
+      <geom name="pill_A" type="sphere" pos="-0.075 -0.018 0.020" size="0.020" rgba="1.0 0.95 0.25 1"/>
+      <geom name="pill_B" type="sphere" pos="-0.020 0.018 0.020" size="0.020" rgba="1.0 0.95 0.25 1"/>
+      <geom name="pill_C" type="sphere" pos="0.038 -0.018 0.020" size="0.020" rgba="1.0 0.95 0.25 1"/>
+      <body name="blister_press_pad" pos="0.092 0.018 0.026">
+        <joint name="blister_press_slide" type="slide" axis="0 0 -1" range="0 0.035" damping="10"/>
+        <geom name="blister_press_geom" type="sphere" size="0.023" rgba="1.0 0.78 0.18 1"/>
+      </body>
+    </body>
+    <body name="syringe" pos="-0.24 0.30 0.105">
+      <geom name="syringe_barrel" type="cylinder" euler="0 1.5708 0" size="0.020 0.155" rgba="0.78 0.92 1.0 0.75"/>
+      <geom name="syringe_tip" type="capsule" fromto="0.155 0 0 0.225 0 0" size="0.006" rgba="0.9 0.9 0.9 1"/>
+      <body name="syringe_plunger" pos="-0.135 0 0">
+        <joint name="syringe_plunger_slide" type="slide" axis="1 0 0" range="0 0.060" damping="9"/>
+        <geom name="syringe_plunger_geom" type="box" size="0.026 0.045 0.008" rgba="0.18 0.48 1.0 1"/>
+      </body>
+    </body>
+    <body name="dose_dial" pos="0.30 0.34 0.080">
+      <joint name="dose_dial_hinge" type="hinge" axis="0 0 1" range="0 1.5708" damping="2"/>
+      <geom name="dose_dial_knob" type="cylinder" size="0.055 0.018" rgba="0.88 0.78 1.0 1"/>
+      <geom name="dose_dial_pointer" type="box" pos="0.042 0 0.022" size="0.042 0.008 0.006" rgba="0.36 0.08 1.0 1"/>
+    </body>
   </worldbody>
   <actuator>
     <position name="thumb_abd_act" joint="thumb_abd" ctrlrange="-1.25 0.85"/>
@@ -144,6 +167,9 @@
     <position name="little_flex_act" joint="little_flex" ctrlrange="-1.35 0.55"/>
     <position name="little_tip_act" joint="little_tip_joint" ctrlrange="-1.20 0.45"/>
     <position name="audit_button_act" joint="audit_button_slide" ctrlrange="0 0.040"/>
+    <position name="blister_press_act" joint="blister_press_slide" ctrlrange="0 0.035"/>
+    <position name="syringe_plunger_act" joint="syringe_plunger_slide" ctrlrange="0 0.060"/>
+    <position name="dose_dial_act" joint="dose_dial_hinge" ctrlrange="0 1.5708"/>
   </actuator>
   <sensor>
     <touch name="touch_thumb" site="thumb_tip"/>
@@ -155,5 +181,8 @@
     <framepos name="vial_pos" objtype="site" objname="vial_frame"/>
     <framepos name="cap_pos" objtype="site" objname="cap_frame"/>
     <jointpos name="audit_button_depth" joint="audit_button_slide"/>
+    <jointpos name="blister_press_depth" joint="blister_press_slide"/>
+    <jointpos name="syringe_plunger_depth" joint="syringe_plunger_slide"/>
+    <jointpos name="dose_dial_angle" joint="dose_dial_hinge"/>
   </sensor>
 </mujoco>

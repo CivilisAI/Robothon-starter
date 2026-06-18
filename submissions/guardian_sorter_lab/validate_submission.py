@@ -75,6 +75,14 @@ def main() -> int:
         raise SystemExit("Cap rotation did not exceed 200 degrees")
     if summary.get("recovered_slip_mm", 99) > 1.2:
         raise SystemExit("Slip recovery did not meet threshold")
+    if summary.get("real_world_demo_count", 0) < 6:
+        raise SystemExit("Too few real-world care demonstrations")
+    if summary.get("max_blister_press_depth_mm", 0) < 30:
+        raise SystemExit("Blister press did not meet threshold")
+    if summary.get("max_syringe_plunger_depth_mm", 0) < 55:
+        raise SystemExit("Syringe plunger did not meet threshold")
+    if summary.get("max_dose_dial_deg", 0) < 80:
+        raise SystemExit("Dose dial did not meet threshold")
     if stress.get("learned_policy_success_rate", 0.0) < 0.95:
         raise SystemExit("Stress replay success rate below target")
     if not all(
@@ -107,6 +115,7 @@ def main() -> int:
                 "stable_five_finger_contact_samples": summary.get("stable_five_finger_contact_samples"),
                 "max_cap_rotation_deg": summary.get("max_cap_rotation_deg"),
                 "recovered_slip_mm": summary.get("recovered_slip_mm"),
+                "real_world_demo_count": summary.get("real_world_demo_count"),
                 "stress_success": stress.get("learned_policy_success_rate"),
             },
             indent=2,

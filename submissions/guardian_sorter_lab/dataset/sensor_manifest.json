@@ -1,5 +1,5 @@
 {
-  "sensor_count": 9,
+  "sensor_count": 12,
   "sensors": [
     "touch_thumb",
     "touch_index",
@@ -9,6 +9,9 @@
     "palm_pos",
     "vial_pos",
     "cap_pos",
-    "audit_button_depth"
+    "audit_button_depth",
+    "blister_press_depth",
+    "syringe_plunger_depth",
+    "dose_dial_angle"
   ]
 }

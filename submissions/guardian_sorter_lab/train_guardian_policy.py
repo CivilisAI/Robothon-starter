@@ -112,7 +112,7 @@ def train() -> dict:
         },
     }
     report = {
-        "project": "Guardian Apothecary DexTriage",
+        "project": "Guardian Apothecary Care Suite",
         "uuid": UUID,
         "policy_type": weights["policy_type"],
         "training_method": weights["training_method"],
