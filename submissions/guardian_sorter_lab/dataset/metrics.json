@@ -13,11 +13,11 @@
     "policy_type": "learned_tactile_residual_grasp_policy",
     "policy_training_samples": 6717,
     "policy_validation_mae": 0.022843,
-    "learned_policy_inference_samples": 449,
-    "raw_median_visual_servo_error_m": 0.02415,
-    "post_residual_median_error_m": 0.0097,
-    "visual_servo_error_reduction_pct": 59.83,
-    "stable_five_finger_contact_samples": 237,
+    "learned_policy_inference_samples": 353,
+    "raw_median_visual_servo_error_m": 0.0236,
+    "post_residual_median_error_m": 0.0095,
+    "visual_servo_error_reduction_pct": 59.72,
+    "stable_five_finger_contact_samples": 186,
     "max_cap_rotation_deg": 214.0,
     "recovered_slip_mm": 0.35,
     "mean_policy_confidence": 0.8583
@@ -35,7 +35,7 @@
     "sterile_pod_delivery",
     "visual_servo_approach"
   ],
-  "sample_count": 449,
+  "sample_count": 353,
   "scene": "submissions/guardian_sorter_lab/scene.xml",
   "video": "submissions/guardian_sorter_lab/media/demo.mp4",
   "dataset": "submissions/guardian_sorter_lab/dataset"

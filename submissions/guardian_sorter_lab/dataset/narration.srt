@@ -1,31 +1,31 @@
 1
-00:00:00,000 --> 00:00:06,000
+00:00:00,000 --> 00:00:05,000
 Scan vial, sterile pod, cap, and audit button.
 
 2
-00:00:06,000 --> 00:00:14,000
+00:00:05,000 --> 00:00:11,000
 Visual-servo approach uses learned tactile residual policy.
 
 3
-00:00:14,000 --> 00:00:22,000
+00:00:11,000 --> 00:00:18,000
 Five fingers close and tactile contacts stabilize the vial.
 
 4
-00:00:22,000 --> 00:00:34,000
+00:00:18,000 --> 00:00:29,000
 In-hand cap rotation exceeds 200 degrees without losing the vial.
 
 5
-00:00:34,000 --> 00:00:42,000
+00:00:29,000 --> 00:00:35,000
 Slip disturbance is detected and recovered under 1.2 mm.
 
 6
-00:00:42,000 --> 00:00:50,000
+00:00:35,000 --> 00:00:40,000
 Vial is delivered to the sterile pod and verified.
 
 7
-00:00:50,000 --> 00:00:54,000
+00:00:40,000 --> 00:00:43,000
 Audit button is pressed after delivery.
 
 8
-00:00:54,000 --> 00:00:56,000
+00:00:43,000 --> 00:00:44,000
 Metrics, stress replay, and policy card are exported.

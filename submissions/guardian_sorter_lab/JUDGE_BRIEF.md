@@ -24,12 +24,12 @@ learned tactile residual grasp policy trained from randomized perturbation label
 - Policy type: learned_tactile_residual_grasp_policy
 - Policy training samples: 6717
 - Policy validation MAE: 0.022843
-- Learned policy inference samples: 449
-- Five-finger stable contact samples: 237
+- Learned policy inference samples: 353
+- Five-finger stable contact samples: 186
 - Max cap rotation: 214.0 deg
-- Raw median visual-servo error: 0.02415 m
-- Post-residual median error: 0.0097 m
-- Error reduction: 59.83%
+- Raw median visual-servo error: 0.0236 m
+- Post-residual median error: 0.0095 m
+- Error reduction: 59.72%
 - Recovered slip: 0.35 mm
 - Stress rollouts: 64
 - Learned-policy stress success: 0.9844

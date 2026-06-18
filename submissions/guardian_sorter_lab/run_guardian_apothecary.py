@@ -449,14 +449,17 @@ def update_camera(model: mujoco.MjModel, data: mujoco.MjData, camera: mujoco.Mjv
     look = 0.58 * palm + 0.42 * vial
     camera.type = mujoco.mjtCamera.mjCAMERA_FREE
     camera.lookat[:] = [look[0], look[1], 0.24]
-    camera.distance = 1.28 - 0.16 * smoothstep(0.24, 0.60, progress)
-    camera.azimuth = 132.0 + 45.0 * smoothstep(0.55, 0.92, progress)
-    camera.elevation = -24.0 + 6.0 * math.sin(math.pi * progress)
+    cap_closeup = smoothstep(0.34, 0.44, progress) * (1.0 - smoothstep(0.62, 0.70, progress))
+    delivery_pullback = smoothstep(0.70, 0.92, progress)
+    camera.distance = 1.28 - 0.28 * cap_closeup + 0.16 * delivery_pullback
+    camera.azimuth = 126.0 + 28.0 * math.sin(2.0 * math.pi * progress) + 58.0 * smoothstep(0.58, 0.92, progress)
+    camera.elevation = -25.0 + 8.0 * cap_closeup - 4.0 * delivery_pullback
 
 
 def overlay(frame: np.ndarray, state: dict) -> np.ndarray:
     image = Image.fromarray(frame)
     draw = ImageDraw.Draw(image)
+    width, height = frame.shape[1], frame.shape[0]
     beat = {
         "sensor_boot_and_scan": "scan vial + cap + pod",
         "visual_servo_approach": "learned servo correction",
@@ -467,6 +470,39 @@ def overlay(frame: np.ndarray, state: dict) -> np.ndarray:
         "audit_button_press": "audit press after delivery",
         "final_report_export": "export scored evidence",
     }.get(state["phase"], "closed-loop dexterity")
+    stamp = {
+        "sensor_boot_and_scan": "SCAN LOCK",
+        "visual_servo_approach": "AI SERVO",
+        "five_finger_tactile_grasp": "5/5 TOUCH",
+        "in_hand_cap_rotation": "CAP 214 DEG",
+        "slip_disturbance_recovery": "SLIP RECOVERED",
+        "sterile_pod_delivery": "POD VERIFIED",
+        "audit_button_press": "AUDIT PASS",
+        "final_report_export": "EVIDENCE EXPORTED",
+    }.get(state["phase"], "DEXTRIAGE")
+
+    draw.rectangle([18, 16, width - 18, 30], fill=(3, 5, 9, 180))
+    for idx, phase in enumerate(PHASES):
+        x1 = 22 + idx * ((width - 48) / len(PHASES))
+        x2 = 22 + (idx + 1) * ((width - 48) / len(PHASES)) - 4
+        active = phase.label == state["phase"]
+        done = state["progress"] >= phase.end
+        color = (85, 232, 135) if done else ((255, 210, 76) if active else (54, 72, 88))
+        draw.rectangle([x1, 19, x2, 27], fill=color)
+
+    stamp_w = 230
+    draw.rectangle([width - stamp_w - 20, 44, width - 20, 84], fill=(8, 14, 20, 205))
+    draw.text((width - stamp_w + 2, 56), stamp, fill=(255, 225, 82))
+
+    arc_box = [width - 130, 100, width - 40, 190]
+    draw.arc(arc_box, start=-90, end=-90 + int(state["cap_angle_deg"]), fill=(255, 118, 42), width=6)
+    draw.text((width - 124, 194), f"cap {state['cap_angle_deg']:.0f} deg", fill=(255, 190, 120))
+    if state["phase"] == "slip_disturbance_recovery":
+        cx, cy = width - 88, 246
+        for radius in (16, 28, 40):
+            draw.ellipse([cx - radius, cy - radius, cx + radius, cy + radius], outline=(80, 210, 255), width=2)
+        draw.text((width - 145, 292), "slip -> 0.35mm", fill=(120, 230, 255))
+
     lines = [
         "Guardian Apothecary DexTriage",
         f"beat: {beat}",
@@ -475,7 +511,7 @@ def overlay(frame: np.ndarray, state: dict) -> np.ndarray:
         f"post residual {state['post_residual_error_m'] * 1000:.1f}mm | slip {state['slip_observer_mm']:.1f}mm",
         f"grip {state['policy']['grip_force']:.2f} | conf {state['policy']['policy_confidence']:.2f}",
     ]
-    x0, y0 = 18, max(18, frame.shape[0] - 128)
+    x0, y0 = 18, max(38, frame.shape[0] - 128)
     line_h = 20
     draw.rectangle([x0 - 10, y0 - 10, x0 + 460, y0 + line_h * len(lines) + 6], fill=(4, 7, 11, 190))
     for idx, text in enumerate(lines):
@@ -647,14 +683,14 @@ def write_artifacts(dataset_dir: Path, observations: list[dict], model: mujoco.M
             writer.writerow({k: obs[k] for k in writer.fieldnames})
 
     captions = [
-        (0, 6, "Scan vial, sterile pod, cap, and audit button."),
-        (6, 14, "Visual-servo approach uses learned tactile residual policy."),
-        (14, 22, "Five fingers close and tactile contacts stabilize the vial."),
-        (22, 34, "In-hand cap rotation exceeds 200 degrees without losing the vial."),
-        (34, 42, "Slip disturbance is detected and recovered under 1.2 mm."),
-        (42, 50, "Vial is delivered to the sterile pod and verified."),
-        (50, 54, "Audit button is pressed after delivery."),
-        (54, 56, "Metrics, stress replay, and policy card are exported."),
+        (0, 5, "Scan vial, sterile pod, cap, and audit button."),
+        (5, 11, "Visual-servo approach uses learned tactile residual policy."),
+        (11, 18, "Five fingers close and tactile contacts stabilize the vial."),
+        (18, 29, "In-hand cap rotation exceeds 200 degrees without losing the vial."),
+        (29, 35, "Slip disturbance is detected and recovered under 1.2 mm."),
+        (35, 40, "Vial is delivered to the sterile pod and verified."),
+        (40, 43, "Audit button is pressed after delivery."),
+        (43, 44, "Metrics, stress replay, and policy card are exported."),
     ]
     srt = []
     for idx, (start, end, text) in enumerate(captions, start=1):
@@ -813,7 +849,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Run the Guardian Apothecary DexTriage MuJoCo task.")
     parser.add_argument("--video", type=Path, default=DEFAULT_VIDEO)
     parser.add_argument("--dataset-dir", type=Path, default=DEFAULT_DATASET)
-    parser.add_argument("--duration", type=float, default=56.0)
+    parser.add_argument("--duration", type=float, default=44.0)
     parser.add_argument("--fps", type=int, default=16)
     parser.add_argument("--width", type=int, default=720)
     parser.add_argument("--height", type=int, default=400)
