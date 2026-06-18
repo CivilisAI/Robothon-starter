@@ -721,7 +721,7 @@
   },
   {
     "time_s": 5.625,
-    "phase": "sensor_boot_and_scan",
+    "phase": "visual_servo_approach",
     "active_fingers": 0,
     "touch_forces": {
       "thumb": 0.0,
@@ -737,7 +737,7 @@
   },
   {
     "time_s": 5.75,
-    "phase": "sensor_boot_and_scan",
+    "phase": "visual_servo_approach",
     "active_fingers": 0,
     "touch_forces": {
       "thumb": 0.0,
@@ -753,7 +753,7 @@
   },
   {
     "time_s": 5.875,
-    "phase": "sensor_boot_and_scan",
+    "phase": "visual_servo_approach",
     "active_fingers": 0,
     "touch_forces": {
       "thumb": 0.0,
@@ -769,7 +769,7 @@
   },
   {
     "time_s": 6.0,
-    "phase": "sensor_boot_and_scan",
+    "phase": "visual_servo_approach",
     "active_fingers": 0,
     "touch_forces": {
       "thumb": 0.0,
@@ -785,7 +785,7 @@
   },
   {
     "time_s": 6.125,
-    "phase": "sensor_boot_and_scan",
+    "phase": "visual_servo_approach",
     "active_fingers": 0,
     "touch_forces": {
       "thumb": 0.0,
@@ -801,7 +801,7 @@
   },
   {
     "time_s": 6.25,
-    "phase": "sensor_boot_and_scan",
+    "phase": "visual_servo_approach",
     "active_fingers": 0,
     "touch_forces": {
       "thumb": 0.0,
@@ -817,7 +817,7 @@
   },
   {
     "time_s": 6.375,
-    "phase": "sensor_boot_and_scan",
+    "phase": "visual_servo_approach",
     "active_fingers": 0,
     "touch_forces": {
       "thumb": 0.0,
@@ -833,7 +833,7 @@
   },
   {
     "time_s": 6.5,
-    "phase": "sensor_boot_and_scan",
+    "phase": "visual_servo_approach",
     "active_fingers": 0,
     "touch_forces": {
       "thumb": 0.0,
@@ -849,7 +849,7 @@
   },
   {
     "time_s": 6.625,
-    "phase": "sensor_boot_and_scan",
+    "phase": "visual_servo_approach",
     "active_fingers": 0,
     "touch_forces": {
       "thumb": 0.0,
@@ -865,7 +865,7 @@
   },
   {
     "time_s": 6.75,
-    "phase": "sensor_boot_and_scan",
+    "phase": "visual_servo_approach",
     "active_fingers": 0,
     "touch_forces": {
       "thumb": 0.0,
@@ -881,7 +881,7 @@
   },
   {
     "time_s": 6.875,
-    "phase": "sensor_boot_and_scan",
+    "phase": "visual_servo_approach",
     "active_fingers": 0,
     "touch_forces": {
       "thumb": 0.0,
@@ -897,7 +897,7 @@
   },
   {
     "time_s": 7.0,
-    "phase": "sensor_boot_and_scan",
+    "phase": "visual_servo_approach",
     "active_fingers": 0,
     "touch_forces": {
       "thumb": 0.0,
@@ -913,7 +913,7 @@
   },
   {
     "time_s": 7.125,
-    "phase": "sensor_boot_and_scan",
+    "phase": "visual_servo_approach",
     "active_fingers": 0,
     "touch_forces": {
       "thumb": 0.0,
@@ -1729,7 +1729,7 @@
   },
   {
     "time_s": 13.5,
-    "phase": "visual_servo_approach",
+    "phase": "five_finger_tactile_grasp",
     "active_fingers": 0,
     "touch_forces": {
       "thumb": 0.0,
@@ -1738,14 +1738,14 @@
       "ring": 0.0,
       "little": 0.0
     },
-    "contact_balance_score": 0.18,
+    "contact_balance_score": 0.1801,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
     "time_s": 13.625,
-    "phase": "visual_servo_approach",
+    "phase": "five_finger_tactile_grasp",
     "active_fingers": 0,
     "touch_forces": {
       "thumb": 0.0,
@@ -1754,14 +1754,14 @@
       "ring": 0.0,
       "little": 0.0
     },
-    "contact_balance_score": 0.18,
+    "contact_balance_score": 0.1813,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
     "time_s": 13.75,
-    "phase": "visual_servo_approach",
+    "phase": "five_finger_tactile_grasp",
     "active_fingers": 0,
     "touch_forces": {
       "thumb": 0.0,
@@ -1770,14 +1770,14 @@
       "ring": 0.0,
       "little": 0.0
     },
-    "contact_balance_score": 0.18,
+    "contact_balance_score": 0.1837,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
     "time_s": 13.875,
-    "phase": "visual_servo_approach",
+    "phase": "five_finger_tactile_grasp",
     "active_fingers": 0,
     "touch_forces": {
       "thumb": 0.0,
@@ -1786,525 +1786,13 @@
       "ring": 0.0,
       "little": 0.0
     },
-    "contact_balance_score": 0.18,
+    "contact_balance_score": 0.1873,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
     "time_s": 14.0,
-    "phase": "visual_servo_approach",
-    "active_fingers": 0,
-    "touch_forces": {
-      "thumb": 0.0,
-      "index": 0.0,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.18,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 14.125,
-    "phase": "visual_servo_approach",
-    "active_fingers": 0,
-    "touch_forces": {
-      "thumb": 0.0,
-      "index": 0.0,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.18,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 14.25,
-    "phase": "visual_servo_approach",
-    "active_fingers": 0,
-    "touch_forces": {
-      "thumb": 0.0,
-      "index": 0.0,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.18,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 14.375,
-    "phase": "visual_servo_approach",
-    "active_fingers": 0,
-    "touch_forces": {
-      "thumb": 0.0,
-      "index": 0.0,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.18,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 14.5,
-    "phase": "visual_servo_approach",
-    "active_fingers": 0,
-    "touch_forces": {
-      "thumb": 0.0,
-      "index": 0.0,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.18,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 14.625,
-    "phase": "visual_servo_approach",
-    "active_fingers": 0,
-    "touch_forces": {
-      "thumb": 0.0,
-      "index": 0.0,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.18,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 14.75,
-    "phase": "visual_servo_approach",
-    "active_fingers": 0,
-    "touch_forces": {
-      "thumb": 0.0,
-      "index": 0.0,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.18,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 14.875,
-    "phase": "visual_servo_approach",
-    "active_fingers": 0,
-    "touch_forces": {
-      "thumb": 0.0,
-      "index": 0.0,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.18,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 15.0,
-    "phase": "visual_servo_approach",
-    "active_fingers": 0,
-    "touch_forces": {
-      "thumb": 0.0,
-      "index": 0.0,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.18,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 15.125,
-    "phase": "visual_servo_approach",
-    "active_fingers": 0,
-    "touch_forces": {
-      "thumb": 0.0,
-      "index": 0.0,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.18,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 15.25,
-    "phase": "visual_servo_approach",
-    "active_fingers": 0,
-    "touch_forces": {
-      "thumb": 0.0,
-      "index": 0.0,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.18,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 15.375,
-    "phase": "visual_servo_approach",
-    "active_fingers": 0,
-    "touch_forces": {
-      "thumb": 0.0,
-      "index": 0.0,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.18,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 15.5,
-    "phase": "visual_servo_approach",
-    "active_fingers": 0,
-    "touch_forces": {
-      "thumb": 0.0,
-      "index": 0.0,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.18,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 15.625,
-    "phase": "visual_servo_approach",
-    "active_fingers": 0,
-    "touch_forces": {
-      "thumb": 0.0,
-      "index": 0.0,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.18,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 15.75,
-    "phase": "visual_servo_approach",
-    "active_fingers": 0,
-    "touch_forces": {
-      "thumb": 0.0,
-      "index": 0.0,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.18,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 15.875,
-    "phase": "visual_servo_approach",
-    "active_fingers": 0,
-    "touch_forces": {
-      "thumb": 0.0,
-      "index": 0.0,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.18,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 16.0,
-    "phase": "visual_servo_approach",
-    "active_fingers": 0,
-    "touch_forces": {
-      "thumb": 0.0,
-      "index": 0.0,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.18,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 16.125,
-    "phase": "visual_servo_approach",
-    "active_fingers": 0,
-    "touch_forces": {
-      "thumb": 0.0,
-      "index": 0.0,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.18,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 16.25,
-    "phase": "visual_servo_approach",
-    "active_fingers": 0,
-    "touch_forces": {
-      "thumb": 0.0,
-      "index": 0.0,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.18,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 16.375,
-    "phase": "visual_servo_approach",
-    "active_fingers": 0,
-    "touch_forces": {
-      "thumb": 0.0,
-      "index": 0.0,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.18,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 16.5,
-    "phase": "visual_servo_approach",
-    "active_fingers": 0,
-    "touch_forces": {
-      "thumb": 0.0,
-      "index": 0.0,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.18,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 16.625,
-    "phase": "visual_servo_approach",
-    "active_fingers": 0,
-    "touch_forces": {
-      "thumb": 0.0,
-      "index": 0.0,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.18,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 16.75,
-    "phase": "visual_servo_approach",
-    "active_fingers": 0,
-    "touch_forces": {
-      "thumb": 0.0,
-      "index": 0.0,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.18,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 16.875,
-    "phase": "visual_servo_approach",
-    "active_fingers": 0,
-    "touch_forces": {
-      "thumb": 0.0,
-      "index": 0.0,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.18,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 17.0,
-    "phase": "visual_servo_approach",
-    "active_fingers": 0,
-    "touch_forces": {
-      "thumb": 0.0,
-      "index": 0.0,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.18,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 17.125,
-    "phase": "visual_servo_approach",
-    "active_fingers": 0,
-    "touch_forces": {
-      "thumb": 0.0,
-      "index": 0.0,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.18,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 17.25,
-    "phase": "visual_servo_approach",
-    "active_fingers": 0,
-    "touch_forces": {
-      "thumb": 0.0,
-      "index": 0.0,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.18,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 17.375,
-    "phase": "five_finger_tactile_grasp",
-    "active_fingers": 0,
-    "touch_forces": {
-      "thumb": 0.0,
-      "index": 0.0,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.1802,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 17.5,
-    "phase": "five_finger_tactile_grasp",
-    "active_fingers": 0,
-    "touch_forces": {
-      "thumb": 0.0,
-      "index": 0.0,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.1812,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 17.625,
-    "phase": "five_finger_tactile_grasp",
-    "active_fingers": 0,
-    "touch_forces": {
-      "thumb": 0.0,
-      "index": 0.0,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.1828,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 17.75,
-    "phase": "five_finger_tactile_grasp",
-    "active_fingers": 0,
-    "touch_forces": {
-      "thumb": 0.0,
-      "index": 0.0,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.1852,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 17.875,
-    "phase": "five_finger_tactile_grasp",
-    "active_fingers": 0,
-    "touch_forces": {
-      "thumb": 0.0,
-      "index": 0.0,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.1882,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 18.0,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 0,
     "touch_forces": {
@@ -2320,7 +1808,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 18.125,
+    "time_s": 14.125,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 0,
     "touch_forces": {
@@ -2330,13 +1818,13 @@
       "ring": 0.0,
       "little": 0.0
     },
-    "contact_balance_score": 0.1963,
+    "contact_balance_score": 0.1977,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
-    "time_s": 18.25,
+    "time_s": 14.25,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 0,
     "touch_forces": {
@@ -2346,13 +1834,13 @@
       "ring": 0.0,
       "little": 0.0
     },
-    "contact_balance_score": 0.2013,
+    "contact_balance_score": 0.2045,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
-    "time_s": 18.375,
+    "time_s": 14.375,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 0,
     "touch_forces": {
@@ -2362,13 +1850,13 @@
       "ring": 0.0,
       "little": 0.0
     },
-    "contact_balance_score": 0.2069,
+    "contact_balance_score": 0.2122,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
-    "time_s": 18.5,
+    "time_s": 14.5,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 0,
     "touch_forces": {
@@ -2378,13 +1866,13 @@
       "ring": 0.0,
       "little": 0.0
     },
-    "contact_balance_score": 0.2131,
+    "contact_balance_score": 0.2209,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
-    "time_s": 18.625,
+    "time_s": 14.625,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 0,
     "touch_forces": {
@@ -2394,13 +1882,13 @@
       "ring": 0.0,
       "little": 0.0
     },
-    "contact_balance_score": 0.2199,
+    "contact_balance_score": 0.2305,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
-    "time_s": 18.75,
+    "time_s": 14.75,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 0,
     "touch_forces": {
@@ -2410,45 +1898,13 @@
       "ring": 0.0,
       "little": 0.0
     },
-    "contact_balance_score": 0.2272,
+    "contact_balance_score": 0.241,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
-    "time_s": 18.875,
-    "phase": "five_finger_tactile_grasp",
-    "active_fingers": 0,
-    "touch_forces": {
-      "thumb": 0.0,
-      "index": 0.0,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.2351,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 19.0,
-    "phase": "five_finger_tactile_grasp",
-    "active_fingers": 0,
-    "touch_forces": {
-      "thumb": 0.0,
-      "index": 0.0,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.2435,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 19.125,
+    "time_s": 14.875,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 0,
     "touch_forces": {
@@ -2464,135 +1920,103 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 19.25,
-    "phase": "five_finger_tactile_grasp",
-    "active_fingers": 0,
-    "touch_forces": {
-      "thumb": 0.0,
-      "index": 0.0,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.2617,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 19.375,
+    "time_s": 15.0,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 1,
     "touch_forces": {
-      "thumb": 0.277,
+      "thumb": 0.276,
       "index": 0.0,
       "middle": 0.0,
       "ring": 0.0,
       "little": 0.0
     },
-    "contact_balance_score": 0.2715,
+    "contact_balance_score": 0.2645,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
-    "time_s": 19.5,
+    "time_s": 15.125,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 1,
     "touch_forces": {
-      "thumb": 0.2785,
+      "thumb": 0.2779,
       "index": 0.0,
       "middle": 0.0,
       "ring": 0.0,
       "little": 0.0
     },
-    "contact_balance_score": 0.2818,
+    "contact_balance_score": 0.2774,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
-    "time_s": 19.625,
+    "time_s": 15.25,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 1,
     "touch_forces": {
-      "thumb": 0.28,
+      "thumb": 0.2798,
       "index": 0.0,
       "middle": 0.0,
       "ring": 0.0,
       "little": 0.0
     },
-    "contact_balance_score": 0.2925,
+    "contact_balance_score": 0.2909,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
-    "time_s": 19.75,
+    "time_s": 15.375,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 1,
     "touch_forces": {
-      "thumb": 0.2816,
+      "thumb": 0.2818,
       "index": 0.0,
       "middle": 0.0,
       "ring": 0.0,
       "little": 0.0
     },
-    "contact_balance_score": 0.3036,
+    "contact_balance_score": 0.3052,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
-    "time_s": 19.875,
+    "time_s": 15.5,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 1,
     "touch_forces": {
-      "thumb": 0.2831,
+      "thumb": 0.2838,
       "index": 0.0,
       "middle": 0.0,
       "ring": 0.0,
       "little": 0.0
     },
-    "contact_balance_score": 0.3151,
+    "contact_balance_score": 0.3201,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
-    "time_s": 20.0,
+    "time_s": 15.625,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 1,
     "touch_forces": {
-      "thumb": 0.2847,
+      "thumb": 0.2859,
       "index": 0.0,
       "middle": 0.0,
       "ring": 0.0,
       "little": 0.0
     },
-    "contact_balance_score": 0.3269,
+    "contact_balance_score": 0.3356,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
-    "time_s": 20.125,
-    "phase": "five_finger_tactile_grasp",
-    "active_fingers": 1,
-    "touch_forces": {
-      "thumb": 0.2864,
-      "index": 0.0,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.3391,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 20.25,
+    "time_s": 15.75,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 1,
     "touch_forces": {
@@ -2608,135 +2032,103 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 20.375,
+    "time_s": 15.875,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 1,
     "touch_forces": {
-      "thumb": 0.2897,
+      "thumb": 0.2902,
       "index": 0.0,
       "middle": 0.0,
       "ring": 0.0,
       "little": 0.0
     },
-    "contact_balance_score": 0.3644,
+    "contact_balance_score": 0.3682,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
-    "time_s": 20.5,
+    "time_s": 16.0,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 1,
     "touch_forces": {
-      "thumb": 0.2914,
+      "thumb": 0.2924,
       "index": 0.0,
       "middle": 0.0,
       "ring": 0.0,
       "little": 0.0
     },
-    "contact_balance_score": 0.3776,
+    "contact_balance_score": 0.3852,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
-    "time_s": 20.625,
+    "time_s": 16.125,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 1,
     "touch_forces": {
-      "thumb": 0.2931,
+      "thumb": 0.2946,
       "index": 0.0,
       "middle": 0.0,
       "ring": 0.0,
       "little": 0.0
     },
-    "contact_balance_score": 0.391,
+    "contact_balance_score": 0.4027,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
-    "time_s": 20.75,
+    "time_s": 16.25,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 1,
     "touch_forces": {
-      "thumb": 0.2948,
+      "thumb": 0.2968,
       "index": 0.0,
       "middle": 0.0,
       "ring": 0.0,
       "little": 0.0
     },
-    "contact_balance_score": 0.4046,
+    "contact_balance_score": 0.4205,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
-    "time_s": 20.875,
-    "phase": "five_finger_tactile_grasp",
-    "active_fingers": 1,
-    "touch_forces": {
-      "thumb": 0.2966,
-      "index": 0.0,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.4185,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 21.0,
+    "time_s": 16.375,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 2,
     "touch_forces": {
-      "thumb": 0.4044,
-      "index": 0.4241,
+      "thumb": 0.4052,
+      "index": 0.4249,
       "middle": 0.0,
       "ring": 0.0,
       "little": 0.0
     },
-    "contact_balance_score": 0.4326,
+    "contact_balance_score": 0.4387,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
-    "time_s": 21.125,
+    "time_s": 16.5,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 2,
     "touch_forces": {
-      "thumb": 0.4062,
-      "index": 0.426,
+      "thumb": 0.4075,
+      "index": 0.4273,
       "middle": 0.0,
       "ring": 0.0,
       "little": 0.0
     },
-    "contact_balance_score": 0.4469,
+    "contact_balance_score": 0.4572,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
-    "time_s": 21.25,
-    "phase": "five_finger_tactile_grasp",
-    "active_fingers": 2,
-    "touch_forces": {
-      "thumb": 0.408,
-      "index": 0.4279,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.4614,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 21.375,
+    "time_s": 16.625,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 2,
     "touch_forces": {
@@ -2752,135 +2144,103 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 21.5,
+    "time_s": 16.75,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 2,
     "touch_forces": {
-      "thumb": 0.4116,
-      "index": 0.4317,
+      "thumb": 0.4121,
+      "index": 0.4322,
       "middle": 0.0,
       "ring": 0.0,
       "little": 0.0
     },
-    "contact_balance_score": 0.4908,
+    "contact_balance_score": 0.4951,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
-    "time_s": 21.625,
+    "time_s": 16.875,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 2,
     "touch_forces": {
-      "thumb": 0.4134,
-      "index": 0.4336,
+      "thumb": 0.4144,
+      "index": 0.4347,
       "middle": 0.0,
       "ring": 0.0,
       "little": 0.0
     },
-    "contact_balance_score": 0.5057,
+    "contact_balance_score": 0.5143,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
-    "time_s": 21.75,
+    "time_s": 17.0,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 2,
     "touch_forces": {
-      "thumb": 0.4152,
-      "index": 0.4355,
+      "thumb": 0.4168,
+      "index": 0.4371,
       "middle": 0.0,
       "ring": 0.0,
       "little": 0.0
     },
-    "contact_balance_score": 0.5207,
+    "contact_balance_score": 0.5337,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
-    "time_s": 21.875,
+    "time_s": 17.125,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 2,
     "touch_forces": {
-      "thumb": 0.4171,
-      "index": 0.4374,
+      "thumb": 0.4192,
+      "index": 0.4396,
       "middle": 0.0,
       "ring": 0.0,
       "little": 0.0
     },
-    "contact_balance_score": 0.5358,
+    "contact_balance_score": 0.5532,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
-    "time_s": 22.0,
+    "time_s": 17.25,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 2,
     "touch_forces": {
-      "thumb": 0.4189,
-      "index": 0.4393,
+      "thumb": 0.4215,
+      "index": 0.4421,
       "middle": 0.0,
       "ring": 0.0,
       "little": 0.0
     },
-    "contact_balance_score": 0.551,
+    "contact_balance_score": 0.5727,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
-    "time_s": 22.125,
-    "phase": "five_finger_tactile_grasp",
-    "active_fingers": 2,
-    "touch_forces": {
-      "thumb": 0.4207,
-      "index": 0.4413,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.5662,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 22.25,
-    "phase": "five_finger_tactile_grasp",
-    "active_fingers": 2,
-    "touch_forces": {
-      "thumb": 0.4226,
-      "index": 0.4432,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.5815,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 22.375,
+    "time_s": 17.375,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 3,
     "touch_forces": {
-      "thumb": 0.5305,
-      "index": 0.5563,
-      "middle": 0.5822,
+      "thumb": 0.5299,
+      "index": 0.5558,
+      "middle": 0.5816,
       "ring": 0.0,
       "little": 0.0
     },
-    "contact_balance_score": 0.5967,
+    "contact_balance_score": 0.5924,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
-    "time_s": 22.5,
+    "time_s": 17.5,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 3,
     "touch_forces": {
@@ -2896,135 +2256,103 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 22.625,
+    "time_s": 17.625,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 3,
     "touch_forces": {
-      "thumb": 0.5341,
-      "index": 0.5602,
-      "middle": 0.5863,
+      "thumb": 0.5347,
+      "index": 0.5608,
+      "middle": 0.5868,
       "ring": 0.0,
       "little": 0.0
     },
-    "contact_balance_score": 0.6272,
+    "contact_balance_score": 0.6315,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
-    "time_s": 22.75,
+    "time_s": 17.75,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 3,
     "touch_forces": {
-      "thumb": 0.536,
-      "index": 0.5621,
-      "middle": 0.5883,
+      "thumb": 0.537,
+      "index": 0.5632,
+      "middle": 0.5894,
       "ring": 0.0,
       "little": 0.0
     },
-    "contact_balance_score": 0.6423,
+    "contact_balance_score": 0.651,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
-    "time_s": 22.875,
+    "time_s": 17.875,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 3,
     "touch_forces": {
-      "thumb": 0.5378,
-      "index": 0.564,
-      "middle": 0.5903,
+      "thumb": 0.5394,
+      "index": 0.5657,
+      "middle": 0.592,
       "ring": 0.0,
       "little": 0.0
     },
-    "contact_balance_score": 0.6574,
+    "contact_balance_score": 0.6703,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
-    "time_s": 23.0,
+    "time_s": 18.0,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 3,
     "touch_forces": {
-      "thumb": 0.5396,
-      "index": 0.5659,
-      "middle": 0.5923,
+      "thumb": 0.5417,
+      "index": 0.5681,
+      "middle": 0.5945,
       "ring": 0.0,
       "little": 0.0
     },
-    "contact_balance_score": 0.6725,
+    "contact_balance_score": 0.6895,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
-    "time_s": 23.125,
+    "time_s": 18.125,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 3,
     "touch_forces": {
-      "thumb": 0.5414,
-      "index": 0.5678,
-      "middle": 0.5942,
+      "thumb": 0.544,
+      "index": 0.5705,
+      "middle": 0.5971,
       "ring": 0.0,
       "little": 0.0
     },
-    "contact_balance_score": 0.6874,
+    "contact_balance_score": 0.7085,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
-    "time_s": 23.25,
+    "time_s": 18.25,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 3,
     "touch_forces": {
-      "thumb": 0.5432,
-      "index": 0.5697,
-      "middle": 0.5962,
+      "thumb": 0.5463,
+      "index": 0.5729,
+      "middle": 0.5996,
       "ring": 0.0,
       "little": 0.0
     },
-    "contact_balance_score": 0.7022,
+    "contact_balance_score": 0.7272,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
-    "time_s": 23.375,
-    "phase": "five_finger_tactile_grasp",
-    "active_fingers": 3,
-    "touch_forces": {
-      "thumb": 0.545,
-      "index": 0.5716,
-      "middle": 0.5982,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.7169,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 23.5,
-    "phase": "five_finger_tactile_grasp",
-    "active_fingers": 3,
-    "touch_forces": {
-      "thumb": 0.5468,
-      "index": 0.5735,
-      "middle": 0.6001,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.7314,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 23.625,
+    "time_s": 18.375,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 3,
     "touch_forces": {
@@ -3040,135 +2368,103 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 23.75,
+    "time_s": 18.5,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 4,
     "touch_forces": {
-      "thumb": 0.6563,
-      "index": 0.6883,
-      "middle": 0.7204,
-      "ring": 0.7524,
+      "thumb": 0.6568,
+      "index": 0.6889,
+      "middle": 0.7209,
+      "ring": 0.7529,
       "little": 0.0
     },
-    "contact_balance_score": 0.7598,
+    "contact_balance_score": 0.7638,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
-    "time_s": 23.875,
+    "time_s": 18.625,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 4,
     "touch_forces": {
-      "thumb": 0.6581,
-      "index": 0.6902,
-      "middle": 0.7223,
-      "ring": 0.7544,
+      "thumb": 0.659,
+      "index": 0.6912,
+      "middle": 0.7233,
+      "ring": 0.7555,
       "little": 0.0
     },
-    "contact_balance_score": 0.7737,
+    "contact_balance_score": 0.7816,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
-    "time_s": 24.0,
+    "time_s": 18.75,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 4,
     "touch_forces": {
-      "thumb": 0.6598,
-      "index": 0.6919,
-      "middle": 0.7241,
-      "ring": 0.7563,
+      "thumb": 0.6612,
+      "index": 0.6935,
+      "middle": 0.7257,
+      "ring": 0.758,
       "little": 0.0
     },
-    "contact_balance_score": 0.7874,
+    "contact_balance_score": 0.7989,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
-    "time_s": 24.125,
+    "time_s": 18.875,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 4,
     "touch_forces": {
-      "thumb": 0.6614,
-      "index": 0.6937,
-      "middle": 0.726,
-      "ring": 0.7582,
+      "thumb": 0.6633,
+      "index": 0.6957,
+      "middle": 0.7281,
+      "ring": 0.7604,
       "little": 0.0
     },
-    "contact_balance_score": 0.8008,
+    "contact_balance_score": 0.8159,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
-    "time_s": 24.25,
+    "time_s": 19.0,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 4,
     "touch_forces": {
-      "thumb": 0.6631,
-      "index": 0.6955,
-      "middle": 0.7278,
-      "ring": 0.7602,
+      "thumb": 0.6654,
+      "index": 0.6979,
+      "middle": 0.7304,
+      "ring": 0.7628,
       "little": 0.0
     },
-    "contact_balance_score": 0.814,
+    "contact_balance_score": 0.8323,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
-    "time_s": 24.375,
+    "time_s": 19.125,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 4,
     "touch_forces": {
-      "thumb": 0.6648,
-      "index": 0.6972,
-      "middle": 0.7296,
-      "ring": 0.762,
+      "thumb": 0.6675,
+      "index": 0.7001,
+      "middle": 0.7326,
+      "ring": 0.7652,
       "little": 0.0
     },
-    "contact_balance_score": 0.8269,
+    "contact_balance_score": 0.8482,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
-    "time_s": 24.5,
-    "phase": "five_finger_tactile_grasp",
-    "active_fingers": 4,
-    "touch_forces": {
-      "thumb": 0.6664,
-      "index": 0.6989,
-      "middle": 0.7314,
-      "ring": 0.7639,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.8394,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 24.625,
-    "phase": "five_finger_tactile_grasp",
-    "active_fingers": 4,
-    "touch_forces": {
-      "thumb": 0.668,
-      "index": 0.7005,
-      "middle": 0.7331,
-      "ring": 0.7657,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.8517,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 24.75,
+    "time_s": 19.25,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 4,
     "touch_forces": {
@@ -3184,135 +2480,103 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 24.875,
+    "time_s": 19.375,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 4,
     "touch_forces": {
-      "thumb": 0.671,
-      "index": 0.7038,
-      "middle": 0.7365,
-      "ring": 0.7693,
+      "thumb": 0.6715,
+      "index": 0.7042,
+      "middle": 0.737,
+      "ring": 0.7697,
       "little": 0.0
     },
-    "contact_balance_score": 0.8751,
+    "contact_balance_score": 0.8783,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
-    "time_s": 25.0,
+    "time_s": 19.5,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 4,
     "touch_forces": {
-      "thumb": 0.6726,
-      "index": 0.7054,
-      "middle": 0.7382,
-      "ring": 0.771,
+      "thumb": 0.6734,
+      "index": 0.7062,
+      "middle": 0.7391,
+      "ring": 0.7719,
       "little": 0.0
     },
-    "contact_balance_score": 0.8862,
+    "contact_balance_score": 0.8924,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
-    "time_s": 25.125,
+    "time_s": 19.625,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 4,
     "touch_forces": {
-      "thumb": 0.674,
-      "index": 0.7069,
-      "middle": 0.7398,
-      "ring": 0.7727,
+      "thumb": 0.6753,
+      "index": 0.7082,
+      "middle": 0.7411,
+      "ring": 0.7741,
       "little": 0.0
     },
-    "contact_balance_score": 0.8969,
+    "contact_balance_score": 0.9058,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": false,
     "disturbance_label": "none"
   },
   {
-    "time_s": 25.25,
-    "phase": "five_finger_tactile_grasp",
-    "active_fingers": 4,
-    "touch_forces": {
-      "thumb": 0.6755,
-      "index": 0.7084,
-      "middle": 0.7414,
-      "ring": 0.7743,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.9073,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 25.375,
-    "phase": "five_finger_tactile_grasp",
-    "active_fingers": 4,
-    "touch_forces": {
-      "thumb": 0.6769,
-      "index": 0.7099,
-      "middle": 0.7429,
-      "ring": 0.7759,
-      "little": 0.0
-    },
-    "contact_balance_score": 0.9171,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 25.5,
+    "time_s": 19.75,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 5,
     "touch_forces": {
-      "thumb": 0.7843,
-      "index": 0.8225,
-      "middle": 0.8608,
-      "ring": 0.8991,
-      "little": 0.9373
+      "thumb": 0.7831,
+      "index": 0.8213,
+      "middle": 0.8595,
+      "ring": 0.8977,
+      "little": 0.9359
     },
-    "contact_balance_score": 0.9265,
+    "contact_balance_score": 0.9185,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": true,
     "disturbance_label": "none"
   },
   {
-    "time_s": 25.625,
+    "time_s": 19.875,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 5,
     "touch_forces": {
-      "thumb": 0.7856,
-      "index": 0.8239,
-      "middle": 0.8623,
-      "ring": 0.9006,
-      "little": 0.9389
+      "thumb": 0.7849,
+      "index": 0.8231,
+      "middle": 0.8614,
+      "ring": 0.8997,
+      "little": 0.938
     },
-    "contact_balance_score": 0.9355,
+    "contact_balance_score": 0.9304,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": true,
     "disturbance_label": "none"
   },
   {
-    "time_s": 25.75,
+    "time_s": 20.0,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 5,
     "touch_forces": {
-      "thumb": 0.7869,
-      "index": 0.8253,
-      "middle": 0.8637,
-      "ring": 0.9021,
-      "little": 0.9404
+      "thumb": 0.7865,
+      "index": 0.8249,
+      "middle": 0.8633,
+      "ring": 0.9016,
+      "little": 0.94
     },
-    "contact_balance_score": 0.9439,
+    "contact_balance_score": 0.9416,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": true,
     "disturbance_label": "none"
   },
   {
-    "time_s": 25.875,
+    "time_s": 20.125,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 5,
     "touch_forces": {
@@ -3328,135 +2592,103 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 26.0,
+    "time_s": 20.25,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 5,
     "touch_forces": {
-      "thumb": 0.7894,
-      "index": 0.8279,
-      "middle": 0.8664,
-      "ring": 0.9049,
-      "little": 0.9434
+      "thumb": 0.7897,
+      "index": 0.8282,
+      "middle": 0.8667,
+      "ring": 0.9053,
+      "little": 0.9438
     },
-    "contact_balance_score": 0.9592,
+    "contact_balance_score": 0.9613,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": true,
     "disturbance_label": "none"
   },
   {
-    "time_s": 26.125,
+    "time_s": 20.375,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 5,
     "touch_forces": {
-      "thumb": 0.7905,
-      "index": 0.8291,
-      "middle": 0.8677,
-      "ring": 0.9062,
-      "little": 0.9448
+      "thumb": 0.7912,
+      "index": 0.8298,
+      "middle": 0.8684,
+      "ring": 0.907,
+      "little": 0.9455
     },
-    "contact_balance_score": 0.9661,
+    "contact_balance_score": 0.9697,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": true,
     "disturbance_label": "none"
   },
   {
-    "time_s": 26.25,
+    "time_s": 20.5,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 5,
     "touch_forces": {
-      "thumb": 0.7916,
-      "index": 0.8303,
-      "middle": 0.8689,
-      "ring": 0.9075,
-      "little": 0.9461
+      "thumb": 0.7926,
+      "index": 0.8312,
+      "middle": 0.8699,
+      "ring": 0.9086,
+      "little": 0.9472
     },
-    "contact_balance_score": 0.9724,
+    "contact_balance_score": 0.9773,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": true,
     "disturbance_label": "none"
   },
   {
-    "time_s": 26.375,
+    "time_s": 20.625,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 5,
     "touch_forces": {
-      "thumb": 0.7927,
-      "index": 0.8314,
-      "middle": 0.8701,
-      "ring": 0.9087,
-      "little": 0.9474
+      "thumb": 0.7939,
+      "index": 0.8326,
+      "middle": 0.8713,
+      "ring": 0.9101,
+      "little": 0.9488
     },
-    "contact_balance_score": 0.978,
+    "contact_balance_score": 0.9838,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": true,
     "disturbance_label": "none"
   },
   {
-    "time_s": 26.5,
+    "time_s": 20.75,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 5,
     "touch_forces": {
-      "thumb": 0.7938,
-      "index": 0.8325,
-      "middle": 0.8712,
-      "ring": 0.9099,
-      "little": 0.9486
+      "thumb": 0.7951,
+      "index": 0.8339,
+      "middle": 0.8727,
+      "ring": 0.9115,
+      "little": 0.9503
     },
-    "contact_balance_score": 0.9831,
+    "contact_balance_score": 0.9893,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": true,
     "disturbance_label": "none"
   },
   {
-    "time_s": 26.625,
+    "time_s": 20.875,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 5,
     "touch_forces": {
-      "thumb": 0.7947,
-      "index": 0.8335,
-      "middle": 0.8723,
-      "ring": 0.911,
-      "little": 0.9498
+      "thumb": 0.7963,
+      "index": 0.8351,
+      "middle": 0.874,
+      "ring": 0.9128,
+      "little": 0.9517
     },
-    "contact_balance_score": 0.9876,
+    "contact_balance_score": 0.9937,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": true,
     "disturbance_label": "none"
   },
   {
-    "time_s": 26.75,
-    "phase": "five_finger_tactile_grasp",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.7957,
-      "index": 0.8345,
-      "middle": 0.8733,
-      "ring": 0.9121,
-      "little": 0.9509
-    },
-    "contact_balance_score": 0.9914,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 26.875,
-    "phase": "five_finger_tactile_grasp",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.7965,
-      "index": 0.8354,
-      "middle": 0.8742,
-      "ring": 0.9131,
-      "little": 0.952
-    },
-    "contact_balance_score": 0.9945,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 27.0,
+    "time_s": 21.0,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 5,
     "touch_forces": {
@@ -3472,47 +2704,31 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 27.125,
+    "time_s": 21.125,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 5,
     "touch_forces": {
-      "thumb": 0.7981,
-      "index": 0.8371,
-      "middle": 0.876,
-      "ring": 0.9149,
-      "little": 0.9539
+      "thumb": 0.7983,
+      "index": 0.8373,
+      "middle": 0.8762,
+      "ring": 0.9152,
+      "little": 0.9541
     },
-    "contact_balance_score": 0.9987,
+    "contact_balance_score": 0.9991,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": true,
     "disturbance_label": "none"
   },
   {
-    "time_s": 27.25,
+    "time_s": 21.25,
     "phase": "five_finger_tactile_grasp",
     "active_fingers": 5,
     "touch_forces": {
-      "thumb": 0.7988,
-      "index": 0.8378,
-      "middle": 0.8768,
-      "ring": 0.9157,
-      "little": 0.9547
-    },
-    "contact_balance_score": 0.9997,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 27.375,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.7995,
-      "index": 0.8385,
-      "middle": 0.8775,
-      "ring": 0.9165,
-      "little": 0.9555
+      "thumb": 0.7992,
+      "index": 0.8382,
+      "middle": 0.8772,
+      "ring": 0.9162,
+      "little": 0.9552
     },
     "contact_balance_score": 1.0,
     "slip_observer_mm": 0.35,
@@ -3520,15 +2736,15 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 27.5,
+    "time_s": 21.375,
     "phase": "in_hand_cap_rotation",
     "active_fingers": 5,
     "touch_forces": {
-      "thumb": 0.8002,
-      "index": 0.8392,
-      "middle": 0.8782,
-      "ring": 0.9172,
-      "little": 0.9563
+      "thumb": 0.8001,
+      "index": 0.8391,
+      "middle": 0.8781,
+      "ring": 0.9171,
+      "little": 0.9562
     },
     "contact_balance_score": 1.0,
     "slip_observer_mm": 0.35,
@@ -3536,15 +2752,15 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 27.625,
+    "time_s": 21.5,
     "phase": "in_hand_cap_rotation",
     "active_fingers": 5,
     "touch_forces": {
-      "thumb": 0.8008,
-      "index": 0.8399,
-      "middle": 0.879,
-      "ring": 0.918,
-      "little": 0.9571
+      "thumb": 0.8009,
+      "index": 0.84,
+      "middle": 0.8791,
+      "ring": 0.9181,
+      "little": 0.9572
     },
     "contact_balance_score": 1.0,
     "slip_observer_mm": 0.35,
@@ -3552,15 +2768,15 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 27.75,
+    "time_s": 21.625,
     "phase": "in_hand_cap_rotation",
     "active_fingers": 5,
     "touch_forces": {
-      "thumb": 0.8016,
-      "index": 0.8407,
-      "middle": 0.8798,
-      "ring": 0.9189,
-      "little": 0.958
+      "thumb": 0.8019,
+      "index": 0.841,
+      "middle": 0.8801,
+      "ring": 0.9192,
+      "little": 0.9583
     },
     "contact_balance_score": 1.0,
     "slip_observer_mm": 0.35,
@@ -3568,15 +2784,15 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 27.875,
+    "time_s": 21.75,
     "phase": "in_hand_cap_rotation",
     "active_fingers": 5,
     "touch_forces": {
-      "thumb": 0.8023,
-      "index": 0.8414,
-      "middle": 0.8806,
-      "ring": 0.9197,
-      "little": 0.9588
+      "thumb": 0.8028,
+      "index": 0.842,
+      "middle": 0.8812,
+      "ring": 0.9203,
+      "little": 0.9595
     },
     "contact_balance_score": 1.0,
     "slip_observer_mm": 0.35,
@@ -3584,23 +2800,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 28.0,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.8031,
-      "index": 0.8422,
-      "middle": 0.8814,
-      "ring": 0.9206,
-      "little": 0.9598
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 28.125,
+    "time_s": 21.875,
     "phase": "in_hand_cap_rotation",
     "active_fingers": 5,
     "touch_forces": {
@@ -3616,15 +2816,15 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 28.25,
+    "time_s": 22.0,
     "phase": "in_hand_cap_rotation",
     "active_fingers": 5,
     "touch_forces": {
-      "thumb": 0.8047,
-      "index": 0.844,
-      "middle": 0.8832,
-      "ring": 0.9225,
-      "little": 0.9617
+      "thumb": 0.8049,
+      "index": 0.8442,
+      "middle": 0.8835,
+      "ring": 0.9227,
+      "little": 0.962
     },
     "contact_balance_score": 1.0,
     "slip_observer_mm": 0.35,
@@ -3632,15 +2832,15 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 28.375,
+    "time_s": 22.125,
     "phase": "in_hand_cap_rotation",
     "active_fingers": 5,
     "touch_forces": {
-      "thumb": 0.8056,
-      "index": 0.8449,
-      "middle": 0.8842,
-      "ring": 0.9235,
-      "little": 0.9627
+      "thumb": 0.8061,
+      "index": 0.8454,
+      "middle": 0.8847,
+      "ring": 0.924,
+      "little": 0.9633
     },
     "contact_balance_score": 1.0,
     "slip_observer_mm": 0.35,
@@ -3648,15 +2848,15 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 28.5,
+    "time_s": 22.25,
     "phase": "in_hand_cap_rotation",
     "active_fingers": 5,
     "touch_forces": {
-      "thumb": 0.8064,
-      "index": 0.8458,
-      "middle": 0.8851,
-      "ring": 0.9245,
-      "little": 0.9638
+      "thumb": 0.8072,
+      "index": 0.8466,
+      "middle": 0.886,
+      "ring": 0.9254,
+      "little": 0.9647
     },
     "contact_balance_score": 1.0,
     "slip_observer_mm": 0.35,
@@ -3664,15 +2864,15 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 28.625,
+    "time_s": 22.375,
     "phase": "in_hand_cap_rotation",
     "active_fingers": 5,
     "touch_forces": {
-      "thumb": 0.8074,
-      "index": 0.8467,
-      "middle": 0.8861,
-      "ring": 0.9255,
-      "little": 0.9649
+      "thumb": 0.8084,
+      "index": 0.8479,
+      "middle": 0.8873,
+      "ring": 0.9267,
+      "little": 0.9662
     },
     "contact_balance_score": 1.0,
     "slip_observer_mm": 0.35,
@@ -3680,15 +2880,15 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 28.75,
+    "time_s": 22.5,
     "phase": "in_hand_cap_rotation",
     "active_fingers": 5,
     "touch_forces": {
-      "thumb": 0.8083,
-      "index": 0.8477,
-      "middle": 0.8871,
-      "ring": 0.9266,
-      "little": 0.966
+      "thumb": 0.8097,
+      "index": 0.8492,
+      "middle": 0.8887,
+      "ring": 0.9282,
+      "little": 0.9677
     },
     "contact_balance_score": 1.0,
     "slip_observer_mm": 0.35,
@@ -3696,15 +2896,15 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 28.875,
+    "time_s": 22.625,
     "phase": "in_hand_cap_rotation",
     "active_fingers": 5,
     "touch_forces": {
-      "thumb": 0.8092,
-      "index": 0.8487,
-      "middle": 0.8882,
-      "ring": 0.9277,
-      "little": 0.9672
+      "thumb": 0.8109,
+      "index": 0.8505,
+      "middle": 0.8901,
+      "ring": 0.9296,
+      "little": 0.9692
     },
     "contact_balance_score": 1.0,
     "slip_observer_mm": 0.35,
@@ -3712,39 +2912,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 29.0,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.8102,
-      "index": 0.8498,
-      "middle": 0.8893,
-      "ring": 0.9288,
-      "little": 0.9683
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 29.125,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.8112,
-      "index": 0.8508,
-      "middle": 0.8904,
-      "ring": 0.93,
-      "little": 0.9695
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 29.25,
+    "time_s": 22.75,
     "phase": "in_hand_cap_rotation",
     "active_fingers": 5,
     "touch_forces": {
@@ -3760,15 +2928,847 @@
     "disturbance_label": "none"
   },
   {
+    "time_s": 22.875,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.8136,
+      "index": 0.8533,
+      "middle": 0.893,
+      "ring": 0.9327,
+      "little": 0.9724
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 23.0,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.815,
+      "index": 0.8548,
+      "middle": 0.8945,
+      "ring": 0.9343,
+      "little": 0.974
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 23.125,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.8164,
+      "index": 0.8562,
+      "middle": 0.8961,
+      "ring": 0.9359,
+      "little": 0.9757
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 23.25,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.8179,
+      "index": 0.8578,
+      "middle": 0.8977,
+      "ring": 0.9376,
+      "little": 0.9775
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 23.375,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.8193,
+      "index": 0.8593,
+      "middle": 0.8993,
+      "ring": 0.9393,
+      "little": 0.9792
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 23.5,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 23.625,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 23.75,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 23.875,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 24.0,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 24.125,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 24.25,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 24.375,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 24.5,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 24.625,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 24.75,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 24.875,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 25.0,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 25.125,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 25.25,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 25.375,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 25.5,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 25.625,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 25.75,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 25.875,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 26.0,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 26.125,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 26.25,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 26.375,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 26.5,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 26.625,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 26.75,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 26.875,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 27.0,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 27.125,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 27.25,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 27.375,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 27.5,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 27.625,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 27.75,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 27.875,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 28.0,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 28.125,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 28.25,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 28.375,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 28.5,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 28.625,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 28.75,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 28.875,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 29.0,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 29.125,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
+    "time_s": 29.25,
+    "phase": "in_hand_cap_rotation",
+    "active_fingers": 5,
+    "touch_forces": {
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
+    },
+    "contact_balance_score": 1.0,
+    "slip_observer_mm": 0.35,
+    "stable_five_finger_hold": true,
+    "disturbance_label": "none"
+  },
+  {
     "time_s": 29.375,
     "phase": "in_hand_cap_rotation",
     "active_fingers": 5,
     "touch_forces": {
-      "thumb": 0.8133,
-      "index": 0.853,
-      "middle": 0.8927,
-      "ring": 0.9323,
-      "little": 0.972
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
     },
     "contact_balance_score": 1.0,
     "slip_observer_mm": 0.35,
@@ -3780,11 +3780,11 @@
     "phase": "in_hand_cap_rotation",
     "active_fingers": 5,
     "touch_forces": {
-      "thumb": 0.8144,
-      "index": 0.8541,
-      "middle": 0.8938,
-      "ring": 0.9336,
-      "little": 0.9733
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
     },
     "contact_balance_score": 1.0,
     "slip_observer_mm": 0.35,
@@ -3796,11 +3796,11 @@
     "phase": "in_hand_cap_rotation",
     "active_fingers": 5,
     "touch_forces": {
-      "thumb": 0.8155,
-      "index": 0.8553,
-      "middle": 0.895,
-      "ring": 0.9348,
-      "little": 0.9746
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
     },
     "contact_balance_score": 1.0,
     "slip_observer_mm": 0.35,
@@ -3812,11 +3812,11 @@
     "phase": "in_hand_cap_rotation",
     "active_fingers": 5,
     "touch_forces": {
-      "thumb": 0.8166,
-      "index": 0.8564,
-      "middle": 0.8962,
-      "ring": 0.9361,
-      "little": 0.9759
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
     },
     "contact_balance_score": 1.0,
     "slip_observer_mm": 0.35,
@@ -3828,11 +3828,11 @@
     "phase": "in_hand_cap_rotation",
     "active_fingers": 5,
     "touch_forces": {
-      "thumb": 0.8177,
-      "index": 0.8576,
-      "middle": 0.8975,
-      "ring": 0.9374,
-      "little": 0.9773
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
     },
     "contact_balance_score": 1.0,
     "slip_observer_mm": 0.35,
@@ -3844,11 +3844,11 @@
     "phase": "in_hand_cap_rotation",
     "active_fingers": 5,
     "touch_forces": {
-      "thumb": 0.8189,
-      "index": 0.8588,
-      "middle": 0.8987,
-      "ring": 0.9387,
-      "little": 0.9786
+      "thumb": 0.82,
+      "index": 0.86,
+      "middle": 0.9,
+      "ring": 0.94,
+      "little": 0.98
     },
     "contact_balance_score": 1.0,
     "slip_observer_mm": 0.35,
@@ -4161,7 +4161,7 @@
   },
   {
     "time_s": 32.5,
-    "phase": "in_hand_cap_rotation",
+    "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
       "thumb": 0.82,
@@ -4170,14 +4170,14 @@
       "ring": 0.94,
       "little": 0.98
     },
-    "contact_balance_score": 1.0,
+    "contact_balance_score": 0.9,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": true,
-    "disturbance_label": "none"
+    "disturbance_label": "lateral_vial_slip"
   },
   {
     "time_s": 32.625,
-    "phase": "in_hand_cap_rotation",
+    "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
       "thumb": 0.82,
@@ -4186,14 +4186,14 @@
       "ring": 0.94,
       "little": 0.98
     },
-    "contact_balance_score": 1.0,
+    "contact_balance_score": 0.9,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": true,
-    "disturbance_label": "none"
+    "disturbance_label": "lateral_vial_slip"
   },
   {
     "time_s": 32.75,
-    "phase": "in_hand_cap_rotation",
+    "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
       "thumb": 0.82,
@@ -4202,14 +4202,14 @@
       "ring": 0.94,
       "little": 0.98
     },
-    "contact_balance_score": 1.0,
+    "contact_balance_score": 0.9,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": true,
-    "disturbance_label": "none"
+    "disturbance_label": "lateral_vial_slip"
   },
   {
     "time_s": 32.875,
-    "phase": "in_hand_cap_rotation",
+    "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
       "thumb": 0.82,
@@ -4218,14 +4218,14 @@
       "ring": 0.94,
       "little": 0.98
     },
-    "contact_balance_score": 1.0,
+    "contact_balance_score": 0.9,
     "slip_observer_mm": 0.35,
     "stable_five_finger_hold": true,
-    "disturbance_label": "none"
+    "disturbance_label": "lateral_vial_slip"
   },
   {
     "time_s": 33.0,
-    "phase": "in_hand_cap_rotation",
+    "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
       "thumb": 0.82,
@@ -4234,14 +4234,14 @@
       "ring": 0.94,
       "little": 0.98
     },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
+    "contact_balance_score": 0.9,
+    "slip_observer_mm": 0.411,
     "stable_five_finger_hold": true,
-    "disturbance_label": "none"
+    "disturbance_label": "lateral_vial_slip"
   },
   {
     "time_s": 33.125,
-    "phase": "in_hand_cap_rotation",
+    "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
       "thumb": 0.82,
@@ -4250,1229 +4250,13 @@
       "ring": 0.94,
       "little": 0.98
     },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
+    "contact_balance_score": 0.9,
+    "slip_observer_mm": 0.619,
     "stable_five_finger_hold": true,
-    "disturbance_label": "none"
+    "disturbance_label": "lateral_vial_slip"
   },
   {
     "time_s": 33.25,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 33.375,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 33.5,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 33.625,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 33.75,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 33.875,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 34.0,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 34.125,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 34.25,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 34.375,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 34.5,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 34.625,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 34.75,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 34.875,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 35.0,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 35.125,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 35.25,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 35.375,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 35.5,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 35.625,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 35.75,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 35.875,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 36.0,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 36.125,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 36.25,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 36.375,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 36.5,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 36.625,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 36.75,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 36.875,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 37.0,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 37.125,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 37.25,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 37.375,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 37.5,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 37.625,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 37.75,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 37.875,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 38.0,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 38.125,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 38.25,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 38.375,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 38.5,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 38.625,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 38.75,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 38.875,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 39.0,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 39.125,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 39.25,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 39.375,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 39.5,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 39.625,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 39.75,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 39.875,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 40.0,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 40.125,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 40.25,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 40.375,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 40.5,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 40.625,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 40.75,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 40.875,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 41.0,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 41.125,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 41.25,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 41.375,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 41.5,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 41.625,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 41.75,
-    "phase": "in_hand_cap_rotation",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 41.875,
-    "phase": "slip_disturbance_recovery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 0.9,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "lateral_vial_slip"
-  },
-  {
-    "time_s": 42.0,
-    "phase": "slip_disturbance_recovery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 0.9,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "lateral_vial_slip"
-  },
-  {
-    "time_s": 42.125,
-    "phase": "slip_disturbance_recovery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 0.9,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "lateral_vial_slip"
-  },
-  {
-    "time_s": 42.25,
-    "phase": "slip_disturbance_recovery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 0.9,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "lateral_vial_slip"
-  },
-  {
-    "time_s": 42.375,
-    "phase": "slip_disturbance_recovery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 0.9,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "lateral_vial_slip"
-  },
-  {
-    "time_s": 42.5,
-    "phase": "slip_disturbance_recovery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 0.9,
-    "slip_observer_mm": 0.499,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "lateral_vial_slip"
-  },
-  {
-    "time_s": 42.625,
-    "phase": "slip_disturbance_recovery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 0.9,
-    "slip_observer_mm": 0.67,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "lateral_vial_slip"
-  },
-  {
-    "time_s": 42.75,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -5488,7 +4272,7 @@
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 42.875,
+    "time_s": 33.375,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -5499,12 +4283,12 @@
       "little": 0.98
     },
     "contact_balance_score": 0.9,
-    "slip_observer_mm": 1.07,
+    "slip_observer_mm": 1.133,
     "stable_five_finger_hold": true,
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 43.0,
+    "time_s": 33.5,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -5515,12 +4299,12 @@
       "little": 0.98
     },
     "contact_balance_score": 0.9,
-    "slip_observer_mm": 1.295,
+    "slip_observer_mm": 1.43,
     "stable_five_finger_hold": true,
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 43.125,
+    "time_s": 33.625,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -5531,12 +4315,12 @@
       "little": 0.98
     },
     "contact_balance_score": 0.9,
-    "slip_observer_mm": 1.533,
+    "slip_observer_mm": 1.746,
     "stable_five_finger_hold": true,
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 43.25,
+    "time_s": 33.75,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -5547,12 +4331,12 @@
       "little": 0.98
     },
     "contact_balance_score": 0.9,
-    "slip_observer_mm": 1.782,
+    "slip_observer_mm": 2.075,
     "stable_five_finger_hold": true,
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 43.375,
+    "time_s": 33.875,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -5563,12 +4347,12 @@
       "little": 0.98
     },
     "contact_balance_score": 0.9,
-    "slip_observer_mm": 2.038,
+    "slip_observer_mm": 2.412,
     "stable_five_finger_hold": true,
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 43.5,
+    "time_s": 34.0,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -5579,44 +4363,12 @@
       "little": 0.98
     },
     "contact_balance_score": 0.9,
-    "slip_observer_mm": 2.299,
+    "slip_observer_mm": 2.749,
     "stable_five_finger_hold": true,
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 43.625,
-    "phase": "slip_disturbance_recovery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 0.9,
-    "slip_observer_mm": 2.562,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "lateral_vial_slip"
-  },
-  {
-    "time_s": 43.75,
-    "phase": "slip_disturbance_recovery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 0.9,
-    "slip_observer_mm": 2.824,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "lateral_vial_slip"
-  },
-  {
-    "time_s": 43.875,
+    "time_s": 34.125,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -5632,7 +4384,7 @@
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 44.0,
+    "time_s": 34.25,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -5643,12 +4395,12 @@
       "little": 0.98
     },
     "contact_balance_score": 0.9,
-    "slip_observer_mm": 3.33,
+    "slip_observer_mm": 3.399,
     "stable_five_finger_hold": true,
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 44.125,
+    "time_s": 34.375,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -5659,12 +4411,12 @@
       "little": 0.98
     },
     "contact_balance_score": 0.9,
-    "slip_observer_mm": 3.569,
+    "slip_observer_mm": 3.699,
     "stable_five_finger_hold": true,
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 44.25,
+    "time_s": 34.5,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -5675,12 +4427,12 @@
       "little": 0.98
     },
     "contact_balance_score": 0.9,
-    "slip_observer_mm": 3.794,
+    "slip_observer_mm": 3.974,
     "stable_five_finger_hold": true,
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 44.375,
+    "time_s": 34.625,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -5691,12 +4443,12 @@
       "little": 0.98
     },
     "contact_balance_score": 0.9,
-    "slip_observer_mm": 4.002,
+    "slip_observer_mm": 4.218,
     "stable_five_finger_hold": true,
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 44.5,
+    "time_s": 34.75,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -5707,12 +4459,12 @@
       "little": 0.98
     },
     "contact_balance_score": 0.9,
-    "slip_observer_mm": 4.192,
+    "slip_observer_mm": 4.426,
     "stable_five_finger_hold": true,
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 44.625,
+    "time_s": 34.875,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -5723,44 +4475,12 @@
       "little": 0.98
     },
     "contact_balance_score": 0.9,
-    "slip_observer_mm": 4.36,
+    "slip_observer_mm": 4.593,
     "stable_five_finger_hold": true,
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 44.75,
-    "phase": "slip_disturbance_recovery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 0.9,
-    "slip_observer_mm": 4.505,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "lateral_vial_slip"
-  },
-  {
-    "time_s": 44.875,
-    "phase": "slip_disturbance_recovery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 0.9,
-    "slip_observer_mm": 4.625,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "lateral_vial_slip"
-  },
-  {
-    "time_s": 45.0,
+    "time_s": 35.0,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -5776,7 +4496,7 @@
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 45.125,
+    "time_s": 35.125,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -5787,28 +4507,12 @@
       "little": 0.98
     },
     "contact_balance_score": 0.9,
-    "slip_observer_mm": 4.783,
+    "slip_observer_mm": 4.796,
     "stable_five_finger_hold": true,
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 45.25,
-    "phase": "slip_disturbance_recovery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 0.9,
-    "slip_observer_mm": 4.819,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "lateral_vial_slip"
-  },
-  {
-    "time_s": 45.375,
+    "time_s": 35.25,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -5824,7 +4528,7 @@
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 45.5,
+    "time_s": 35.375,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -5835,12 +4539,12 @@
       "little": 0.98
     },
     "contact_balance_score": 0.9,
-    "slip_observer_mm": 4.807,
+    "slip_observer_mm": 4.812,
     "stable_five_finger_hold": true,
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 45.625,
+    "time_s": 35.5,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -5851,12 +4555,12 @@
       "little": 0.98
     },
     "contact_balance_score": 0.9,
-    "slip_observer_mm": 4.759,
+    "slip_observer_mm": 4.75,
     "stable_five_finger_hold": true,
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 45.75,
+    "time_s": 35.625,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -5867,12 +4571,12 @@
       "little": 0.98
     },
     "contact_balance_score": 0.9,
-    "slip_observer_mm": 4.684,
+    "slip_observer_mm": 4.644,
     "stable_five_finger_hold": true,
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 45.875,
+    "time_s": 35.75,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -5883,28 +4587,12 @@
       "little": 0.98
     },
     "contact_balance_score": 0.9,
-    "slip_observer_mm": 4.583,
+    "slip_observer_mm": 4.497,
     "stable_five_finger_hold": true,
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 46.0,
-    "phase": "slip_disturbance_recovery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 0.9,
-    "slip_observer_mm": 4.459,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "lateral_vial_slip"
-  },
-  {
-    "time_s": 46.125,
+    "time_s": 35.875,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -5920,7 +4608,7 @@
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 46.25,
+    "time_s": 36.0,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -5931,12 +4619,12 @@
       "little": 0.98
     },
     "contact_balance_score": 0.9,
-    "slip_observer_mm": 4.148,
+    "slip_observer_mm": 4.097,
     "stable_five_finger_hold": true,
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 46.375,
+    "time_s": 36.125,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -5947,12 +4635,12 @@
       "little": 0.98
     },
     "contact_balance_score": 0.9,
-    "slip_observer_mm": 3.965,
+    "slip_observer_mm": 3.854,
     "stable_five_finger_hold": true,
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 46.5,
+    "time_s": 36.25,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -5963,12 +4651,12 @@
       "little": 0.98
     },
     "contact_balance_score": 0.9,
-    "slip_observer_mm": 3.769,
+    "slip_observer_mm": 3.591,
     "stable_five_finger_hold": true,
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 46.625,
+    "time_s": 36.375,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -5979,12 +4667,12 @@
       "little": 0.98
     },
     "contact_balance_score": 0.9,
-    "slip_observer_mm": 3.56,
+    "slip_observer_mm": 3.312,
     "stable_five_finger_hold": true,
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 46.75,
+    "time_s": 36.5,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -5995,12 +4683,12 @@
       "little": 0.98
     },
     "contact_balance_score": 0.9,
-    "slip_observer_mm": 3.344,
+    "slip_observer_mm": 3.024,
     "stable_five_finger_hold": true,
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 46.875,
+    "time_s": 36.625,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -6011,44 +4699,12 @@
       "little": 0.98
     },
     "contact_balance_score": 0.9,
-    "slip_observer_mm": 3.121,
+    "slip_observer_mm": 2.733,
     "stable_five_finger_hold": true,
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 47.0,
-    "phase": "slip_disturbance_recovery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 0.9,
-    "slip_observer_mm": 2.895,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "lateral_vial_slip"
-  },
-  {
-    "time_s": 47.125,
-    "phase": "slip_disturbance_recovery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 0.9,
-    "slip_observer_mm": 2.668,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "lateral_vial_slip"
-  },
-  {
-    "time_s": 47.25,
+    "time_s": 36.75,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -6064,7 +4720,7 @@
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 47.375,
+    "time_s": 36.875,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -6075,12 +4731,12 @@
       "little": 0.98
     },
     "contact_balance_score": 0.9,
-    "slip_observer_mm": 2.223,
+    "slip_observer_mm": 2.161,
     "stable_five_finger_hold": true,
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 47.5,
+    "time_s": 37.0,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -6091,12 +4747,12 @@
       "little": 0.98
     },
     "contact_balance_score": 0.9,
-    "slip_observer_mm": 2.009,
+    "slip_observer_mm": 1.89,
     "stable_five_finger_hold": true,
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 47.625,
+    "time_s": 37.125,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -6107,12 +4763,12 @@
       "little": 0.98
     },
     "contact_balance_score": 0.9,
-    "slip_observer_mm": 1.803,
+    "slip_observer_mm": 1.633,
     "stable_five_finger_hold": true,
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 47.75,
+    "time_s": 37.25,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -6123,12 +4779,12 @@
       "little": 0.98
     },
     "contact_balance_score": 0.9,
-    "slip_observer_mm": 1.606,
+    "slip_observer_mm": 1.394,
     "stable_five_finger_hold": true,
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 47.875,
+    "time_s": 37.375,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -6139,12 +4795,12 @@
       "little": 0.98
     },
     "contact_balance_score": 0.9,
-    "slip_observer_mm": 1.42,
+    "slip_observer_mm": 1.175,
     "stable_five_finger_hold": true,
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 48.0,
+    "time_s": 37.5,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -6155,44 +4811,12 @@
       "little": 0.98
     },
     "contact_balance_score": 0.9,
-    "slip_observer_mm": 1.246,
+    "slip_observer_mm": 0.977,
     "stable_five_finger_hold": true,
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 48.125,
-    "phase": "slip_disturbance_recovery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 0.9,
-    "slip_observer_mm": 1.084,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "lateral_vial_slip"
-  },
-  {
-    "time_s": 48.25,
-    "phase": "slip_disturbance_recovery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 0.9,
-    "slip_observer_mm": 0.935,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "lateral_vial_slip"
-  },
-  {
-    "time_s": 48.375,
+    "time_s": 37.625,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -6208,7 +4832,7 @@
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 48.5,
+    "time_s": 37.75,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -6219,12 +4843,12 @@
       "little": 0.98
     },
     "contact_balance_score": 0.9,
-    "slip_observer_mm": 0.677,
+    "slip_observer_mm": 0.645,
     "stable_five_finger_hold": true,
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 48.625,
+    "time_s": 37.875,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -6235,12 +4859,12 @@
       "little": 0.98
     },
     "contact_balance_score": 0.9,
-    "slip_observer_mm": 0.568,
+    "slip_observer_mm": 0.51,
     "stable_five_finger_hold": true,
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 48.75,
+    "time_s": 38.0,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -6251,28 +4875,12 @@
       "little": 0.98
     },
     "contact_balance_score": 0.9,
-    "slip_observer_mm": 0.47,
+    "slip_observer_mm": 0.396,
     "stable_five_finger_hold": true,
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 48.875,
-    "phase": "slip_disturbance_recovery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 0.9,
-    "slip_observer_mm": 0.385,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "lateral_vial_slip"
-  },
-  {
-    "time_s": 49.0,
+    "time_s": 38.125,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -6288,7 +4896,7 @@
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 49.125,
+    "time_s": 38.25,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -6304,7 +4912,7 @@
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 49.25,
+    "time_s": 38.375,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -6320,7 +4928,7 @@
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 49.375,
+    "time_s": 38.5,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -6336,7 +4944,7 @@
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 49.5,
+    "time_s": 38.625,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -6352,7 +4960,7 @@
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 49.625,
+    "time_s": 38.75,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
@@ -6368,15 +4976,15 @@
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 49.75,
+    "time_s": 38.875,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
+      "thumb": 0.8194,
+      "index": 0.8594,
+      "middle": 0.8993,
+      "ring": 0.9393,
+      "little": 0.9793
     },
     "contact_balance_score": 0.9,
     "slip_observer_mm": 0.35,
@@ -6384,15 +4992,15 @@
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 49.875,
+    "time_s": 39.0,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
-      "thumb": 0.8199,
-      "index": 0.8599,
-      "middle": 0.8999,
-      "ring": 0.9399,
-      "little": 0.9799
+      "thumb": 0.8186,
+      "index": 0.8586,
+      "middle": 0.8985,
+      "ring": 0.9384,
+      "little": 0.9784
     },
     "contact_balance_score": 0.9,
     "slip_observer_mm": 0.35,
@@ -6400,15 +5008,15 @@
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 50.0,
+    "time_s": 39.125,
     "phase": "slip_disturbance_recovery",
     "active_fingers": 5,
     "touch_forces": {
-      "thumb": 0.8193,
-      "index": 0.8593,
-      "middle": 0.8992,
-      "ring": 0.9392,
-      "little": 0.9792
+      "thumb": 0.8179,
+      "index": 0.8578,
+      "middle": 0.8976,
+      "ring": 0.9375,
+      "little": 0.9774
     },
     "contact_balance_score": 0.9,
     "slip_observer_mm": 0.35,
@@ -6416,375 +5024,7 @@
     "disturbance_label": "lateral_vial_slip"
   },
   {
-    "time_s": 50.125,
-    "phase": "slip_disturbance_recovery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.8187,
-      "index": 0.8587,
-      "middle": 0.8986,
-      "ring": 0.9385,
-      "little": 0.9785
-    },
-    "contact_balance_score": 0.9,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "lateral_vial_slip"
-  },
-  {
-    "time_s": 50.25,
-    "phase": "slip_disturbance_recovery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.8181,
-      "index": 0.858,
-      "middle": 0.8979,
-      "ring": 0.9378,
-      "little": 0.9777
-    },
-    "contact_balance_score": 0.9,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "lateral_vial_slip"
-  },
-  {
-    "time_s": 50.375,
-    "phase": "slip_disturbance_recovery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.8175,
-      "index": 0.8574,
-      "middle": 0.8973,
-      "ring": 0.9371,
-      "little": 0.977
-    },
-    "contact_balance_score": 0.9,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "lateral_vial_slip"
-  },
-  {
-    "time_s": 50.5,
-    "phase": "sterile_pod_delivery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 50.625,
-    "phase": "sterile_pod_delivery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 50.75,
-    "phase": "sterile_pod_delivery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 50.875,
-    "phase": "sterile_pod_delivery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 51.0,
-    "phase": "sterile_pod_delivery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 51.125,
-    "phase": "sterile_pod_delivery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 51.25,
-    "phase": "sterile_pod_delivery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 51.375,
-    "phase": "sterile_pod_delivery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 51.5,
-    "phase": "sterile_pod_delivery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 51.625,
-    "phase": "sterile_pod_delivery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 51.75,
-    "phase": "sterile_pod_delivery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 51.875,
-    "phase": "sterile_pod_delivery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 52.0,
-    "phase": "sterile_pod_delivery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 52.125,
-    "phase": "sterile_pod_delivery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 52.25,
-    "phase": "sterile_pod_delivery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 52.375,
-    "phase": "sterile_pod_delivery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 52.5,
-    "phase": "sterile_pod_delivery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 52.625,
-    "phase": "sterile_pod_delivery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 52.75,
-    "phase": "sterile_pod_delivery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 52.875,
-    "phase": "sterile_pod_delivery",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.82,
-      "index": 0.86,
-      "middle": 0.9,
-      "ring": 0.94,
-      "little": 0.98
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 53.0,
+    "time_s": 39.25,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -6800,7 +5040,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 53.125,
+    "time_s": 39.375,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -6816,7 +5056,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 53.25,
+    "time_s": 39.5,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -6832,7 +5072,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 53.375,
+    "time_s": 39.625,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -6848,7 +5088,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 53.5,
+    "time_s": 39.75,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -6864,7 +5104,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 53.625,
+    "time_s": 39.875,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -6880,7 +5120,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 53.75,
+    "time_s": 40.0,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -6896,7 +5136,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 53.875,
+    "time_s": 40.125,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -6912,7 +5152,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 54.0,
+    "time_s": 40.25,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -6928,7 +5168,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 54.125,
+    "time_s": 40.375,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -6944,7 +5184,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 54.25,
+    "time_s": 40.5,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -6960,7 +5200,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 54.375,
+    "time_s": 40.625,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -6976,7 +5216,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 54.5,
+    "time_s": 40.75,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -6992,7 +5232,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 54.625,
+    "time_s": 40.875,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7008,7 +5248,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 54.75,
+    "time_s": 41.0,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7024,7 +5264,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 54.875,
+    "time_s": 41.125,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7040,7 +5280,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 55.0,
+    "time_s": 41.25,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7056,7 +5296,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 55.125,
+    "time_s": 41.375,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7072,7 +5312,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 55.25,
+    "time_s": 41.5,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7088,7 +5328,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 55.375,
+    "time_s": 41.625,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7104,7 +5344,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 55.5,
+    "time_s": 41.75,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7120,7 +5360,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 55.625,
+    "time_s": 41.875,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7136,7 +5376,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 55.75,
+    "time_s": 42.0,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7152,7 +5392,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 55.875,
+    "time_s": 42.125,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7168,7 +5408,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 56.0,
+    "time_s": 42.25,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7184,7 +5424,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 56.125,
+    "time_s": 42.375,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7200,7 +5440,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 56.25,
+    "time_s": 42.5,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7216,7 +5456,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 56.375,
+    "time_s": 42.625,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7232,7 +5472,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 56.5,
+    "time_s": 42.75,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7248,7 +5488,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 56.625,
+    "time_s": 42.875,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7264,7 +5504,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 56.75,
+    "time_s": 43.0,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7280,7 +5520,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 56.875,
+    "time_s": 43.125,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7296,7 +5536,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 57.0,
+    "time_s": 43.25,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7312,7 +5552,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 57.125,
+    "time_s": 43.375,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7328,7 +5568,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 57.25,
+    "time_s": 43.5,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7344,7 +5584,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 57.375,
+    "time_s": 43.625,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7360,7 +5600,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 57.5,
+    "time_s": 43.75,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7376,7 +5616,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 57.625,
+    "time_s": 43.875,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7392,7 +5632,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 57.75,
+    "time_s": 44.0,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7408,7 +5648,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 57.875,
+    "time_s": 44.125,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7424,7 +5664,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 58.0,
+    "time_s": 44.25,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7440,7 +5680,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 58.125,
+    "time_s": 44.375,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7456,7 +5696,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 58.25,
+    "time_s": 44.5,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7472,7 +5712,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 58.375,
+    "time_s": 44.625,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7488,7 +5728,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 58.5,
+    "time_s": 44.75,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7504,7 +5744,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 58.625,
+    "time_s": 44.875,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7520,7 +5760,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 58.75,
+    "time_s": 45.0,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7536,7 +5776,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 58.875,
+    "time_s": 45.125,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7552,7 +5792,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 59.0,
+    "time_s": 45.25,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7568,7 +5808,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 59.125,
+    "time_s": 45.375,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7584,7 +5824,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 59.25,
+    "time_s": 45.5,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7600,7 +5840,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 59.375,
+    "time_s": 45.625,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7616,7 +5856,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 59.5,
+    "time_s": 45.75,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7632,7 +5872,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 59.625,
+    "time_s": 45.875,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7648,7 +5888,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 59.75,
+    "time_s": 46.0,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7664,7 +5904,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 59.875,
+    "time_s": 46.125,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7680,7 +5920,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 60.0,
+    "time_s": 46.25,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7696,7 +5936,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 60.125,
+    "time_s": 46.375,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7712,7 +5952,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 60.25,
+    "time_s": 46.5,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7728,7 +5968,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 60.375,
+    "time_s": 46.625,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7744,7 +5984,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 60.5,
+    "time_s": 46.75,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7760,7 +6000,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 60.625,
+    "time_s": 46.875,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7776,7 +6016,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 60.75,
+    "time_s": 47.0,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7792,7 +6032,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 60.875,
+    "time_s": 47.125,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7808,7 +6048,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 61.0,
+    "time_s": 47.25,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7824,7 +6064,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 61.125,
+    "time_s": 47.375,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7840,7 +6080,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 61.25,
+    "time_s": 47.5,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7856,7 +6096,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 61.375,
+    "time_s": 47.625,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7872,7 +6112,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 61.5,
+    "time_s": 47.75,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7888,7 +6128,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 61.625,
+    "time_s": 47.875,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7904,15 +6144,15 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 61.75,
+    "time_s": 48.0,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
-      "thumb": 0.8195,
-      "index": 0.8595,
-      "middle": 0.8994,
-      "ring": 0.9394,
-      "little": 0.9794
+      "thumb": 0.8197,
+      "index": 0.8597,
+      "middle": 0.8996,
+      "ring": 0.9396,
+      "little": 0.9796
     },
     "contact_balance_score": 1.0,
     "slip_observer_mm": 0.35,
@@ -7920,7 +6160,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 61.875,
+    "time_s": 48.125,
     "phase": "sterile_pod_delivery",
     "active_fingers": 5,
     "touch_forces": {
@@ -7936,15 +6176,15 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 62.0,
+    "time_s": 48.25,
     "phase": "audit_button_press",
     "active_fingers": 5,
     "touch_forces": {
-      "thumb": 0.8182,
-      "index": 0.8581,
-      "middle": 0.898,
-      "ring": 0.9379,
-      "little": 0.9779
+      "thumb": 0.818,
+      "index": 0.8579,
+      "middle": 0.8978,
+      "ring": 0.9377,
+      "little": 0.9776
     },
     "contact_balance_score": 1.0,
     "slip_observer_mm": 0.35,
@@ -7952,15 +6192,15 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 62.125,
+    "time_s": 48.375,
     "phase": "audit_button_press",
     "active_fingers": 5,
     "touch_forces": {
-      "thumb": 0.8176,
-      "index": 0.8575,
-      "middle": 0.8973,
-      "ring": 0.9372,
-      "little": 0.9771
+      "thumb": 0.8172,
+      "index": 0.8571,
+      "middle": 0.8969,
+      "ring": 0.9368,
+      "little": 0.9767
     },
     "contact_balance_score": 1.0,
     "slip_observer_mm": 0.35,
@@ -7968,15 +6208,15 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 62.25,
+    "time_s": 48.5,
     "phase": "audit_button_press",
     "active_fingers": 5,
     "touch_forces": {
-      "thumb": 0.8169,
-      "index": 0.8568,
-      "middle": 0.8966,
-      "ring": 0.9365,
-      "little": 0.9763
+      "thumb": 0.8164,
+      "index": 0.8562,
+      "middle": 0.8961,
+      "ring": 0.9359,
+      "little": 0.9757
     },
     "contact_balance_score": 1.0,
     "slip_observer_mm": 0.35,
@@ -7984,15 +6224,15 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 62.375,
+    "time_s": 48.625,
     "phase": "audit_button_press",
     "active_fingers": 5,
     "touch_forces": {
-      "thumb": 0.8163,
-      "index": 0.8561,
-      "middle": 0.896,
-      "ring": 0.9358,
-      "little": 0.9756
+      "thumb": 0.8156,
+      "index": 0.8554,
+      "middle": 0.8952,
+      "ring": 0.935,
+      "little": 0.9747
     },
     "contact_balance_score": 1.0,
     "slip_observer_mm": 0.35,
@@ -8000,15 +6240,15 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 62.5,
+    "time_s": 48.75,
     "phase": "audit_button_press",
     "active_fingers": 5,
     "touch_forces": {
-      "thumb": 0.8157,
-      "index": 0.8555,
-      "middle": 0.8953,
-      "ring": 0.9351,
-      "little": 0.9748
+      "thumb": 0.8148,
+      "index": 0.8546,
+      "middle": 0.8943,
+      "ring": 0.934,
+      "little": 0.9738
     },
     "contact_balance_score": 1.0,
     "slip_observer_mm": 0.35,
@@ -8016,15 +6256,15 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 62.625,
+    "time_s": 48.875,
     "phase": "audit_button_press",
     "active_fingers": 5,
     "touch_forces": {
-      "thumb": 0.8151,
-      "index": 0.8548,
-      "middle": 0.8946,
-      "ring": 0.9343,
-      "little": 0.9741
+      "thumb": 0.814,
+      "index": 0.8537,
+      "middle": 0.8934,
+      "ring": 0.9331,
+      "little": 0.9728
     },
     "contact_balance_score": 1.0,
     "slip_observer_mm": 0.35,
@@ -8032,39 +6272,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 62.75,
-    "phase": "audit_button_press",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.8145,
-      "index": 0.8542,
-      "middle": 0.8939,
-      "ring": 0.9336,
-      "little": 0.9734
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 62.875,
-    "phase": "audit_button_press",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.8138,
-      "index": 0.8535,
-      "middle": 0.8932,
-      "ring": 0.9329,
-      "little": 0.9726
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 63.0,
+    "time_s": 49.0,
     "phase": "audit_button_press",
     "active_fingers": 5,
     "touch_forces": {
@@ -8080,15 +6288,15 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 63.125,
+    "time_s": 49.125,
     "phase": "audit_button_press",
     "active_fingers": 5,
     "touch_forces": {
-      "thumb": 0.8126,
-      "index": 0.8523,
-      "middle": 0.8919,
-      "ring": 0.9315,
-      "little": 0.9712
+      "thumb": 0.8125,
+      "index": 0.8521,
+      "middle": 0.8917,
+      "ring": 0.9313,
+      "little": 0.971
     },
     "contact_balance_score": 1.0,
     "slip_observer_mm": 0.35,
@@ -8096,15 +6304,15 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 63.25,
+    "time_s": 49.25,
     "phase": "audit_button_press",
     "active_fingers": 5,
     "touch_forces": {
-      "thumb": 0.812,
-      "index": 0.8516,
-      "middle": 0.8912,
-      "ring": 0.9309,
-      "little": 0.9705
+      "thumb": 0.8117,
+      "index": 0.8513,
+      "middle": 0.8909,
+      "ring": 0.9305,
+      "little": 0.9701
     },
     "contact_balance_score": 1.0,
     "slip_observer_mm": 0.35,
@@ -8112,30 +6320,14 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 63.375,
-    "phase": "audit_button_press",
-    "active_fingers": 5,
-    "touch_forces": {
-      "thumb": 0.8114,
-      "index": 0.851,
-      "middle": 0.8906,
-      "ring": 0.9302,
-      "little": 0.9698
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": true,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 63.5,
+    "time_s": 49.375,
     "phase": "audit_button_press",
     "active_fingers": 4,
     "touch_forces": {
-      "thumb": 0.7048,
-      "index": 0.7392,
-      "middle": 0.7735,
-      "ring": 0.8079,
+      "thumb": 0.7049,
+      "index": 0.7393,
+      "middle": 0.7736,
+      "ring": 0.808,
       "little": 0.0
     },
     "contact_balance_score": 1.0,
@@ -8144,14 +6336,14 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 63.625,
+    "time_s": 49.5,
     "phase": "audit_button_press",
     "active_fingers": 4,
     "touch_forces": {
-      "thumb": 0.7042,
+      "thumb": 0.7041,
       "index": 0.7385,
-      "middle": 0.7729,
-      "ring": 0.8073,
+      "middle": 0.7728,
+      "ring": 0.8072,
       "little": 0.0
     },
     "contact_balance_score": 1.0,
@@ -8160,14 +6352,14 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 63.75,
+    "time_s": 49.625,
     "phase": "audit_button_press",
     "active_fingers": 4,
     "touch_forces": {
-      "thumb": 0.7036,
-      "index": 0.7379,
-      "middle": 0.7723,
-      "ring": 0.8066,
+      "thumb": 0.7034,
+      "index": 0.7377,
+      "middle": 0.772,
+      "ring": 0.8063,
       "little": 0.0
     },
     "contact_balance_score": 1.0,
@@ -8176,14 +6368,14 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 63.875,
+    "time_s": 49.75,
     "phase": "audit_button_press",
     "active_fingers": 4,
     "touch_forces": {
-      "thumb": 0.703,
-      "index": 0.7373,
-      "middle": 0.7716,
-      "ring": 0.8059,
+      "thumb": 0.7026,
+      "index": 0.7369,
+      "middle": 0.7712,
+      "ring": 0.8055,
       "little": 0.0
     },
     "contact_balance_score": 1.0,
@@ -8192,23 +6384,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 64.0,
-    "phase": "audit_button_press",
-    "active_fingers": 4,
-    "touch_forces": {
-      "thumb": 0.7025,
-      "index": 0.7367,
-      "middle": 0.771,
-      "ring": 0.8053,
-      "little": 0.0
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 64.125,
+    "time_s": 49.875,
     "phase": "audit_button_press",
     "active_fingers": 4,
     "touch_forces": {
@@ -8224,14 +6400,14 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 64.25,
+    "time_s": 50.0,
     "phase": "audit_button_press",
     "active_fingers": 4,
     "touch_forces": {
-      "thumb": 0.7013,
-      "index": 0.7355,
-      "middle": 0.7698,
-      "ring": 0.804,
+      "thumb": 0.7012,
+      "index": 0.7354,
+      "middle": 0.7696,
+      "ring": 0.8038,
       "little": 0.0
     },
     "contact_balance_score": 1.0,
@@ -8240,14 +6416,14 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 64.375,
+    "time_s": 50.125,
     "phase": "audit_button_press",
     "active_fingers": 4,
     "touch_forces": {
-      "thumb": 0.7008,
-      "index": 0.735,
-      "middle": 0.7691,
-      "ring": 0.8033,
+      "thumb": 0.7005,
+      "index": 0.7346,
+      "middle": 0.7688,
+      "ring": 0.803,
       "little": 0.0
     },
     "contact_balance_score": 1.0,
@@ -8256,14 +6432,14 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 64.5,
+    "time_s": 50.25,
     "phase": "audit_button_press",
     "active_fingers": 4,
     "touch_forces": {
-      "thumb": 0.7002,
-      "index": 0.7344,
-      "middle": 0.7685,
-      "ring": 0.8027,
+      "thumb": 0.6998,
+      "index": 0.7339,
+      "middle": 0.768,
+      "ring": 0.8022,
       "little": 0.0
     },
     "contact_balance_score": 1.0,
@@ -8272,23 +6448,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 64.625,
-    "phase": "audit_button_press",
-    "active_fingers": 4,
-    "touch_forces": {
-      "thumb": 0.6997,
-      "index": 0.7338,
-      "middle": 0.7679,
-      "ring": 0.8021,
-      "little": 0.0
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 64.75,
+    "time_s": 50.375,
     "phase": "audit_button_press",
     "active_fingers": 4,
     "touch_forces": {
@@ -8304,13 +6464,13 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 64.875,
+    "time_s": 50.5,
     "phase": "audit_button_press",
     "active_fingers": 3,
     "touch_forces": {
-      "thumb": 0.5925,
-      "index": 0.6214,
-      "middle": 0.6503,
+      "thumb": 0.5923,
+      "index": 0.6212,
+      "middle": 0.6501,
       "ring": 0.0,
       "little": 0.0
     },
@@ -8320,13 +6480,13 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 65.0,
+    "time_s": 50.625,
     "phase": "audit_button_press",
     "active_fingers": 3,
     "touch_forces": {
-      "thumb": 0.592,
-      "index": 0.6209,
-      "middle": 0.6498,
+      "thumb": 0.5916,
+      "index": 0.6205,
+      "middle": 0.6494,
       "ring": 0.0,
       "little": 0.0
     },
@@ -8336,23 +6496,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 65.125,
-    "phase": "audit_button_press",
-    "active_fingers": 3,
-    "touch_forces": {
-      "thumb": 0.5915,
-      "index": 0.6203,
-      "middle": 0.6492,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 65.25,
+    "time_s": 50.75,
     "phase": "audit_button_press",
     "active_fingers": 3,
     "touch_forces": {
@@ -8368,13 +6512,13 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 65.375,
+    "time_s": 50.875,
     "phase": "audit_button_press",
     "active_fingers": 3,
     "touch_forces": {
-      "thumb": 0.5904,
-      "index": 0.6192,
-      "middle": 0.648,
+      "thumb": 0.5903,
+      "index": 0.6191,
+      "middle": 0.6479,
       "ring": 0.0,
       "little": 0.0
     },
@@ -8384,13 +6528,13 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 65.5,
+    "time_s": 51.0,
     "phase": "audit_button_press",
     "active_fingers": 3,
     "touch_forces": {
-      "thumb": 0.5899,
-      "index": 0.6187,
-      "middle": 0.6475,
+      "thumb": 0.5896,
+      "index": 0.6184,
+      "middle": 0.6472,
       "ring": 0.0,
       "little": 0.0
     },
@@ -8400,29 +6544,13 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 65.625,
+    "time_s": 51.125,
     "phase": "audit_button_press",
     "active_fingers": 3,
     "touch_forces": {
-      "thumb": 0.5894,
-      "index": 0.6182,
-      "middle": 0.6469,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 65.75,
-    "phase": "audit_button_press",
-    "active_fingers": 3,
-    "touch_forces": {
-      "thumb": 0.5889,
+      "thumb": 0.589,
       "index": 0.6177,
-      "middle": 0.6464,
+      "middle": 0.6465,
       "ring": 0.0,
       "little": 0.0
     },
@@ -8432,7 +6560,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 65.875,
+    "time_s": 51.25,
     "phase": "audit_button_press",
     "active_fingers": 3,
     "touch_forces": {
@@ -8448,13 +6576,13 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 66.0,
+    "time_s": 51.375,
     "phase": "audit_button_press",
     "active_fingers": 3,
     "touch_forces": {
-      "thumb": 0.5879,
-      "index": 0.6166,
-      "middle": 0.6453,
+      "thumb": 0.5877,
+      "index": 0.6164,
+      "middle": 0.6451,
       "ring": 0.0,
       "little": 0.0
     },
@@ -8464,28 +6592,12 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 66.125,
-    "phase": "audit_button_press",
-    "active_fingers": 3,
-    "touch_forces": {
-      "thumb": 0.5875,
-      "index": 0.6161,
-      "middle": 0.6448,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 66.25,
+    "time_s": 51.5,
     "phase": "audit_button_press",
     "active_fingers": 2,
     "touch_forces": {
-      "thumb": 0.4809,
-      "index": 0.5044,
+      "thumb": 0.4811,
+      "index": 0.5045,
       "middle": 0.0,
       "ring": 0.0,
       "little": 0.0
@@ -8496,7 +6608,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 66.375,
+    "time_s": 51.625,
     "phase": "audit_button_press",
     "active_fingers": 2,
     "touch_forces": {
@@ -8512,12 +6624,12 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 66.5,
+    "time_s": 51.75,
     "phase": "audit_button_press",
     "active_fingers": 2,
     "touch_forces": {
-      "thumb": 0.48,
-      "index": 0.5034,
+      "thumb": 0.4799,
+      "index": 0.5033,
       "middle": 0.0,
       "ring": 0.0,
       "little": 0.0
@@ -8528,12 +6640,12 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 66.625,
+    "time_s": 51.875,
     "phase": "audit_button_press",
     "active_fingers": 2,
     "touch_forces": {
-      "thumb": 0.4795,
-      "index": 0.5029,
+      "thumb": 0.4793,
+      "index": 0.5027,
       "middle": 0.0,
       "ring": 0.0,
       "little": 0.0
@@ -8544,12 +6656,12 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 66.75,
+    "time_s": 52.0,
     "phase": "audit_button_press",
     "active_fingers": 2,
     "touch_forces": {
-      "thumb": 0.4791,
-      "index": 0.5025,
+      "thumb": 0.4787,
+      "index": 0.5021,
       "middle": 0.0,
       "ring": 0.0,
       "little": 0.0
@@ -8560,27 +6672,11 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 66.875,
+    "time_s": 52.125,
     "phase": "audit_button_press",
     "active_fingers": 2,
     "touch_forces": {
-      "thumb": 0.4786,
-      "index": 0.502,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 67.0,
-    "phase": "audit_button_press",
-    "active_fingers": 2,
-    "touch_forces": {
-      "thumb": 0.4782,
+      "thumb": 0.4781,
       "index": 0.5015,
       "middle": 0.0,
       "ring": 0.0,
@@ -8592,12 +6688,12 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 67.125,
+    "time_s": 52.25,
     "phase": "audit_button_press",
     "active_fingers": 2,
     "touch_forces": {
-      "thumb": 0.4778,
-      "index": 0.5011,
+      "thumb": 0.4776,
+      "index": 0.5009,
       "middle": 0.0,
       "ring": 0.0,
       "little": 0.0
@@ -8608,12 +6704,12 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 67.25,
+    "time_s": 52.375,
     "phase": "audit_button_press",
     "active_fingers": 2,
     "touch_forces": {
-      "thumb": 0.4773,
-      "index": 0.5006,
+      "thumb": 0.477,
+      "index": 0.5003,
       "middle": 0.0,
       "ring": 0.0,
       "little": 0.0
@@ -8624,23 +6720,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 67.375,
-    "phase": "audit_button_press",
-    "active_fingers": 2,
-    "touch_forces": {
-      "thumb": 0.4769,
-      "index": 0.5002,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 67.5,
+    "time_s": 52.5,
     "phase": "audit_button_press",
     "active_fingers": 2,
     "touch_forces": {
@@ -8656,12 +6736,12 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 67.625,
+    "time_s": 52.625,
     "phase": "audit_button_press",
     "active_fingers": 2,
     "touch_forces": {
-      "thumb": 0.4761,
-      "index": 0.4993,
+      "thumb": 0.476,
+      "index": 0.4992,
       "middle": 0.0,
       "ring": 0.0,
       "little": 0.0
@@ -8672,12 +6752,12 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 67.75,
+    "time_s": 52.75,
     "phase": "final_report_export",
     "active_fingers": 2,
     "touch_forces": {
-      "thumb": 0.4757,
-      "index": 0.4989,
+      "thumb": 0.4755,
+      "index": 0.4987,
       "middle": 0.0,
       "ring": 0.0,
       "little": 0.0
@@ -8688,27 +6768,11 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 67.875,
+    "time_s": 52.875,
     "phase": "final_report_export",
     "active_fingers": 2,
     "touch_forces": {
-      "thumb": 0.4753,
-      "index": 0.4985,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 68.0,
-    "phase": "final_report_export",
-    "active_fingers": 2,
-    "touch_forces": {
-      "thumb": 0.4749,
+      "thumb": 0.475,
       "index": 0.4981,
       "middle": 0.0,
       "ring": 0.0,
@@ -8720,12 +6784,12 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 68.125,
+    "time_s": 53.0,
     "phase": "final_report_export",
     "active_fingers": 2,
     "touch_forces": {
       "thumb": 0.4745,
-      "index": 0.4977,
+      "index": 0.4976,
       "middle": 0.0,
       "ring": 0.0,
       "little": 0.0
@@ -8736,12 +6800,12 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 68.25,
+    "time_s": 53.125,
     "phase": "final_report_export",
     "active_fingers": 2,
     "touch_forces": {
-      "thumb": 0.4742,
-      "index": 0.4973,
+      "thumb": 0.474,
+      "index": 0.4971,
       "middle": 0.0,
       "ring": 0.0,
       "little": 0.0
@@ -8752,12 +6816,12 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 68.375,
+    "time_s": 53.25,
     "phase": "final_report_export",
     "active_fingers": 2,
     "touch_forces": {
-      "thumb": 0.4738,
-      "index": 0.4969,
+      "thumb": 0.4735,
+      "index": 0.4966,
       "middle": 0.0,
       "ring": 0.0,
       "little": 0.0
@@ -8768,23 +6832,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 68.5,
-    "phase": "final_report_export",
-    "active_fingers": 2,
-    "touch_forces": {
-      "thumb": 0.4734,
-      "index": 0.4965,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 68.625,
+    "time_s": 53.375,
     "phase": "final_report_export",
     "active_fingers": 2,
     "touch_forces": {
@@ -8800,12 +6848,12 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 68.75,
+    "time_s": 53.5,
     "phase": "final_report_export",
     "active_fingers": 2,
     "touch_forces": {
-      "thumb": 0.4727,
-      "index": 0.4958,
+      "thumb": 0.4726,
+      "index": 0.4957,
       "middle": 0.0,
       "ring": 0.0,
       "little": 0.0
@@ -8816,12 +6864,12 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 68.875,
+    "time_s": 53.625,
     "phase": "final_report_export",
     "active_fingers": 2,
     "touch_forces": {
-      "thumb": 0.4724,
-      "index": 0.4954,
+      "thumb": 0.4722,
+      "index": 0.4952,
       "middle": 0.0,
       "ring": 0.0,
       "little": 0.0
@@ -8832,12 +6880,12 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 69.0,
+    "time_s": 53.75,
     "phase": "final_report_export",
     "active_fingers": 2,
     "touch_forces": {
-      "thumb": 0.472,
-      "index": 0.4951,
+      "thumb": 0.4718,
+      "index": 0.4948,
       "middle": 0.0,
       "ring": 0.0,
       "little": 0.0
@@ -8848,23 +6896,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 69.125,
-    "phase": "final_report_export",
-    "active_fingers": 2,
-    "touch_forces": {
-      "thumb": 0.4717,
-      "index": 0.4947,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 69.25,
+    "time_s": 53.875,
     "phase": "final_report_export",
     "active_fingers": 2,
     "touch_forces": {
@@ -8880,12 +6912,12 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 69.375,
+    "time_s": 54.0,
     "phase": "final_report_export",
     "active_fingers": 2,
     "touch_forces": {
-      "thumb": 0.4711,
-      "index": 0.4941,
+      "thumb": 0.471,
+      "index": 0.4939,
       "middle": 0.0,
       "ring": 0.0,
       "little": 0.0
@@ -8896,12 +6928,12 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 69.5,
+    "time_s": 54.125,
     "phase": "final_report_export",
     "active_fingers": 2,
     "touch_forces": {
-      "thumb": 0.4708,
-      "index": 0.4938,
+      "thumb": 0.4706,
+      "index": 0.4935,
       "middle": 0.0,
       "ring": 0.0,
       "little": 0.0
@@ -8912,23 +6944,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 69.625,
-    "phase": "final_report_export",
-    "active_fingers": 2,
-    "touch_forces": {
-      "thumb": 0.4705,
-      "index": 0.4934,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 69.75,
+    "time_s": 54.25,
     "phase": "final_report_export",
     "active_fingers": 2,
     "touch_forces": {
@@ -8944,11 +6960,11 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 69.875,
+    "time_s": 54.375,
     "phase": "final_report_export",
     "active_fingers": 2,
     "touch_forces": {
-      "thumb": 0.4699,
+      "thumb": 0.4698,
       "index": 0.4928,
       "middle": 0.0,
       "ring": 0.0,
@@ -8960,12 +6976,12 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 70.0,
+    "time_s": 54.5,
     "phase": "final_report_export",
     "active_fingers": 2,
     "touch_forces": {
-      "thumb": 0.4696,
-      "index": 0.4925,
+      "thumb": 0.4695,
+      "index": 0.4924,
       "middle": 0.0,
       "ring": 0.0,
       "little": 0.0
@@ -8976,23 +6992,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 70.125,
-    "phase": "final_report_export",
-    "active_fingers": 2,
-    "touch_forces": {
-      "thumb": 0.4694,
-      "index": 0.4923,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 70.25,
+    "time_s": 54.625,
     "phase": "final_report_export",
     "active_fingers": 2,
     "touch_forces": {
@@ -9008,11 +7008,11 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 70.375,
+    "time_s": 54.75,
     "phase": "final_report_export",
     "active_fingers": 2,
     "touch_forces": {
-      "thumb": 0.4689,
+      "thumb": 0.4688,
       "index": 0.4917,
       "middle": 0.0,
       "ring": 0.0,
@@ -9024,12 +7024,12 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 70.5,
+    "time_s": 54.875,
     "phase": "final_report_export",
     "active_fingers": 2,
     "touch_forces": {
-      "thumb": 0.4686,
-      "index": 0.4915,
+      "thumb": 0.4685,
+      "index": 0.4914,
       "middle": 0.0,
       "ring": 0.0,
       "little": 0.0
@@ -9040,27 +7040,11 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 70.625,
+    "time_s": 55.0,
     "phase": "final_report_export",
     "active_fingers": 2,
     "touch_forces": {
-      "thumb": 0.4684,
-      "index": 0.4912,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 70.75,
-    "phase": "final_report_export",
-    "active_fingers": 2,
-    "touch_forces": {
-      "thumb": 0.4681,
+      "thumb": 0.4682,
       "index": 0.491,
       "middle": 0.0,
       "ring": 0.0,
@@ -9072,7 +7056,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 70.875,
+    "time_s": 55.125,
     "phase": "final_report_export",
     "active_fingers": 2,
     "touch_forces": {
@@ -9088,11 +7072,11 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 71.0,
+    "time_s": 55.25,
     "phase": "final_report_export",
     "active_fingers": 2,
     "touch_forces": {
-      "thumb": 0.4677,
+      "thumb": 0.4676,
       "index": 0.4905,
       "middle": 0.0,
       "ring": 0.0,
@@ -9104,12 +7088,12 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 71.125,
+    "time_s": 55.375,
     "phase": "final_report_export",
     "active_fingers": 2,
     "touch_forces": {
-      "thumb": 0.4675,
-      "index": 0.4903,
+      "thumb": 0.4674,
+      "index": 0.4902,
       "middle": 0.0,
       "ring": 0.0,
       "little": 0.0
@@ -9120,23 +7104,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 71.25,
-    "phase": "final_report_export",
-    "active_fingers": 2,
-    "touch_forces": {
-      "thumb": 0.4673,
-      "index": 0.4901,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 71.375,
+    "time_s": 55.5,
     "phase": "final_report_export",
     "active_fingers": 2,
     "touch_forces": {
@@ -9152,7 +7120,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 71.5,
+    "time_s": 55.625,
     "phase": "final_report_export",
     "active_fingers": 2,
     "touch_forces": {
@@ -9168,12 +7136,12 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 71.625,
+    "time_s": 55.75,
     "phase": "final_report_export",
     "active_fingers": 2,
     "touch_forces": {
       "thumb": 0.4667,
-      "index": 0.4895,
+      "index": 0.4894,
       "middle": 0.0,
       "ring": 0.0,
       "little": 0.0
@@ -9184,27 +7152,11 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 71.75,
+    "time_s": 55.875,
     "phase": "final_report_export",
     "active_fingers": 2,
     "touch_forces": {
-      "thumb": 0.4666,
-      "index": 0.4893,
-      "middle": 0.0,
-      "ring": 0.0,
-      "little": 0.0
-    },
-    "contact_balance_score": 1.0,
-    "slip_observer_mm": 0.35,
-    "stable_five_finger_hold": false,
-    "disturbance_label": "none"
-  },
-  {
-    "time_s": 71.875,
-    "phase": "final_report_export",
-    "active_fingers": 2,
-    "touch_forces": {
-      "thumb": 0.4664,
+      "thumb": 0.4665,
       "index": 0.4892,
       "middle": 0.0,
       "ring": 0.0,
@@ -9216,7 +7168,7 @@
     "disturbance_label": "none"
   },
   {
-    "time_s": 71.938,
+    "time_s": 55.938,
     "phase": "final_report_export",
     "active_fingers": 2,
     "touch_forces": {

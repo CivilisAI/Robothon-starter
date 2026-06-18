@@ -22,13 +22,13 @@
     "policy_type": "learned_tactile_residual_grasp_policy",
     "policy_training_samples": 6717,
     "policy_validation_mae": 0.022843,
-    "learned_policy_inference_samples": 577,
-    "raw_median_visual_servo_error_m": 0.02403,
-    "post_residual_median_error_m": 0.00966,
-    "visual_servo_error_reduction_pct": 59.8,
-    "stable_five_finger_contact_samples": 304,
+    "learned_policy_inference_samples": 449,
+    "raw_median_visual_servo_error_m": 0.02415,
+    "post_residual_median_error_m": 0.0097,
+    "visual_servo_error_reduction_pct": 59.83,
+    "stable_five_finger_contact_samples": 237,
     "max_cap_rotation_deg": 214.0,
     "recovered_slip_mm": 0.35,
-    "mean_policy_confidence": 0.8584
+    "mean_policy_confidence": 0.8583
   }
 }

@@ -76,6 +76,8 @@ SCENE_XML = """<mujoco model="guardian_apothecary_dextriage">
     <light name="key_light" pos="-1.1 -1.2 2.4" dir="0.45 0.55 -1" diffuse="0.9 0.86 0.78"/>
     <light name="rim_light" pos="0.9 1.0 1.5" dir="-0.5 -0.35 -1" diffuse="0.35 0.55 0.95"/>
     <geom name="floor" type="plane" size="1.4 1.0 0.02" material="floor_mat"/>
+    <geom name="backdrop_wall" type="box" pos="0.40 0.58 0.43" size="1.20 0.018 0.42" rgba="0.05 0.16 0.24 1"/>
+    <geom name="triage_light_bar" type="box" pos="0.20 0.555 0.72" size="0.44 0.012 0.018" rgba="0.10 0.75 1.00 1"/>
     <geom name="route_line" type="box" pos="0.14 0 0.012" size="0.70 0.035 0.006" rgba="0.10 0.20 0.28 1"/>
     <geom name="sterile_pod_pad" type="box" pos="0.52 0.12 0.018" size="0.16 0.13 0.010" rgba="0.14 0.76 0.32 1"/>
     <geom name="quarantine_pad" type="box" pos="0.42 -0.18 0.018" size="0.14 0.11 0.010" rgba="1.00 0.62 0.06 1"/>
@@ -455,8 +457,19 @@ def update_camera(model: mujoco.MjModel, data: mujoco.MjData, camera: mujoco.Mjv
 def overlay(frame: np.ndarray, state: dict) -> np.ndarray:
     image = Image.fromarray(frame)
     draw = ImageDraw.Draw(image)
+    beat = {
+        "sensor_boot_and_scan": "scan vial + cap + pod",
+        "visual_servo_approach": "learned servo correction",
+        "five_finger_tactile_grasp": "five tactile contacts lock",
+        "in_hand_cap_rotation": "cap rotation over 200 deg",
+        "slip_disturbance_recovery": "slip recovered under 1.2mm",
+        "sterile_pod_delivery": "sterile pod delivery",
+        "audit_button_press": "audit press after delivery",
+        "final_report_export": "export scored evidence",
+    }.get(state["phase"], "closed-loop dexterity")
     lines = [
         "Guardian Apothecary DexTriage",
+        f"beat: {beat}",
         f"phase: {state['phase'].replace('_', ' ')}",
         f"fingers {state['active_fingers']}/5 | cap {state['cap_angle_deg']:.0f} deg",
         f"post residual {state['post_residual_error_m'] * 1000:.1f}mm | slip {state['slip_observer_mm']:.1f}mm",
@@ -464,9 +477,9 @@ def overlay(frame: np.ndarray, state: dict) -> np.ndarray:
     ]
     x0, y0 = 18, max(18, frame.shape[0] - 128)
     line_h = 20
-    draw.rectangle([x0 - 10, y0 - 10, x0 + 440, y0 + line_h * len(lines) + 6], fill=(4, 7, 11, 190))
+    draw.rectangle([x0 - 10, y0 - 10, x0 + 460, y0 + line_h * len(lines) + 6], fill=(4, 7, 11, 190))
     for idx, text in enumerate(lines):
-        color = (238, 246, 255) if idx not in {1, 2} else ((255, 218, 85) if idx == 1 else (130, 245, 165))
+        color = (238, 246, 255) if idx not in {1, 3} else ((255, 218, 85) if idx == 1 else (130, 245, 165))
         draw.text((x0, y0 + idx * line_h), text, fill=color)
     return np.asarray(image)
 
@@ -634,14 +647,14 @@ def write_artifacts(dataset_dir: Path, observations: list[dict], model: mujoco.M
             writer.writerow({k: obs[k] for k in writer.fieldnames})
 
     captions = [
-        (0, 7, "Scan vial, sterile pod, cap, and audit button."),
-        (7, 17, "Visual-servo approach uses learned tactile residual policy."),
-        (17, 27, "Five fingers close and tactile contacts stabilize the vial."),
-        (27, 42, "In-hand cap rotation exceeds 200 degrees without losing the vial."),
-        (42, 50, "Slip disturbance is detected and recovered under 1.2 mm."),
-        (50, 62, "Vial is delivered to the sterile pod and verified."),
-        (62, 68, "Audit button is pressed after delivery."),
-        (68, 72, "Metrics, stress replay, and policy card are exported."),
+        (0, 6, "Scan vial, sterile pod, cap, and audit button."),
+        (6, 14, "Visual-servo approach uses learned tactile residual policy."),
+        (14, 22, "Five fingers close and tactile contacts stabilize the vial."),
+        (22, 34, "In-hand cap rotation exceeds 200 degrees without losing the vial."),
+        (34, 42, "Slip disturbance is detected and recovered under 1.2 mm."),
+        (42, 50, "Vial is delivered to the sterile pod and verified."),
+        (50, 54, "Audit button is pressed after delivery."),
+        (54, 56, "Metrics, stress replay, and policy card are exported."),
     ]
     srt = []
     for idx, (start, end, text) in enumerate(captions, start=1):
@@ -800,7 +813,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Run the Guardian Apothecary DexTriage MuJoCo task.")
     parser.add_argument("--video", type=Path, default=DEFAULT_VIDEO)
     parser.add_argument("--dataset-dir", type=Path, default=DEFAULT_DATASET)
-    parser.add_argument("--duration", type=float, default=72.0)
+    parser.add_argument("--duration", type=float, default=56.0)
     parser.add_argument("--fps", type=int, default=16)
     parser.add_argument("--width", type=int, default=720)
     parser.add_argument("--height", type=int, default=400)
