@@ -1,0 +1,59 @@
+{
+  "project": "Guardian Apothecary DexTriage Challenge",
+  "uuid": "e9367728-67e3-4adc-9f3e-fc7a1a364a8d",
+  "controller": "learned tactile residual grasp policy with six real-world care demonstrations",
+  "policy_type": "learned_tactile_residual_grasp_policy",
+  "inputs": [
+    "progress",
+    "vial_error_m",
+    "cap_error_rad",
+    "slip_mm",
+    "active_fingers_norm",
+    "contact_balance",
+    "disturbance",
+    "sin_phase",
+    "cos_phase"
+  ],
+  "outputs": [
+    "palm_correction_gain",
+    "grip_force",
+    "cap_torque",
+    "recovery_gain",
+    "policy_confidence"
+  ],
+  "training": {
+    "training_samples": 6717,
+    "validation_samples": 1475,
+    "validation": {
+      "mean_absolute_error": 0.022843,
+      "per_output_mae": {
+        "palm_correction_gain": 0.006593,
+        "grip_force": 0.037353,
+        "cap_torque": 0.051307,
+        "recovery_gain": 0.013539,
+        "policy_confidence": 0.005422
+      }
+    }
+  },
+  "evidence": {
+    "policy_type": "learned_tactile_residual_grasp_policy",
+    "policy_training_samples": 6717,
+    "policy_validation_mae": 0.022843,
+    "learned_policy_inference_samples": 321,
+    "raw_median_visual_servo_error_m": 0.01381,
+    "post_residual_median_error_m": 0.00576,
+    "visual_servo_error_reduction_pct": 58.29,
+    "stable_five_finger_contact_samples": 149,
+    "max_cap_rotation_deg": 214.0,
+    "recovered_slip_mm": 0.35,
+    "max_blister_press_depth_mm": 32.0,
+    "max_syringe_plunger_depth_mm": 58.0,
+    "max_dose_dial_deg": 83.08,
+    "max_lateral_shove_n": 4.0,
+    "max_load_multiplier": 9.0,
+    "max_hold_drift_deg": 0.46,
+    "multi_object_shape_count": 6,
+    "real_world_demo_count": 7,
+    "mean_policy_confidence": 0.8826
+  }
+}
