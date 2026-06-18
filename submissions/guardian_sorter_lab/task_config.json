@@ -1,0 +1,39 @@
+{
+  "project_name": "Guardian Sorter Lab",
+  "robot_platform": "FF Master humanoid",
+  "task": "Long-horizon warehouse inspection, hazard sorting, and labeled data collection",
+  "success_conditions": {
+    "hazard_case_to_quarantine_m": 0.12,
+    "medkit_to_delivery_m": 0.12,
+    "minimum_beacon_inspection_m": 0.45
+  },
+  "objects": [
+    {
+      "name": "hazard_case",
+      "label": "hazard",
+      "start": [-0.46, -0.34, 0.16],
+      "goal": [0.52, -0.36, 0.16]
+    },
+    {
+      "name": "medkit_case",
+      "label": "supply",
+      "start": [-0.42, 0.34, 0.15],
+      "goal": [0.54, 0.34, 0.15]
+    },
+    {
+      "name": "inspection_beacon",
+      "label": "inspection_target",
+      "start": [0.18, 0.0, 0.22]
+    }
+  ],
+  "phases": [
+    "boot_and_sensor_check",
+    "navigate_to_hazard",
+    "pick_hazard_case",
+    "carry_to_quarantine",
+    "scan_center_beacon",
+    "retrieve_medkit",
+    "deliver_medkit",
+    "final_report"
+  ]
+}

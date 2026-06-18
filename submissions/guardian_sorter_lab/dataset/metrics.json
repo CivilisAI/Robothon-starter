@@ -1,0 +1,29 @@
+{
+  "project": "Guardian Sorter Lab",
+  "uuid": "e9367728-67e3-4adc-9f3e-fc7a1a364a8d",
+  "success": true,
+  "criteria": {
+    "hazard_case_sorted": true,
+    "medkit_delivered": true,
+    "beacon_inspected": true
+  },
+  "final_distances_m": {
+    "hazard_to_quarantine": 0.0,
+    "medkit_to_delivery": 0.0,
+    "robot_to_beacon_min": 0.0117
+  },
+  "phases_observed": [
+    "boot_and_sensor_check",
+    "carry_to_quarantine",
+    "deliver_medkit",
+    "final_report",
+    "navigate_to_hazard",
+    "pick_hazard_case",
+    "retrieve_medkit",
+    "scan_center_beacon"
+  ],
+  "sample_count": 342,
+  "scene": "assets/Master/scene.xml",
+  "video": "submissions/guardian_sorter_lab/media/demo.mp4",
+  "dataset": "submissions/guardian_sorter_lab/dataset"
+}

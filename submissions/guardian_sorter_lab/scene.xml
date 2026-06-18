@@ -1,0 +1,31 @@
+<mujoco model="guardian_sorter_lab_overlay">
+  <worldbody>
+    <geom name="lab_floor" type="plane" size="0 0 0.05" rgba="0.10 0.12 0.14 1"/>
+    <geom name="route_centerline" type="box" pos="0.05 0 0.004" size="0.86 0.06 0.004" rgba="0.12 0.18 0.24 1"/>
+    <geom name="cross_aisle" type="box" pos="0.02 0 0.006" size="0.08 0.47 0.004" rgba="0.12 0.18 0.24 1"/>
+    <geom name="start_pad" type="box" pos="-0.58 0 0.012" size="0.12 0.18 0.008" rgba="0.12 0.36 1.00 0.78"/>
+    <geom name="quarantine_pad" type="box" pos="0.52 -0.36 0.014" size="0.16 0.16 0.008" rgba="1.00 0.62 0.06 0.84"/>
+    <geom name="delivery_pad" type="box" pos="0.54 0.34 0.014" size="0.16 0.16 0.008" rgba="0.20 1.00 0.42 0.84"/>
+    <geom name="hazard_shelf" type="box" pos="-0.48 -0.43 0.16" size="0.22 0.025 0.16" rgba="0.34 0.37 0.40 1"/>
+    <geom name="supply_shelf" type="box" pos="-0.44 0.43 0.16" size="0.22 0.025 0.16" rgba="0.34 0.37 0.40 1"/>
+    <geom name="inspection_marker" type="cylinder" pos="0.18 0 0.025" size="0.12 0.012" rgba="0.95 0.95 0.18 1"/>
+
+    <body name="hazard_case" pos="-0.46 -0.34 0.16">
+      <freejoint name="hazard_case_joint"/>
+      <geom name="hazard_case_geom" type="box" size="0.075 0.055 0.055" mass="1.4" rgba="1.00 0.18 0.10 1"/>
+    </body>
+
+    <body name="medkit_case" pos="-0.42 0.34 0.15">
+      <freejoint name="medkit_case_joint"/>
+      <geom name="medkit_case_geom" type="box" size="0.080 0.055 0.045" mass="1.1" rgba="0.05 0.68 1.00 1"/>
+    </body>
+
+    <body name="inspection_beacon" pos="0.18 0 0.22">
+      <geom name="inspection_beacon_geom" type="sphere" size="0.055" rgba="0.95 0.95 0.18 1"/>
+    </body>
+
+    <light name="key_light" pos="-0.9 -1.2 2.5" dir="0.3 0.5 -1" diffuse="0.85 0.85 0.78"/>
+    <light name="bay_light" pos="0.75 0.6 1.6" dir="-0.5 -0.25 -1" diffuse="0.35 0.55 0.9"/>
+    <camera name="hero_camera" pos="1.25 -1.25 0.85" xyaxes="0.72 0.69 0 -0.31 0.32 0.90"/>
+  </worldbody>
+</mujoco>
