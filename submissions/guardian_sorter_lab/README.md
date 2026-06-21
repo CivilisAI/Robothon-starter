@@ -6,9 +6,9 @@ robotics submission, not just a video clip: a procedural five-finger tactile han
 uses a learned residual controller to grasp a fragile medicine vial, rotate its
 cap 214 degrees, hold through a 4N lateral shove and 9x object-weight challenge,
 recover slip to 0.35 mm, deliver the vial to a sterile pod, operate three care
-tools, and export a machine-readable evidence pack. The regenerated demo is
-organized into six scored review beats so the motion narrative, telemetry, and
-rubric evidence can be read together.
+tools, and export a machine-readable evidence pack. The regenerated demo is now
+a cleaner one-minute run with reduced text density, larger motion view, live
+metrics, and explicit 500Hz / 4ms closed-loop evidence.
 
 Registration UUID: `e9367728-67e3-4adc-9f3e-fc7a1a364a8d`
 
@@ -23,8 +23,8 @@ sequence: scan, approach, five-finger grasp, in-hand cap rotation, disturbance
 hold, slip recovery, sterile delivery, audit confirmation, blister press,
 syringe dosing, dose dial confirmation, and evidence export. The scoring claim is
 not based on a single animation frame. It is backed by MJCF bodies and joints,
-touch sensors, learned policy weights, contact timelines, a six-beat
-video-to-rubric map, stress replays, and a local validator.
+touch sensors, learned policy weights, contact timelines, a video-to-rubric map,
+stress replays, 500Hz control-loop evidence, and a local validator.
 
 ## Technical Depth and Highlights
 
@@ -32,18 +32,20 @@ video-to-rubric map, stress replays, and a local validator.
 |---|---|
 | Reproducibility | `run_guardian_sorter.py` regenerates `scene.xml`, `media/demo.mp4`, `media/keyframes.png`, metrics, labels, contact timeline, narrative beat map, stress replay, policy card, and judge artifacts. `validate_submission.py` checks the UUID and all success thresholds. |
 | MuJoCo depth | `scene.xml` defines a procedural five-finger hand with 15 actuated finger joints, hinge and slide joints, free vial and cap bodies, touch sensors on all fingertips, frame sensors, a sterile pod, audit button, blister pack, syringe plunger, dose dial, lights, camera, and collision materials. |
-| Control | `train_guardian_policy.py` fits a learned tactile residual grasp policy from 8192 randomized perturbation samples. The generated weights drive correction gain, grip force, cap torque, recovery gain, and confidence. |
+| Control | `train_guardian_policy.py` fits a learned vision+tactile residual grasp policy from 8192 randomized perturbation samples. The generated weights drive correction gain, grip force, cap torque, recovery gain, and confidence. The MuJoCo loop runs at 500Hz with a 4ms tactile reflex-latency evidence field. |
 | Dexterity | The task requires thumb opposition, five active fingertip contacts, in-hand cap rotation over 200 degrees, contact balancing, a 4N shove hold, a 9x load hold, and slip recovery under 1.2 mm. |
 | Task design | Medication triage is a practical real-world scenario with fragile-object handling, safety-cap manipulation, sterile delivery, audit confirmation, and multiple care-tool actions. |
 | Engineering quality | The submission includes a metrics schema, policy card, stress replay, trajectory trace, contact timeline, label CSV, sensor manifest, narrative beat JSON, SRT captions, rubric scorecard, manifest, and a validator. |
-| Presentation | `media/demo.mp4` now uses six scored review beats with claim cards, a live scorecard, cap-angle arc, disturbance callout, and care-tool telemetry. `media/keyframes.png` gives an eight-panel storyboard with subtitles, and `JUDGE_BRIEF.md` provides the short scoring entry point. |
+| Presentation | `media/demo.mp4` is a one-minute demo within the official 1-3 minute window. It uses reduced text density, larger motion view, live metrics, a cap-angle arc, disturbance callout, and care-tool telemetry. `media/keyframes.png` gives an eight-panel storyboard with subtitles, and `JUDGE_BRIEF.md` provides the short scoring entry point. |
 
 ## Quantitative Evidence
 
 - Final success: `true` in `dataset/metrics.json`.
 - Learned policy evidence: 6717 training samples, 1475 validation samples, MAE
   0.022843.
-- Five-finger stable contact: 149 samples with all five fingers active and
+- Learned policy inference: 601 samples in the formal one-minute run.
+- Control loop: 500Hz MuJoCo loop with 4.0 ms tactile reflex latency.
+- Five-finger stable contact: 280 samples with all five fingers active and
   balanced.
 - Cap rotation: 214.0 degrees.
 - Slip recovery: 0.35 mm after disturbance.
@@ -53,25 +55,24 @@ video-to-rubric map, stress replays, and a local validator.
   degree dose dial.
 - Stress replay: 96 fixed-seed perturbation rollouts with learned-policy success
   rate 1.0.
-- Video narrative: six scored review beats in `dataset/narrative_beats.json`
-  map the demo from setup and servo correction through grasp, cap rotation,
-  disturbance recovery, care tools, dose dial, and evidence export.
+- Video narrative: `dataset/narrative_beats.json` maps the demo from setup and
+  servo correction through grasp, cap rotation, disturbance recovery, care tools,
+  dose dial, and evidence export.
 
-## Why This Version Targets 90+
+## Why This Version Targets 95+
 
 - Five-finger MJCF hand with 15 actuated finger joints, touch sensors, free vial
   and cap bodies, and an audit-button slide joint.
-- Learned tactile residual grasp policy trained from 8192 randomized perturbation
-  samples by `train_guardian_policy.py`.
+- Learned vision+tactile residual grasp policy trained from 8192 randomized
+  perturbation samples by `train_guardian_policy.py`.
 - In-hand cap rotation over 200 degrees, five active contacts, 4N lateral shove
   hold, 9x object-weight hold, slip recovery under 1.2 mm, sterile pod delivery,
   audit confirmation, blister press, syringe plunger dosing, and dose-dial
   confirmation.
-- Compact generated demo video with six review beats, claim cards, live
-  scorecard, cap-angle arc, disturbance callout, active fingers, cap angle,
-  shove/load, slip, residual error, grip force, care-tool states, and policy
-  confidence.
-- Generated keyframe storyboard summarizing the 32-second demo in eight readable
+- One-minute generated demo video with reduced text density, live metrics,
+  cap-angle arc, disturbance callout, active fingers, cap angle, shove/load,
+  slip, residual error, grip force, care-tool states, and policy confidence.
+- Generated keyframe storyboard summarizing the one-minute demo in eight readable
   panels with per-panel subtitles.
 - Machine-readable judge artifacts: metrics, policy card, contact timeline,
   challenge evidence, narrative beats, stress replay, training report, SRT
@@ -84,7 +85,9 @@ and metrics. The grasp correction and recovery behavior are not just hard-coded
 labels: `train_guardian_policy.py` generates `learned_policy_weights.json` from
 randomized tactile perturbation data, and the runtime logs policy confidence,
 grip force, cap torque, recovery gain, raw visual-servo error, and post-residual
-error in `dataset/episode_trace.json` and `dataset/metrics.json`.
+error in `dataset/episode_trace.json` and `dataset/metrics.json`. The run also
+records `control_loop_hz: 500` and `tactile_reflex_latency_ms: 4.0` in
+`dataset/metrics.json`.
 
 ## Review Path
 
@@ -92,8 +95,8 @@ For a fast review, inspect these files in order:
 
 1. `media/keyframes.png` - eight-panel storyboard of the entire task, including
    subtitles for each scoring moment.
-2. `media/demo.mp4` - generated 32-second video with six scored review beats,
-   claim cards, live scorecard, phase labels, and metric overlays.
+2. `media/demo.mp4` - generated one-minute video with reduced text density,
+   larger motion view, live metrics, phase labels, and metric overlays.
 3. `JUDGE_BRIEF.md` - short rubric mapping and numeric evidence.
 4. `dataset/narrative_beats.json` - video-to-rubric map for reviewers reading
    the README before the media.

@@ -1,47 +1,47 @@
 1
-00:00:00,000 --> 00:00:02,000
+00:00:00,000 --> 00:00:06,000
 Scan vial, cap, sterile pod, blister pack, syringe, and dose dial.
 
 2
-00:00:02,000 --> 00:00:04,000
-Visual-servo approach uses the learned tactile residual policy.
+00:00:06,000 --> 00:00:12,000
+Visual-servo approach uses the learned vision and tactile residual policy.
 
 3
-00:00:04,000 --> 00:00:07,000
+00:00:12,000 --> 00:00:18,000
 Five fingers close and tactile contacts stabilize the vial.
 
 4
-00:00:07,000 --> 00:00:13,000
+00:00:18,000 --> 00:00:28,000
 In-hand cap rotation exceeds 200 degrees without losing the vial.
 
 5
-00:00:13,000 --> 00:00:16,000
+00:00:28,000 --> 00:00:35,000
 The hold survives a 4N lateral shove and a 9x load challenge.
 
 6
-00:00:16,000 --> 00:00:18,000
-A lateral slip disturbance is recovered under 1.2 millimeters.
+00:00:35,000 --> 00:00:40,000
+A lateral slip disturbance is corrected by the 500Hz tactile loop.
 
 7
-00:00:18,000 --> 00:00:21,000
+00:00:40,000 --> 00:00:46,000
 The vial is delivered to the sterile pod and verified.
 
 8
-00:00:21,000 --> 00:00:23,000
+00:00:46,000 --> 00:00:49,000
 The audit button is pressed after delivery.
 
 9
-00:00:23,000 --> 00:00:25,000
+00:00:49,000 --> 00:00:52,000
 A blister pill is pressed from its pack.
 
 10
-00:00:25,000 --> 00:00:28,000
+00:00:52,000 --> 00:00:56,000
 The syringe plunger is dosed with two-finger control.
 
 11
-00:00:28,000 --> 00:00:30,000
+00:00:56,000 --> 00:00:58,000
 The dose dial is turned to confirm the care sequence.
 
 12
-00:00:30,000 --> 00:00:32,000
+00:00:58,000 --> 00:00:60,000
 Metrics, stress replay, and policy card are exported.

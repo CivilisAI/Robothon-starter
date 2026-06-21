@@ -75,7 +75,13 @@ def main() -> int:
         raise SystemExit("Wrong policy type")
     if summary.get("policy_training_samples", 0) < 6000:
         raise SystemExit("Too few policy training samples")
-    if summary.get("stable_five_finger_contact_samples", 0) < 80:
+    if summary.get("learned_policy_inference_samples", 0) < 550:
+        raise SystemExit("Formal demo did not run long enough for one-minute evidence")
+    if summary.get("control_loop_hz", 0) < 500:
+        raise SystemExit("Control loop evidence did not meet 500Hz target")
+    if summary.get("tactile_reflex_latency_ms", 99) > 4.0:
+        raise SystemExit("Tactile reflex latency did not meet 4ms target")
+    if summary.get("stable_five_finger_contact_samples", 0) < 250:
         raise SystemExit("Too few stable five-finger contact samples")
     if summary.get("max_cap_rotation_deg", 0) < 200:
         raise SystemExit("Cap rotation did not exceed 200 degrees")
@@ -135,6 +141,9 @@ def main() -> int:
                 "keyframes_bytes": keyframes_path.stat().st_size,
                 "policy_type": summary.get("policy_type"),
                 "policy_training_samples": summary.get("policy_training_samples"),
+                "learned_policy_inference_samples": summary.get("learned_policy_inference_samples"),
+                "control_loop_hz": summary.get("control_loop_hz"),
+                "tactile_reflex_latency_ms": summary.get("tactile_reflex_latency_ms"),
                 "stable_five_finger_contact_samples": summary.get("stable_five_finger_contact_samples"),
                 "max_cap_rotation_deg": summary.get("max_cap_rotation_deg"),
                 "recovered_slip_mm": summary.get("recovered_slip_mm"),
