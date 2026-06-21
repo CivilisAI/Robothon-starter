@@ -26,6 +26,7 @@ REQUIRED_FILES = [
     "dataset/stress_eval.json",
     "dataset/policy_card.json",
     "dataset/challenge_evidence.json",
+    "dataset/narrative_beats.json",
     "dataset/episode_trace.json",
     "dataset/labels.csv",
     "dataset/sensor_manifest.json",
@@ -49,6 +50,7 @@ def main() -> int:
     stress = load_json("dataset/stress_eval.json")
     policy_card = load_json("dataset/policy_card.json")
     challenge = load_json("dataset/challenge_evidence.json")
+    narrative = load_json("dataset/narrative_beats.json")
     manifest = load_json("submission_manifest.json")
     scorecard = load_json("rubric_scorecard.json")
     contact_timeline = load_json("dataset/contact_timeline.json")
@@ -113,6 +115,8 @@ def main() -> int:
         raise SystemExit(f"Criteria missing: {criteria}")
     if not any(row.get("stable_five_finger_hold") for row in contact_timeline):
         raise SystemExit("No stable five-finger hold in contact timeline")
+    if len(narrative) < 6 or not all(row.get("claim") and row.get("evidence") for row in narrative):
+        raise SystemExit("Narrative beat map is incomplete")
 
     video_path = PROJECT_DIR / "media" / "demo.mp4"
     if video_path.stat().st_size < 1_000_000:

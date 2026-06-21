@@ -18,6 +18,7 @@
     "dataset/stress_eval.json",
     "dataset/policy_card.json",
     "dataset/challenge_evidence.json",
+    "dataset/narrative_beats.json",
     "JUDGE_BRIEF.md"
   ],
   "closed_loop_summary": {

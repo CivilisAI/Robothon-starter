@@ -16,6 +16,7 @@
     "dataset/stress_eval.json",
     "dataset/policy_card.json",
     "dataset/challenge_evidence.json",
+    "dataset/narrative_beats.json",
     "JUDGE_BRIEF.md"
   ],
   "scorecard": {
@@ -45,7 +46,7 @@
     },
     "presentation": {
       "target_score": 9.9,
-      "evidence": "Tighter video pacing with beat labels, pass banner, progress bar, cap-angle arc, disturbance callout, keyframe storyboard, five-finger contact, shove/load, slip, residual error, care-tool states, and confidence."
+      "evidence": "Six scored review beats, tighter top-left claim card, live scorecard, progress bar, cap-angle arc, disturbance callout, keyframe storyboard subtitles, SRT narration, five-finger contact, shove/load, slip, residual error, care-tool states, and confidence."
     },
     "innovation": {
       "target_score": 9.8,

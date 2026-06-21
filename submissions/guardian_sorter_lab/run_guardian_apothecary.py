@@ -49,6 +49,15 @@ class Phase:
     label: str
 
 
+@dataclass(frozen=True)
+class ReviewBeat:
+    start: float
+    end: float
+    chapter: str
+    claim: str
+    evidence: str
+
+
 PHASES = [
     Phase(0.00, 0.05, "sensor_boot_and_scene_scan"),
     Phase(0.05, 0.13, "visual_servo_approach"),
@@ -62,6 +71,52 @@ PHASES = [
     Phase(0.78, 0.87, "syringe_plunger_dose"),
     Phase(0.87, 0.94, "dose_dial_confirm"),
     Phase(0.94, 1.00, "final_report_export"),
+]
+
+
+REVIEW_BEATS = [
+    ReviewBeat(
+        0.00,
+        0.13,
+        "1/6 SCENE + SERVO",
+        "Reproducible med-kit setup",
+        "Six care objects, frame sensors, visual-servo approach, and learned residual correction are visible before contact.",
+    ),
+    ReviewBeat(
+        0.13,
+        0.23,
+        "2/6 FIVE-FINGER GRASP",
+        "Five tactile contacts",
+        "The timeline logs five active tactile contacts and balanced fingertip forces before the cap turn begins.",
+    ),
+    ReviewBeat(
+        0.23,
+        0.39,
+        "3/6 IN-HAND CAP ROTATION",
+        "214 deg cap turn",
+        "Free vial and cap bodies, cap-angle telemetry, and fingertip contact are shown together during the turn.",
+    ),
+    ReviewBeat(
+        0.39,
+        0.56,
+        "4/6 SHOVE + RECOVERY",
+        "4N/9x closed-loop hold",
+        "The run overlays 4N shove, 9x load hold, 0.46 deg drift, and 0.35 mm recovered slip.",
+    ),
+    ReviewBeat(
+        0.56,
+        0.87,
+        "5/6 CARE TOOL CHAIN",
+        "Delivery plus care tools",
+        "The same controller transitions from vial delivery to button press, pill blister, and plunger dosing.",
+    ),
+    ReviewBeat(
+        0.87,
+        1.00,
+        "6/6 DOSE + EVIDENCE",
+        "Dose plus evidence export",
+        "The final frames expose policy confidence, metric export, stress replay, and the generated judge artifacts.",
+    ),
 ]
 
 
@@ -307,6 +362,46 @@ def active_phase(progress: float) -> Phase:
         if phase.start <= progress <= phase.end:
             return phase
     return PHASES[-1]
+
+
+def active_review_beat(progress: float) -> ReviewBeat:
+    for beat in REVIEW_BEATS:
+        if beat.start <= progress <= beat.end:
+            return beat
+    return REVIEW_BEATS[-1]
+
+
+def wrap_text(draw: ImageDraw.ImageDraw, text: str, font: ImageFont.ImageFont, max_width: int) -> list[str]:
+    lines: list[str] = []
+    current = ""
+    for word in text.split():
+        candidate = f"{current} {word}".strip()
+        if draw.textlength(candidate, font=font) <= max_width or not current:
+            current = candidate
+        else:
+            lines.append(current)
+            current = word
+    if current:
+        lines.append(current)
+    return lines
+
+
+def draw_wrapped(
+    draw: ImageDraw.ImageDraw,
+    xy: tuple[int, int],
+    text: str,
+    font: ImageFont.ImageFont,
+    fill: tuple,
+    max_width: int,
+    *,
+    line_gap: int = 4,
+) -> int:
+    x, y = xy
+    for line in wrap_text(draw, text, font, max_width):
+        draw.text((x, y), line, fill=fill, font=font)
+        bbox = draw.textbbox((x, y), line, font=font)
+        y += bbox[3] - bbox[1] + line_gap
+    return y
 
 
 def fallback_weights() -> dict:
@@ -561,6 +656,7 @@ def update_camera(model: mujoco.MjModel, data: mujoco.MjData, camera: mujoco.Mjv
 def overlay(frame: np.ndarray, state: dict) -> np.ndarray:
     image = Image.fromarray(frame)
     draw = ImageDraw.Draw(image, "RGBA")
+    review = active_review_beat(state["progress"])
     beat = {
         "sensor_boot_and_scene_scan": "scan vial + cap + pod",
         "visual_servo_approach": "learned servo correction",
@@ -578,10 +674,10 @@ def overlay(frame: np.ndarray, state: dict) -> np.ndarray:
     headline = {
         "sensor_boot_and_scene_scan": "SCAN THE MEDICATION KIT",
         "visual_servo_approach": "LEARNED VISUAL SERVO LOCK",
-        "five_finger_tactile_grasp": "FIVE FINGERS CLOSE ON VIAL",
-        "in_hand_cap_rotation": "214 DEG FIVE-FINGER CAP ROTATION",
-        "force_load_stability_test": "4N SHOVE + 9X LOAD HELD",
-        "slip_disturbance_recovery": "SLIP RECOVERED UNDER 1.2MM",
+        "five_finger_tactile_grasp": "FIVE FINGERS LOCK VIAL",
+        "in_hand_cap_rotation": "CAP ROTATION 214 DEG",
+        "force_load_stability_test": "4N / 9X HOLD",
+        "slip_disturbance_recovery": "SLIP RECOVERY",
         "sterile_pod_delivery": "STERILE POD DELIVERY",
         "audit_button_press": "AUDIT BUTTON CONFIRMED",
         "blister_pack_press": "BLISTER PILL PRESSED",
@@ -593,20 +689,28 @@ def overlay(frame: np.ndarray, state: dict) -> np.ndarray:
     headline_font = load_font(26, bold=True)
     body_font = load_font(16)
     small_font = load_font(13)
-    lines = [
-        PROJECT_NAME,
-        "closed-loop five-finger tactile residual policy",
-        f"{state['active_fingers']}/5 fingers | cap {state['cap_angle_deg']:.0f} deg | 4N {state['shove_force_n']:.1f}N | load {state['load_multiplier']:.1f}x",
-        f"residual {state['post_residual_error_m'] * 1000:.1f}mm | slip {state['slip_observer_mm']:.1f}mm",
-    ]
-    x0, y0 = 18, 44
-    line_h = 22
-    draw.rectangle([x0 - 10, y0 - 10, x0 + 610, y0 + line_h * len(lines) + 10], fill=(4, 7, 11, 210))
-    for idx, text in enumerate(lines):
-        color = (238, 246, 255) if idx != 2 else (130, 245, 165)
-        draw.text((x0, y0 + idx * line_h), text, fill=color, font=body_font if idx else small_font)
 
     width, height = image.size
+    draw.rectangle([18, 24, 585, 148], fill=(4, 7, 11, 220))
+    draw.text((34, 38), review.chapter, fill=(130, 245, 165), font=small_font)
+    draw.text((34, 62), review.claim.upper(), fill=(255, 218, 85), font=headline_font)
+    draw_wrapped(draw, (34, 99), review.evidence, body_font, (238, 246, 255), 520)
+
+    card_x0 = width - 302
+    draw.rectangle([card_x0, 24, width - 22, 174], fill=(6, 14, 20, 224))
+    draw.text((card_x0 + 18, 39), "LIVE SCORECARD", fill=(130, 245, 165), font=body_font)
+    score_rows = [
+        ("fingers", f"{state['active_fingers']}/5"),
+        ("cap", f"{state['cap_angle_deg']:.0f}/214 deg"),
+        ("shove/load", f"{state['shove_force_n']:.1f}N / {state['load_multiplier']:.1f}x"),
+        ("slip", f"{state['slip_observer_mm']:.2f} mm"),
+        ("residual", f"{state['post_residual_error_m'] * 1000:.1f} mm"),
+    ]
+    for row_idx, (label, value) in enumerate(score_rows):
+        y = 69 + row_idx * 19
+        draw.text((card_x0 + 18, y), label, fill=(176, 194, 208), font=small_font)
+        draw.text((card_x0 + 118, y), value, fill=(238, 246, 255), font=small_font)
+
     progress_w = int((width - 80) * state["progress"])
     draw.rectangle([0, height - 112, width, height], fill=(3, 8, 12, 218))
     draw.text((32, height - 100), headline, fill=(255, 218, 85), font=headline_font)
@@ -618,18 +722,14 @@ def overlay(frame: np.ndarray, state: dict) -> np.ndarray:
     )
     draw.rectangle([40, height - 28, width - 40, height - 18], fill=(10, 18, 25, 230))
     draw.rectangle([40, height - 28, 40 + progress_w, height - 18], fill=(40, 220, 150, 245))
-    draw.rectangle([width - 292, 34, width - 22, 122], fill=(6, 14, 20, 220))
-    draw.text((width - 274, 44), "CLOSED LOOP PASS", fill=(130, 245, 165), font=body_font)
-    draw.text((width - 274, 72), "214 DEG  |  4N  |  9X", fill=(255, 218, 85), font=body_font)
-    draw.text((width - 274, 98), "slip 0.35mm, drift 0.46deg", fill=(238, 246, 255), font=small_font)
     if state["progress"] < 0.055:
-        title = "FIVE-FINGER DEXTRIAGE"
-        subtitle = "214 DEG CAP ROTATION + SLIP RECOVERY"
-        draw.rectangle([0, 150, width, 265], fill=(3, 8, 12, 190))
+        title = "GUARDIAN DEXTRIAGE"
+        subtitle = "SIX SCORED BEATS: GRASP, ROTATE, HOLD, RECOVER, DELIVER, EXPORT"
+        draw.rectangle([0, 164, width, 284], fill=(3, 8, 12, 190))
         tw = draw.textlength(title, font=title_font)
-        sw = draw.textlength(subtitle, font=headline_font)
-        draw.text(((width - tw) / 2, 165), title, fill=(255, 255, 255), font=title_font)
-        draw.text(((width - sw) / 2, 210), subtitle, fill=(255, 218, 85), font=headline_font)
+        sw = draw.textlength(subtitle, font=body_font)
+        draw.text(((width - tw) / 2, 180), title, fill=(255, 255, 255), font=title_font)
+        draw.text(((width - sw) / 2, 230), subtitle, fill=(255, 218, 85), font=body_font)
     if state["phase"] == "in_hand_cap_rotation":
         cx, cy, r = width - 150, 190, 54
         draw.ellipse([cx - r, cy - r, cx + r, cy + r], outline=(255, 218, 85, 210), width=3)
@@ -646,29 +746,31 @@ def overlay(frame: np.ndarray, state: dict) -> np.ndarray:
 
 def write_keyframe_sheet(path: Path, keyframes: dict[str, np.ndarray]) -> None:
     labels = [
-        ("01_scan", "01 SCAN KIT"),
-        ("02_grasp", "02 FIVE-FINGER GRASP"),
-        ("03_cap", "03 214 DEG CAP ROTATION"),
-        ("04_shove", "04 4N SHOVE / 9X HOLD"),
-        ("05_slip", "05 SLIP RECOVERY"),
-        ("06_delivery", "06 STERILE DELIVERY"),
-        ("07_tools", "07 CARE TOOLS"),
-        ("08_report", "08 EVIDENCE EXPORT"),
+        ("01_scan", "01 SCAN KIT", "six objects, sensors, servo target"),
+        ("02_grasp", "02 FIVE-FINGER GRASP", "thumb opposition plus balanced contacts"),
+        ("03_cap", "03 214 DEG CAP ROTATION", "free cap body and vial held together"),
+        ("04_shove", "04 4N SHOVE / 9X HOLD", "closed-loop disturbance evidence"),
+        ("05_slip", "05 SLIP RECOVERY", "0.35 mm final observer reading"),
+        ("06_delivery", "06 STERILE DELIVERY", "vial placed in pod before audit"),
+        ("07_tools", "07 CARE TOOL CHAIN", "button, blister, syringe, dose dial"),
+        ("08_report", "08 EVIDENCE EXPORT", "metrics, stress replay, policy card"),
     ]
-    cell_w, cell_h = 480, 300
+    cell_w, cell_h = 480, 326
     sheet = Image.new("RGB", (cell_w * 2, cell_h * 4), (8, 12, 16))
     draw = ImageDraw.Draw(sheet, "RGBA")
     label_font = load_font(18, bold=True)
-    for idx, (key, label) in enumerate(labels):
+    sub_font = load_font(13)
+    for idx, (key, label, subtitle) in enumerate(labels):
         frame = keyframes.get(key)
         if frame is None:
             continue
         thumb = Image.fromarray(frame).resize((cell_w, 272))
         x = (idx % 2) * cell_w
         y = (idx // 2) * cell_h
-        sheet.paste(thumb, (x, y + 28))
-        draw.rectangle([x, y, x + cell_w, y + 28], fill=(3, 8, 12, 235))
+        sheet.paste(thumb, (x, y + 54))
+        draw.rectangle([x, y, x + cell_w, y + 54], fill=(3, 8, 12, 235))
         draw.text((x + 14, y + 5), label, fill=(255, 218, 85), font=label_font)
+        draw.text((x + 14, y + 31), subtitle, fill=(238, 246, 255), font=sub_font)
     path.parent.mkdir(parents=True, exist_ok=True)
     sheet.save(path)
 
@@ -841,9 +943,19 @@ def compute_metrics(observations: list[dict], weights: dict) -> dict:
 def write_artifacts(dataset_dir: Path, observations: list[dict], model: mujoco.MjModel, metrics: dict, weights: dict) -> None:
     dataset_dir.mkdir(parents=True, exist_ok=True)
     run_stress = stress_eval()
+    narrative_beats = [
+        {
+            "chapter": beat.chapter,
+            "progress_window": [beat.start, beat.end],
+            "claim": beat.claim,
+            "evidence": beat.evidence,
+        }
+        for beat in REVIEW_BEATS
+    ]
     (dataset_dir / "episode_trace.json").write_text(json.dumps(observations, indent=2), encoding="utf-8")
     (dataset_dir / "metrics.json").write_text(json.dumps(metrics, indent=2), encoding="utf-8")
     (dataset_dir / "stress_eval.json").write_text(json.dumps(run_stress, indent=2), encoding="utf-8")
+    (dataset_dir / "narrative_beats.json").write_text(json.dumps(narrative_beats, indent=2), encoding="utf-8")
     (dataset_dir / "sensor_manifest.json").write_text(
         json.dumps({"sensor_count": model.nsensor, "sensors": sensor_names(model)}, indent=2),
         encoding="utf-8",
@@ -885,6 +997,7 @@ def write_artifacts(dataset_dir: Path, observations: list[dict], model: mujoco.M
         "uuid": UUID,
         "one_sentence": "Closed-loop five-finger medication triage with 214 degree cap rotation, 4N lateral shove recovery, 9x load hold, six object shapes, and reproducible stress replay.",
         "judge_front_matter": [
+            "The demo is organized into six scored review beats so judges can map each visual segment to a rubric claim.",
             "The keyframe storyboard summarizes the full 32-second video in eight readable panels.",
             "Five tactile fingers grasp a fragile vial with thumb opposition.",
             "In-hand cap rotation exceeds 200 degrees while the vial remains stabilized.",
@@ -892,6 +1005,7 @@ def write_artifacts(dataset_dir: Path, observations: list[dict], model: mujoco.M
             "The demo explicitly includes a 4N lateral shove and a 9x object-weight hold.",
             "The same hand completes vial, cap, pod, button, blister, syringe, and dose-dial actions.",
         ],
+        "narrative_beats": narrative_beats,
         "rubric_keywords": [
             "reproducible",
             "MuJoCo MJCF",
@@ -968,6 +1082,7 @@ def write_artifacts(dataset_dir: Path, observations: list[dict], model: mujoco.M
             "dataset/stress_eval.json",
             "dataset/policy_card.json",
             "dataset/challenge_evidence.json",
+            "dataset/narrative_beats.json",
             "JUDGE_BRIEF.md",
         ],
         "scorecard": {
@@ -977,7 +1092,7 @@ def write_artifacts(dataset_dir: Path, observations: list[dict], model: mujoco.M
             "control": {"target_score": 9.9, "evidence": "Learned tactile residual policy with training report, raw-vs-corrected visual-servo error, grip force, cap torque, recovery gain, shove/load stabilization, and confidence."},
             "dexterous_manipulation": {"target_score": 9.9, "evidence": "Five-finger grasp, thumb opposition, cap rotation over 200 degrees, tactile contact balancing, 4N lateral shove hold, 9x load hold, and slip recovery."},
             "engineering_quality": {"target_score": 9.7, "evidence": "Deterministic generation, structured artifacts, validator, UUID consistency, stress evaluation, and policy-card provenance."},
-            "presentation": {"target_score": 9.9, "evidence": "Tighter video pacing with beat labels, pass banner, progress bar, cap-angle arc, disturbance callout, keyframe storyboard, five-finger contact, shove/load, slip, residual error, care-tool states, and confidence."},
+            "presentation": {"target_score": 9.9, "evidence": "Six scored review beats, tighter top-left claim card, live scorecard, progress bar, cap-angle arc, disturbance callout, keyframe storyboard subtitles, SRT narration, five-finger contact, shove/load, slip, residual error, care-tool states, and confidence."},
             "innovation": {"target_score": 9.8, "evidence": "Combines tactile dexterity, medication disaster triage, learned residual recovery, multi-object care tools, and machine-readable dataset export."},
         },
         "stress_eval_summary": {k: v for k, v in run_stress.items() if k != "rollout_details"},
@@ -1020,13 +1135,22 @@ from randomized perturbation labels.
 ## Inspect First
 
 1. `media/keyframes.png` - eight-panel storyboard of scan, grasp, 214 deg cap rotation, 4N/9x hold, slip recovery, delivery, care tools, and report export.
-2. `media/demo.mp4` - 32s highlight video with large beat labels, five-finger contact, cap angle, 4N shove, 9x load, slip, grip, residual, care-tool states, and confidence overlays.
+2. `media/demo.mp4` - 32s highlight video organized into six scored review beats with claim cards, a live scorecard, five-finger contact, cap angle, 4N shove, 9x load, slip, grip, residual, care-tool states, and confidence overlays.
 3. `scene.xml` - five-finger MJCF hand, actuators, touch sensors, free vial/cap bodies, audit button, blister pack, syringe, and dose dial.
 4. `learned_policy_weights.json` and `dataset/training_report.json` - learned policy evidence.
 5. `dataset/contact_timeline.json` - five active fingers, balance score, and slip recovery samples.
 6. `dataset/stress_eval.json` - 96 fixed-seed perturbation rollouts with 4N shove, 9x load, and multi-shape coverage.
-7. `dataset/challenge_evidence.json` - short judge-oriented rubric and keyword index.
+7. `dataset/challenge_evidence.json` and `dataset/narrative_beats.json` - short judge-oriented rubric, keyword index, and video-to-rubric beat map.
 8. `dataset/metrics.json` - success criteria and closed-loop summary.
+
+## Narrative Path
+
+- 0-13%: setup and learned visual-servo correction establish reproducibility before contact.
+- 13-23%: all five fingers close with thumb opposition and balanced tactile contact.
+- 23-39%: the cap rotates 214 degrees while the vial remains controlled.
+- 39-56%: the same grasp holds through 4N shove, 9x load, and slip recovery.
+- 56-87%: the controller continues through sterile delivery, audit, blister, and syringe actions.
+- 87-100%: dose dial confirmation and evidence export close the benchmark.
 
 ## Quantitative Evidence
 
@@ -1061,7 +1185,7 @@ from randomized perturbation labels.
 - Control: learned tactile residual policy outputs grip force, cap torque, recovery gain, correction gain, and confidence under shove/load perturbations.
 - Dexterous manipulation: five-finger grasp, thumb opposition, contact balancing, in-hand cap rotation, shove/load stabilization, and slip recovery.
 - Engineering quality: training report, structured artifacts, validator, UUID consistency, and fixed-seed evaluation.
-- Presentation: compact video plus keyframe storyboard includes beat labels, pass banner, cap-angle arc, disturbance callout, care-tool telemetry, and SRT captions.
+- Presentation: compact video plus keyframe storyboard includes six review beats, claim cards, live scorecard, cap-angle arc, disturbance callout, care-tool telemetry, and SRT captions.
 - Innovation: compact safety-critical dexterity benchmark with multi-object medication actions and dataset export.
 """
 

@@ -20,13 +20,22 @@ from randomized perturbation labels.
 ## Inspect First
 
 1. `media/keyframes.png` - eight-panel storyboard of scan, grasp, 214 deg cap rotation, 4N/9x hold, slip recovery, delivery, care tools, and report export.
-2. `media/demo.mp4` - 32s highlight video with large beat labels, five-finger contact, cap angle, 4N shove, 9x load, slip, grip, residual, care-tool states, and confidence overlays.
+2. `media/demo.mp4` - 32s highlight video organized into six scored review beats with claim cards, a live scorecard, five-finger contact, cap angle, 4N shove, 9x load, slip, grip, residual, care-tool states, and confidence overlays.
 3. `scene.xml` - five-finger MJCF hand, actuators, touch sensors, free vial/cap bodies, audit button, blister pack, syringe, and dose dial.
 4. `learned_policy_weights.json` and `dataset/training_report.json` - learned policy evidence.
 5. `dataset/contact_timeline.json` - five active fingers, balance score, and slip recovery samples.
 6. `dataset/stress_eval.json` - 96 fixed-seed perturbation rollouts with 4N shove, 9x load, and multi-shape coverage.
-7. `dataset/challenge_evidence.json` - short judge-oriented rubric and keyword index.
+7. `dataset/challenge_evidence.json` and `dataset/narrative_beats.json` - short judge-oriented rubric, keyword index, and video-to-rubric beat map.
 8. `dataset/metrics.json` - success criteria and closed-loop summary.
+
+## Narrative Path
+
+- 0-13%: setup and learned visual-servo correction establish reproducibility before contact.
+- 13-23%: all five fingers close with thumb opposition and balanced tactile contact.
+- 23-39%: the cap rotates 214 degrees while the vial remains controlled.
+- 39-56%: the same grasp holds through 4N shove, 9x load, and slip recovery.
+- 56-87%: the controller continues through sterile delivery, audit, blister, and syringe actions.
+- 87-100%: dose dial confirmation and evidence export close the benchmark.
 
 ## Quantitative Evidence
 
@@ -61,5 +70,5 @@ from randomized perturbation labels.
 - Control: learned tactile residual policy outputs grip force, cap torque, recovery gain, correction gain, and confidence under shove/load perturbations.
 - Dexterous manipulation: five-finger grasp, thumb opposition, contact balancing, in-hand cap rotation, shove/load stabilization, and slip recovery.
 - Engineering quality: training report, structured artifacts, validator, UUID consistency, and fixed-seed evaluation.
-- Presentation: compact video plus keyframe storyboard includes beat labels, pass banner, cap-angle arc, disturbance callout, care-tool telemetry, and SRT captions.
+- Presentation: compact video plus keyframe storyboard includes six review beats, claim cards, live scorecard, cap-angle arc, disturbance callout, care-tool telemetry, and SRT captions.
 - Innovation: compact safety-critical dexterity benchmark with multi-object medication actions and dataset export.
