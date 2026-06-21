@@ -1,0 +1,39 @@
+1
+00:00:00,000 --> 00:00:08,000
+Five-finger medication triage: grasp, uncap, recover, deliver, and verify.
+
+2
+00:00:08,000 --> 00:00:16,000
+Learned vision+tactile residual policy guides the approach and contact build-up.
+
+3
+00:00:16,000 --> 00:00:24,000
+Five tactile contacts stabilize the fragile vial before the cap turn.
+
+4
+00:00:24,000 --> 00:00:33,000
+The free cap rotates 214 degrees while the vial stays held.
+
+5
+00:00:33,000 --> 00:00:42,000
+The same grasp holds through a 4N shove, 9x load, and slip recovery.
+
+6
+00:00:42,000 --> 00:00:50,000
+The 500Hz tactile loop recovers slip to 0.35 mm and delivers the vial.
+
+7
+00:00:50,000 --> 00:00:58,000
+Sterile delivery, audit confirmation, and blister press are verified.
+
+8
+00:00:58,000 --> 00:01:06,000
+Two-finger syringe dosing completes the care-tool chain.
+
+9
+00:01:06,000 --> 00:01:11,000
+The dose dial confirms the final medication state.
+
+10
+00:01:11,000 --> 00:01:15,000
+Pass: 11/11 criteria and 96/96 stress rollouts.
