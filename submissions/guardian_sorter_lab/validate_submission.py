@@ -123,6 +123,13 @@ def main() -> int:
         raise SystemExit("No stable five-finger hold in contact timeline")
     if len(narrative) < 6 or not all(row.get("claim") and row.get("evidence") for row in narrative):
         raise SystemExit("Narrative beat map is incomplete")
+    criteria_passed = sum(1 for value in criteria.values() if value)
+    stress_passed = sum(1 for row in stress.get("rollout_details", []) if row.get("learned_policy_success"))
+    stress_rollouts = stress.get("rollouts", 0)
+    if criteria_passed < len(criteria):
+        raise SystemExit(f"Not all criteria passed: {criteria_passed}/{len(criteria)}")
+    if stress_rollouts and stress_passed < stress_rollouts:
+        raise SystemExit(f"Stress replay did not pass all rollouts: {stress_passed}/{stress_rollouts}")
 
     video_path = PROJECT_DIR / "media" / "demo.mp4"
     if video_path.stat().st_size < 1_000_000:
@@ -141,6 +148,8 @@ def main() -> int:
                 "keyframes_bytes": keyframes_path.stat().st_size,
                 "policy_type": summary.get("policy_type"),
                 "policy_training_samples": summary.get("policy_training_samples"),
+                "criteria_passed": criteria_passed,
+                "criteria_total": len(criteria),
                 "learned_policy_inference_samples": summary.get("learned_policy_inference_samples"),
                 "control_loop_hz": summary.get("control_loop_hz"),
                 "tactile_reflex_latency_ms": summary.get("tactile_reflex_latency_ms"),
@@ -152,6 +161,8 @@ def main() -> int:
                 "max_load_multiplier": summary.get("max_load_multiplier"),
                 "multi_object_shape_count": summary.get("multi_object_shape_count"),
                 "stress_success": stress.get("learned_policy_success_rate"),
+                "stress_rollouts_passed": stress_passed,
+                "stress_rollouts_total": stress_rollouts,
             },
             indent=2,
         )

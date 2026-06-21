@@ -3,7 +3,7 @@
   "uuid": "e9367728-67e3-4adc-9f3e-fc7a1a364a8d",
   "one_sentence": "Vision+tactile closed-loop five-finger medication triage with 214 degree cap rotation, 4ms tactile reflex latency, 4N lateral shove recovery, 9x load hold, six object shapes, and reproducible stress replay.",
   "judge_front_matter": [
-    "The demo is a one-minute run with cleaner overlays so the cap rotation, shove/load hold, slip recovery, and care tools are easier to inspect.",
+    "The demo is a one-minute run with sparse middle overlays plus opening and closing evidence cards for 214 degree cap rotation, 4ms reflex latency, 96/96 stress rollouts, and 11/11 task criteria.",
     "The keyframe storyboard summarizes the full one-minute video in eight readable panels.",
     "Five tactile fingers grasp a fragile vial with thumb opposition.",
     "In-hand cap rotation exceeds 200 degrees while the vial remains stabilized.",

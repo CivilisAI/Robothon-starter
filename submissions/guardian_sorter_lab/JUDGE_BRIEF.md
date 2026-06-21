@@ -20,7 +20,7 @@ trained from randomized perturbation labels.
 ## Inspect First
 
 1. `media/keyframes.png` - eight-panel storyboard of scan, grasp, 214 deg cap rotation, 4N/9x hold, slip recovery, delivery, care tools, and report export.
-2. `media/demo.mp4` - one-minute generated demo with reduced text density, larger motion view, live metrics, five-finger contact, cap angle, 4N shove, 9x load, slip, grip, residual, care-tool states, and confidence overlays.
+2. `media/demo.mp4` - one-minute generated demo with sparse middle overlays, opening and closing evidence cards, larger motion view, live metrics, five-finger contact, cap angle, 4N shove, 9x load, slip, grip, residual, care-tool states, and confidence overlays.
 3. `scene.xml` - five-finger MJCF hand, actuators, touch sensors, free vial/cap bodies, audit button, blister pack, syringe, and dose dial.
 4. `learned_policy_weights.json` and `dataset/training_report.json` - learned policy evidence.
 5. `dataset/contact_timeline.json` - five active fingers, balance score, and slip recovery samples.
@@ -62,6 +62,7 @@ trained from randomized perturbation labels.
 - Recovered slip: 0.35 mm
 - Stress rollouts: 96
 - Learned-policy stress success: 1.0
+- Stress rollout pass count: 96/96
 - Median stress improvement: 46.88 mm
 
 ## Rubric Mapping
@@ -72,5 +73,5 @@ trained from randomized perturbation labels.
 - Control: learned vision+tactile residual policy outputs grip force, cap torque, recovery gain, correction gain, and confidence under shove/load perturbations.
 - Dexterous manipulation: five-finger grasp, thumb opposition, contact balancing, in-hand cap rotation, shove/load stabilization, and slip recovery.
 - Engineering quality: training report, structured artifacts, validator, UUID consistency, and fixed-seed evaluation.
-- Presentation: one-minute cleaner video plus keyframe storyboard includes reduced text density, live metrics, cap-angle arc, disturbance callout, care-tool telemetry, and SRT captions.
+- Presentation: one-minute cleaner video plus keyframe storyboard includes sparse middle overlays, opening and closing evidence cards, live metrics, cap-angle arc, disturbance callout, care-tool telemetry, and SRT captions.
 - Innovation: compact safety-critical dexterity benchmark with multi-object medication actions and dataset export.

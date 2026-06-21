@@ -1,6 +1,6 @@
 1
 00:00:00,000 --> 00:00:06,000
-Scan vial, cap, sterile pod, blister pack, syringe, and dose dial.
+Goal: five-finger grasp, 214 degree cap rotation, 4ms reflex, and 11 out of 11 task criteria.
 
 2
 00:00:06,000 --> 00:00:12,000
@@ -44,4 +44,4 @@ The dose dial is turned to confirm the care sequence.
 
 12
 00:00:58,000 --> 00:00:60,000
-Metrics, stress replay, and policy card are exported.
+Pass summary: 96 stress rollouts, 280 stable five-finger samples, and 0.35 millimeter slip.

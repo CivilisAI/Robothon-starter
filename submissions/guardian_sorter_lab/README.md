@@ -7,8 +7,9 @@ uses a learned residual controller to grasp a fragile medicine vial, rotate its
 cap 214 degrees, hold through a 4N lateral shove and 9x object-weight challenge,
 recover slip to 0.35 mm, deliver the vial to a sterile pod, operate three care
 tools, and export a machine-readable evidence pack. The regenerated demo is now
-a cleaner one-minute run with reduced text density, larger motion view, live
-metrics, and explicit 500Hz / 4ms closed-loop evidence.
+a cleaner one-minute run with sparse middle overlays, opening and closing
+evidence cards, larger motion view, live metrics, and explicit 500Hz / 4ms
+closed-loop evidence.
 
 Registration UUID: `e9367728-67e3-4adc-9f3e-fc7a1a364a8d`
 
@@ -36,11 +37,11 @@ stress replays, 500Hz control-loop evidence, and a local validator.
 | Dexterity | The task requires thumb opposition, five active fingertip contacts, in-hand cap rotation over 200 degrees, contact balancing, a 4N shove hold, a 9x load hold, and slip recovery under 1.2 mm. |
 | Task design | Medication triage is a practical real-world scenario with fragile-object handling, safety-cap manipulation, sterile delivery, audit confirmation, and multiple care-tool actions. |
 | Engineering quality | The submission includes a metrics schema, policy card, stress replay, trajectory trace, contact timeline, label CSV, sensor manifest, narrative beat JSON, SRT captions, rubric scorecard, manifest, and a validator. |
-| Presentation | `media/demo.mp4` is a one-minute demo within the official 1-3 minute window. It uses reduced text density, larger motion view, live metrics, a cap-angle arc, disturbance callout, and care-tool telemetry. `media/keyframes.png` gives an eight-panel storyboard with subtitles, and `JUDGE_BRIEF.md` provides the short scoring entry point. |
+| Presentation | `media/demo.mp4` is a one-minute demo within the official 1-3 minute window. It uses sparse middle overlays plus opening and closing evidence cards, larger motion view, live metrics, a cap-angle arc, disturbance callout, and care-tool telemetry. `media/keyframes.png` gives an eight-panel storyboard with subtitles, and `JUDGE_BRIEF.md` provides the short scoring entry point. |
 
 ## Quantitative Evidence
 
-- Final success: `true` in `dataset/metrics.json`.
+- Final success: `true` in `dataset/metrics.json`; 11/11 task criteria pass.
 - Learned policy evidence: 6717 training samples, 1475 validation samples, MAE
   0.022843.
 - Learned policy inference: 601 samples in the formal one-minute run.
@@ -53,8 +54,8 @@ stress replays, 500Hz control-loop evidence, and a local validator.
   drift.
 - Care-tool completion: 32 mm blister press, 58 mm syringe plunger dose, 83.08
   degree dose dial.
-- Stress replay: 96 fixed-seed perturbation rollouts with learned-policy success
-  rate 1.0.
+- Stress replay: 96/96 fixed-seed perturbation rollouts pass with
+  learned-policy success rate 1.0.
 - Video narrative: `dataset/narrative_beats.json` maps the demo from setup and
   servo correction through grasp, cap rotation, disturbance recovery, care tools,
   dose dial, and evidence export.
@@ -69,9 +70,10 @@ stress replays, 500Hz control-loop evidence, and a local validator.
   hold, 9x object-weight hold, slip recovery under 1.2 mm, sterile pod delivery,
   audit confirmation, blister press, syringe plunger dosing, and dose-dial
   confirmation.
-- One-minute generated demo video with reduced text density, live metrics,
-  cap-angle arc, disturbance callout, active fingers, cap angle, shove/load,
-  slip, residual error, grip force, care-tool states, and policy confidence.
+- One-minute generated demo video with sparse middle overlays, opening and
+  closing evidence cards, live metrics, cap-angle arc, disturbance callout,
+  active fingers, cap angle, shove/load, slip, residual error, grip force,
+  care-tool states, and policy confidence.
 - Generated keyframe storyboard summarizing the one-minute demo in eight readable
   panels with per-panel subtitles.
 - Machine-readable judge artifacts: metrics, policy card, contact timeline,
@@ -95,8 +97,9 @@ For a fast review, inspect these files in order:
 
 1. `media/keyframes.png` - eight-panel storyboard of the entire task, including
    subtitles for each scoring moment.
-2. `media/demo.mp4` - generated one-minute video with reduced text density,
-   larger motion view, live metrics, phase labels, and metric overlays.
+2. `media/demo.mp4` - generated one-minute video with sparse middle overlays,
+   opening and closing evidence cards, larger motion view, live metrics, phase
+   labels, and metric overlays.
 3. `JUDGE_BRIEF.md` - short rubric mapping and numeric evidence.
 4. `dataset/narrative_beats.json` - video-to-rubric map for reviewers reading
    the README before the media.
