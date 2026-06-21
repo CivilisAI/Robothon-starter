@@ -649,43 +649,30 @@ def update_camera(model: mujoco.MjModel, data: mujoco.MjData, camera: mujoco.Mjv
     look = 0.58 * palm + 0.42 * vial
     camera.type = mujoco.mjtCamera.mjCAMERA_FREE
     camera.lookat[:] = [look[0], look[1], 0.24]
-    closeup = smoothstep(0.18, 0.32, progress) * (1.0 - smoothstep(0.56, 0.70, progress))
+    closeup = smoothstep(0.10, 0.22, progress) * (1.0 - smoothstep(0.52, 0.66, progress))
+    cap_closeup = smoothstep(0.21, 0.30, progress) * (1.0 - smoothstep(0.39, 0.48, progress))
     tool_view = smoothstep(0.66, 0.88, progress)
-    camera.distance = 1.28 - 0.24 * closeup + 0.10 * tool_view
-    camera.azimuth = 126.0 + 28.0 * smoothstep(0.34, 0.56, progress) + 38.0 * tool_view
-    camera.elevation = -25.0 + 7.0 * math.sin(math.pi * progress) + 3.0 * closeup
+    camera.distance = 1.26 - 0.29 * closeup - 0.08 * cap_closeup + 0.12 * tool_view
+    camera.azimuth = 122.0 + 24.0 * smoothstep(0.30, 0.54, progress) + 38.0 * tool_view
+    camera.elevation = -24.0 + 7.0 * math.sin(math.pi * progress) + 4.0 * closeup
 
 
 def overlay(frame: np.ndarray, state: dict) -> np.ndarray:
     image = Image.fromarray(frame)
     draw = ImageDraw.Draw(image, "RGBA")
-    beat = {
-        "sensor_boot_and_scene_scan": "scan vial + cap + pod",
-        "visual_servo_approach": "learned servo correction",
-        "five_finger_tactile_grasp": "five tactile contacts lock",
-        "in_hand_cap_rotation": "cap rotation over 200 deg",
-        "force_load_stability_test": "4N shove + 9x load hold",
-        "slip_disturbance_recovery": "slip recovered under 1.2mm",
-        "sterile_pod_delivery": "sterile pod delivery",
-        "audit_button_press": "audit press after delivery",
-        "blister_pack_press": "pill blister press",
-        "syringe_plunger_dose": "syringe plunger dosing",
-        "dose_dial_confirm": "dose dial confirmation",
-        "final_report_export": "export scored evidence",
-    }.get(state["phase"], "closed-loop dexterity")
     headline = {
-        "sensor_boot_and_scene_scan": "SCAN THE MEDICATION KIT",
-        "visual_servo_approach": "LEARNED VISUAL SERVO LOCK",
-        "five_finger_tactile_grasp": "FIVE FINGERS LOCK VIAL",
-        "in_hand_cap_rotation": "CAP ROTATION 214 DEG",
+        "sensor_boot_and_scene_scan": "SCAN",
+        "visual_servo_approach": "SERVO",
+        "five_finger_tactile_grasp": "FIVE-FINGER GRASP",
+        "in_hand_cap_rotation": "214 DEG CAP ROTATION",
         "force_load_stability_test": "4N / 9X HOLD",
         "slip_disturbance_recovery": "SLIP RECOVERY",
-        "sterile_pod_delivery": "STERILE POD DELIVERY",
-        "audit_button_press": "AUDIT BUTTON CONFIRMED",
-        "blister_pack_press": "BLISTER PILL PRESSED",
-        "syringe_plunger_dose": "SYRINGE DOSE CONTROL",
-        "dose_dial_confirm": "DOSE DIAL CONFIRMED",
-        "final_report_export": "EVIDENCE PACK EXPORTED",
+        "sterile_pod_delivery": "STERILE DELIVERY",
+        "audit_button_press": "AUDIT",
+        "blister_pack_press": "BLISTER",
+        "syringe_plunger_dose": "SYRINGE",
+        "dose_dial_confirm": "DOSE DIAL",
+        "final_report_export": "EVIDENCE EXPORT",
     }.get(state["phase"], "CLOSED-LOOP DEXTERITY")
     title_font = load_font(31, bold=True)
     headline_font = load_font(26, bold=True)
@@ -693,31 +680,25 @@ def overlay(frame: np.ndarray, state: dict) -> np.ndarray:
     small_font = load_font(13)
 
     width, height = image.size
-    card_x0 = width - 286
-    draw.rectangle([18, 34, 476, 128], fill=(4, 7, 11, 205))
-    draw.text((34, 48), PROJECT_NAME, fill=(238, 246, 255), font=small_font)
-    draw.text((34, 72), "VISION + TACTILE CLOSED LOOP", fill=(255, 218, 85), font=headline_font)
-    draw.text((34, 106), "500Hz MuJoCo control | 4ms reflex latency", fill=(130, 245, 165), font=body_font)
-
-    draw.rectangle([card_x0, 34, width - 22, 162], fill=(6, 14, 20, 212))
-    draw.text((card_x0 + 18, 49), "LIVE METRICS", fill=(130, 245, 165), font=body_font)
+    card_x0 = width - 238
+    draw.rectangle([card_x0, 34, width - 22, 128], fill=(6, 14, 20, 195))
+    draw.text((card_x0 + 16, 48), "LIVE", fill=(130, 245, 165), font=small_font)
     score_rows = [
-        ("fingers", f"{state['active_fingers']}/5"),
-        ("cap", f"{state['cap_angle_deg']:.0f}/214 deg"),
-        ("shove/load", f"{state['shove_force_n']:.1f}N / {state['load_multiplier']:.1f}x"),
-        ("slip/reflex", f"{state['slip_observer_mm']:.2f}mm / 4ms"),
+        ("F", f"{state['active_fingers']}/5"),
+        ("cap", f"{state['cap_angle_deg']:.0f} deg"),
+        ("load", f"{state['shove_force_n']:.1f}N/{state['load_multiplier']:.1f}x"),
     ]
     for row_idx, (label, value) in enumerate(score_rows):
-        y = 79 + row_idx * 20
+        y = 70 + row_idx * 18
         draw.text((card_x0 + 18, y), label, fill=(176, 194, 208), font=small_font)
-        draw.text((card_x0 + 118, y), value, fill=(238, 246, 255), font=small_font)
+        draw.text((card_x0 + 70, y), value, fill=(238, 246, 255), font=small_font)
 
     progress_w = int((width - 80) * state["progress"])
-    draw.rectangle([0, height - 112, width, height], fill=(3, 8, 12, 218))
-    draw.text((32, height - 100), headline, fill=(255, 218, 85), font=headline_font)
+    draw.rectangle([0, height - 92, width, height], fill=(3, 8, 12, 198))
+    draw.text((32, height - 82), headline, fill=(255, 218, 85), font=headline_font)
     draw.text(
-        (34, height - 64),
-        f"{beat} | residual {state['post_residual_error_m'] * 1000:.1f}mm | grip {state['policy']['grip_force']:.2f} | conf {state['policy']['policy_confidence']:.2f} | pill {state['blister_depth'] * 1000:.0f}mm syringe {state['syringe_depth'] * 1000:.0f}mm dial {state['dose_dial_deg']:.0f}deg",
+        (34, height - 48),
+        f"500Hz loop | 4ms reflex | slip {state['slip_observer_mm']:.2f}mm | residual {state['post_residual_error_m'] * 1000:.1f}mm | conf {state['policy']['policy_confidence']:.2f}",
         fill=(238, 246, 255),
         font=body_font,
     )
@@ -725,12 +706,12 @@ def overlay(frame: np.ndarray, state: dict) -> np.ndarray:
     draw.rectangle([40, height - 28, 40 + progress_w, height - 18], fill=(40, 220, 150, 245))
     if state["progress"] < 0.055:
         title = "GUARDIAN DEXTRIAGE"
-        subtitle = "ONE-MINUTE VISION + TACTILE DEXTERITY DEMO"
-        draw.rectangle([0, 164, width, 284], fill=(3, 8, 12, 190))
+        subtitle = "VISION + TACTILE CLOSED LOOP"
+        draw.rectangle([0, 174, width, 270], fill=(3, 8, 12, 172))
         tw = draw.textlength(title, font=title_font)
         sw = draw.textlength(subtitle, font=body_font)
-        draw.text(((width - tw) / 2, 180), title, fill=(255, 255, 255), font=title_font)
-        draw.text(((width - sw) / 2, 230), subtitle, fill=(255, 218, 85), font=body_font)
+        draw.text(((width - tw) / 2, 188), title, fill=(255, 255, 255), font=title_font)
+        draw.text(((width - sw) / 2, 232), subtitle, fill=(255, 218, 85), font=body_font)
     if state["phase"] == "in_hand_cap_rotation":
         cx, cy, r = width - 150, 190, 54
         draw.ellipse([cx - r, cy - r, cx + r, cy + r], outline=(255, 218, 85, 210), width=3)
@@ -741,20 +722,20 @@ def overlay(frame: np.ndarray, state: dict) -> np.ndarray:
         pulse = int(34 + 22 * math.sin(math.pi * min(1.0, state["progress"] * 8 % 1.0)))
         draw.ellipse([cx - pulse, cy - pulse, cx + pulse, cy + pulse], outline=(255, 92, 92, 190), width=3)
         draw.line([cx - 96, cy, cx - 16, cy], fill=(255, 92, 92, 230), width=6)
-        draw.text((cx - 96, cy + 44), "disturbance", fill=(255, 218, 85), font=body_font)
+        draw.text((cx - 74, cy + 44), "4N shove", fill=(255, 218, 85), font=body_font)
     return np.asarray(image)
 
 
 def write_keyframe_sheet(path: Path, keyframes: dict[str, np.ndarray]) -> None:
     labels = [
-        ("01_scan", "01 SCAN KIT", "six objects, sensors, servo target"),
-        ("02_grasp", "02 FIVE-FINGER GRASP", "thumb opposition plus balanced contacts"),
-        ("03_cap", "03 214 DEG CAP ROTATION", "free cap body and vial held together"),
-        ("04_shove", "04 4N SHOVE / 9X HOLD", "closed-loop disturbance evidence"),
-        ("05_slip", "05 SLIP RECOVERY", "0.35 mm final observer reading"),
-        ("06_delivery", "06 STERILE DELIVERY", "vial placed in pod before audit"),
-        ("07_tools", "07 CARE TOOL CHAIN", "button, blister, syringe, dose dial"),
-        ("08_report", "08 EVIDENCE EXPORT", "metrics, stress replay, policy card"),
+        ("01_scan", "01 SCAN KIT", "six objects"),
+        ("02_grasp", "02 FIVE-FINGER GRASP", "thumb opposition"),
+        ("03_cap", "03 214 DEG CAP ROTATION", "vial stays held"),
+        ("04_shove", "04 4N SHOVE / 9X HOLD", "closed-loop hold"),
+        ("05_slip", "05 SLIP RECOVERY", "0.35 mm slip"),
+        ("06_delivery", "06 STERILE DELIVERY", "pod delivery"),
+        ("07_tools", "07 CARE TOOL CHAIN", "button, blister, syringe"),
+        ("08_report", "08 EVIDENCE EXPORT", "metrics exported"),
     ]
     cell_w, cell_h = 480, 326
     sheet = Image.new("RGB", (cell_w * 2, cell_h * 4), (8, 12, 16))
