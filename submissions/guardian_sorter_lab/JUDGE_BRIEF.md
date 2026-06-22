@@ -9,7 +9,7 @@ strongest Robothon judge signals: five tactile fingers, thumb opposition, in-han
 cap rotation, vision+tactile residual policy control, 500Hz MuJoCo control, 4ms
 tactile reflex latency, 4N lateral shove recovery, 9x object-weight hold,
 multi-object medication tools, 30/30 skill-suite pass, 11/11 criteria pass,
-96/96 stress pass, and a clean 64-second highlight demo video. A separate
+96/96 stress pass, and a clean 64-second high-impact rescue demo video. A separate
 12/12 clinic-transfer scenario replay supports real-world relevance without
 cluttering the video.
 
@@ -22,8 +22,8 @@ trained from randomized perturbation labels.
 
 ## Inspect First
 
-1. `media/demo.mp4` - clean 64-second generated rescue demo with one-line evidence-card overlays, dot-based five-finger contact indicator, closer grasp/cap framing, uncap highlight marker, drop-risk marker, grasp-saved recovery marker, cap-angle arc, 4N/9x callout, opening evidence badges, and closing dose-ready card.
-2. `media/keyframes.png` - eight-panel storyboard of scan, grasp, 214 deg uncap, 4N/9x hold, slip recovery, delivery, care chain, and 30/30 plus 96/96 report export.
+1. `media/demo.mp4` - clean 64-second generated rescue demo with sparse one-line overlays, dot-based five-finger contact indicator, closer grasp/cap framing, uncap marker, drop-risk marker, 4ms vial-saved marker, cap-angle arc, 4N/9x callout, opening evidence badges, and closing 100% pass card.
+2. `media/keyframes.png` - eight-panel storyboard of scan, five-finger grip, 214 deg cap twist, drop risk, 4ms slip catch, delivery, care chain, and 30/30 plus 96/96 report export.
 3. `scene.xml` - five-finger MJCF hand, actuators, touch sensors, free vial/cap bodies, audit button, blister pack, syringe, and dose dial.
 4. `learned_policy_weights.json` and `dataset/training_report.json` - learned policy evidence.
 5. `dataset/contact_timeline.json` - five active fingers, balance score, and slip recovery samples.
@@ -38,9 +38,9 @@ trained from randomized perturbation labels.
 - 0-13%: setup and learned visual-servo correction establish reproducibility before contact.
 - 13-23%: all five fingers close with thumb opposition and balanced tactile contact.
 - 23-39%: the cap rotates 214 degrees while the vial remains controlled.
-- 39-56%: the same grasp faces a drop-risk moment, holds through 4N shove and 9x load, then catches slip with the 4ms tactile reflex.
+- 39-56%: the same grasp faces a clear drop-risk moment, holds through 4N shove and 9x load, then catches slip with the 4ms tactile reflex.
 - 56-87%: the controller continues through sterile delivery, audit, blister, and syringe actions.
-- 87-100%: dose dial confirmation and evidence export close the benchmark with 30/30 skills, 11/11 criteria, and 96/96 stress pass.
+- 87-100%: dose dial confirmation and evidence export close the benchmark with a 100% pass card: 30/30 skills, 11/11 criteria, and 96/96 stress.
 
 ## Quantitative Evidence
 
@@ -91,5 +91,5 @@ artifact handoff scenarios. Pass count:
 - Control: learned vision+tactile residual policy outputs grip force, cap torque, recovery gain, correction gain, and confidence under shove/load perturbations.
 - Dexterous manipulation: five-finger grasp, thumb opposition, contact balancing, in-hand cap rotation, shove/load stabilization, and slip recovery.
 - Engineering quality: training report, structured artifacts, validator, UUID consistency, 30/30 skill-suite evaluation, 12/12 clinic-scenario evaluation, and fixed-seed stress evaluation.
-- Presentation: clean 64-second rescue evidence-card video plus keyframe storyboard uses one-line overlays, contact dots, closer grasp/cap framing, uncap, drop-risk, and grasp-saved markers, opening and closing evidence cards, cap-angle arc, 4N/9x callout, and concise SRT captions.
+- Presentation: clean 64-second rescue video plus keyframe storyboard uses sparse one-line overlays, contact dots, closer grasp/cap framing, uncap, drop-risk, and 4ms vial-saved markers, opening badges, a 100% pass card, cap-angle arc, 4N/9x callout, and concise SRT captions.
 - Innovation: compact safety-critical dexterity benchmark with multi-object medication actions, clinic-transfer scenario coverage, and dataset export.

@@ -3,8 +3,8 @@
 Guardian Apothecary DexTriage Challenge is a MuJoCo closed-loop dexterity
 benchmark for FFAI Robothon Summer 2026.
 
-Scoreboard summary: fragile-vial rescue with five-finger uncap, 4ms closed-loop
-slip recovery, 30/30 care-skill pass, and 96/96 stress pass.
+Scoreboard summary: fragile-vial rescue with five-finger grip, 214-degree cap
+twist, 4ms closed-loop slip catch, 30/30 care-skill pass, and 96/96 stress pass.
 
 The submission is built to be read as a complete robotics system, not just a
 video clip: a procedural five-finger tactile hand uses a learned residual
@@ -12,9 +12,9 @@ controller to grasp a fragile medicine vial, rotate its cap 214 degrees, hold
 through a 4N lateral shove and 9x object-weight challenge, recover slip to 0.35
 mm, deliver the vial to a sterile pod, operate three care tools, and export a
 machine-readable evidence pack. The regenerated demo is a clean 64-second
-rescue evidence-card run: one claim per phase, dot-based five-finger contact,
-closer grasp/cap framing, uncap, drop-risk, and grasp-saved markers, opening
-evidence badges, and a closing dose-ready card. Real-world relevance remains available as a supporting
+high-impact rescue run: one sparse claim per phase, dot-based five-finger
+contact, closer grasp/cap framing, a three-beat grip/drop-risk/4ms-save arc,
+opening evidence badges, and a closing 100% pass card. Real-world relevance remains available as a supporting
 technical artifact in `dataset/clinic_scenario_eval.json`, which maps the same
 generated run to 12 clinic-transfer scenarios.
 
@@ -49,7 +49,7 @@ reflex latency, stable five-finger contact, and 0.35 mm recovered slip.
 | Dexterity | The task requires thumb opposition, five active fingertip contacts, in-hand cap rotation over 200 degrees, contact balancing, a 4N shove hold, a 9x load hold, and slip recovery under 1.2 mm. |
 | Task design | Medication triage is a practical real-world scenario with fragile-object handling, safety-cap manipulation, sterile delivery, audit confirmation, multiple care-tool actions, and 12 named clinic-transfer checks. |
 | Engineering quality | The submission includes a metrics schema, policy card, 30/30 skill-suite replay, 12/12 clinic-scenario replay, stress replay, trajectory trace, contact timeline, label CSV, sensor manifest, narrative beat JSON, SRT captions, rubric scorecard, manifest, and a validator. |
-| Presentation | `media/demo.mp4` is a clean 64-second rescue evidence-card demo within the official 1-3 minute window. It uses one-line middle overlays, a dot-based five-finger contact indicator, opening/closing evidence cards, closer grasp/cap framing, an uncap completion marker, drop-risk and grasp-saved recovery markers, a cap-angle arc, and a 4N/9x disturbance callout. `media/keyframes.png` gives an eight-panel storyboard with concise subtitles, and `JUDGE_BRIEF.md` provides the short scoring entry point. |
+| Presentation | `media/demo.mp4` is a clean 64-second rescue demo within the official 1-3 minute window. It uses sparse one-line overlays, a dot-based five-finger contact indicator, opening badges, a closing 100% pass card, closer grasp/cap framing, an uncap marker, a drop-risk marker, a 4ms vial-saved marker, a cap-angle arc, and a 4N/9x disturbance callout. `media/keyframes.png` gives an eight-panel storyboard with concise subtitles, and `JUDGE_BRIEF.md` provides the short scoring entry point. |
 
 ## Quantitative Evidence
 
@@ -91,11 +91,11 @@ reflex latency, stable five-finger contact, and 0.35 mm recovered slip.
 - Formal pass evidence: 30/30 care-skill variants, 12/12 clinic-transfer
   scenarios, 11/11 task criteria, 96/96 fixed-seed stress rollouts, 100%
   learned-policy stress success, 500Hz loop, and 4ms tactile reflex latency.
-- Clean 64-second generated rescue evidence-card video with one-line overlays,
-  contact dots, closer grasp/cap framing, uncap, drop-risk, and grasp-saved
-  markers, opening and closing evidence cards, cap-angle arc, 4N/9x disturbance
-  callout, active fingers, cap angle, slip, care-tool states, and policy
-  confidence.
+- Clean 64-second generated rescue video with sparse one-line overlays, contact
+  dots, closer grasp/cap framing, five-finger grip, 214-degree cap twist,
+  drop-risk and 4ms vial-saved markers, opening evidence badges, a closing 100%
+  pass card, cap-angle arc, 4N/9x disturbance callout, active fingers, cap
+  angle, slip, care-tool states, and policy confidence.
 - Generated keyframe storyboard summarizing the 64-second demo in eight readable
   panels with per-panel subtitles.
 - Machine-readable judge artifacts: metrics, policy card, contact timeline,
@@ -119,10 +119,10 @@ For a fast review, inspect these files in order:
 
 1. `media/keyframes.png` - eight-panel storyboard of the entire task, including
    subtitles for each scoring moment.
-2. `media/demo.mp4` - generated 64-second video with one-line middle overlays,
-   contact dots, closer grasp/cap framing, uncap and recovered-slip markers,
-   opening and closing evidence cards, phase labels, cap-angle arc, and 4N/9x
-   disturbance callout.
+2. `media/demo.mp4` - generated 64-second video with sparse one-line overlays,
+   contact dots, closer grasp/cap framing, uncap, drop-risk, and 4ms vial-saved
+   markers, opening badges, a closing 100% pass card, phase labels, cap-angle
+   arc, and 4N/9x disturbance callout.
 3. `JUDGE_BRIEF.md` - short rubric mapping and numeric evidence.
 4. `dataset/narrative_beats.json` - video-to-rubric map for reviewers reading
    the README before the media.

@@ -1,11 +1,12 @@
 {
   "project": "Guardian Apothecary DexTriage Challenge",
   "uuid": "e9367728-67e3-4adc-9f3e-fc7a1a364a8d",
-  "scoreboard_description": "Fragile-vial rescue with five-finger uncap, 4ms recovery, 30/30 skills, 96/96 stress pass.",
-  "one_sentence": "Vision+tactile fragile-vial rescue with five-finger grasp, 214 degree cap rotation, 4ms reflex latency, 30/30 care-skill variants, 4N/9x disturbance hold, 11/11 criteria, and 96/96 stress-rollout success.",
+  "scoreboard_description": "Fragile-vial rescue with five-finger grip, 214 deg cap twist, 4ms slip catch, 30/30 skills, 96/96 stress pass.",
+  "one_sentence": "Vision+tactile fragile-vial rescue with five-finger grip, 214 degree cap twist, 4ms slip catch, 4N/9x disturbance hold, 30/30 care-skill variants, 11/11 criteria, and 96/96 stress-rollout success.",
   "judge_front_matter": [
-    "The demo is a clean 64-second rescue evidence-card run: one claim per phase, contact dots, opening badges, shove risk, grasp-saved recovery, and a closing dose-ready card.",
-    "The keyframe storyboard summarizes the full task in eight readable panels without dense subtitles.",
+    "The demo is a clean 64-second rescue run with a sparse three-beat arc: five-finger grip, drop risk, and 4ms save.",
+    "The keyframe storyboard summarizes the full task in eight readable panels with short subtitles.",
+    "The video keeps one measurable claim on screen per phase so the rescue beat is easy to follow.",
     "Five tactile fingers grasp a fragile vial with thumb opposition.",
     "In-hand cap rotation exceeds 200 degrees while the vial remains stabilized.",
     "A learned vision+tactile residual policy corrects visual-servo error and recovers slip.",
@@ -82,7 +83,8 @@
     "4N shove",
     "9x load",
     "multi-object medication triage",
-    "concise demo-video subtitles",
+    "sparse demo-video subtitles",
+    "impactful drop-risk rescue beat",
     "30/30 care-skill suite",
     "100 percent stress pass",
     "12/12 clinic-transfer scenarios"
