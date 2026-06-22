@@ -1,23 +1,23 @@
 1
 00:00:00,000 --> 00:00:10,000
-Five fingers grip the fragile vial.
+Fragile vial enters triage; five fingers close.
 
 2
 00:00:10,000 --> 00:00:22,000
-Residual policy corrects approach.
+Residual policy steadies the approach.
 
 3
 00:00:22,000 --> 00:00:36,000
-Cap twists 214 deg with contact balanced.
+Cap twists 214 deg while contact stays balanced.
 
 4
 00:00:36,000 --> 00:00:48,000
-4N shove and 9x load create one drop-risk beat.
+4N shove and 9x load put the vial at risk.
 
 5
 00:00:48,000 --> 00:00:56,000
-4ms tactile reflex catches slip at 0.35 mm.
+4ms tactile reflex catches the slip at 0.35 mm.
 
 6
 00:00:56,000 --> 00:01:04,000
-100% pass: 30 skills, 11 criteria, 96 stress.
+Sterile delivery closes 30 skills and 96 stress passes.
