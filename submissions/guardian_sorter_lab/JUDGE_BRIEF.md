@@ -9,7 +9,7 @@ strongest Robothon judge signals: five tactile fingers, thumb opposition,
 freejoint vial/cap bodies, in-hand cap rotation, vision+tactile residual policy
 control, 500Hz MuJoCo control, 4ms tactile reflex latency, 4N lateral shove
 recovery, 9x object-weight hold, multi-object medication tools, 30/30
-skill-suite pass, 11/11 criteria pass, 96/96 stress pass, and a clean 64-second
+skill-suite pass, 11/11 criteria pass, 96/96 stress pass, and a clean 62-second
 concise rescue demo video. A separate 12/12 clinic-transfer scenario replay
 supports real-world relevance without cluttering the video.
 
@@ -24,7 +24,7 @@ and measured slip recovery rather than a teleport/weld shortcut.
 
 ## Inspect First
 
-1. `media/demo.mp4` - clean 64-second generated rescue demo with six concise captions, sparse one-line overlays, dot-based five-finger contact indicator, closer grasp/cap framing, uncap marker, drop-risk marker, 4ms vial-saved marker, cap-angle arc, 4N/9x callout, opening evidence badges, and closing 100% pass card.
+1. `media/demo.mp4` - clean 62-second generated rescue demo with six concise captions, sparse one-line overlays, dot-based five-finger contact indicator, closer grasp/cap framing, uncap marker, drop-risk marker, 4ms vial-saved marker, cap-angle arc, 4N/9x callout, opening evidence badges, and closing 100% pass card.
 2. `media/keyframes.png` - eight-panel storyboard of scan, five-finger grip, 214 deg cap twist, drop risk, 4ms slip catch, delivery, care chain, and 30/30 plus 96/96 report export.
 3. `scene.xml` - five-finger MJCF hand, actuators, touch sensors, free vial/cap bodies, audit button, blister pack, syringe, and dose dial.
 4. `learned_policy_weights.json` and `dataset/training_report.json` - learned policy evidence from randomized perturbation labels.
@@ -50,10 +50,10 @@ and measured slip recovery rather than a teleport/weld shortcut.
 - Policy type: learned_tactile_residual_grasp_policy
 - Policy training samples: 6717
 - Policy validation MAE: 0.022843
-- Learned policy inference samples: 641
+- Learned policy inference samples: 621
 - MuJoCo control loop: 500 Hz
 - Tactile reflex latency: 4.0 ms
-- Five-finger stable contact samples: 299
+- Five-finger stable contact samples: 289
 - Care-skill suite pass: 30/30
 - Care-skill success rate: 1.0
 - Clinic scenario pass: 12/12
@@ -67,9 +67,9 @@ and measured slip recovery rather than a teleport/weld shortcut.
 - Max load hold: 9.0x object weight
 - Max hold drift: 0.46 deg
 - Multi-object shape count: 6
-- Raw median visual-servo error: 0.01381 m
-- Post-residual median error: 0.00576 m
-- Error reduction: 58.29%
+- Raw median visual-servo error: 0.01392 m
+- Post-residual median error: 0.00581 m
+- Error reduction: 58.25%
 - Recovered slip: 0.35 mm
 - Stress rollouts: 96
 - Learned-policy stress success: 1.0
@@ -93,5 +93,5 @@ artifact handoff scenarios. Pass count:
 - Control: learned vision+tactile residual policy outputs grip force, cap torque, recovery gain, correction gain, and confidence under shove/load perturbations.
 - Dexterous manipulation: five-finger grasp, thumb opposition, contact balancing, in-hand cap rotation, shove/load stabilization, and slip recovery.
 - Engineering quality: training report, structured artifacts, validator, UUID consistency, 30/30 skill-suite evaluation, 12/12 clinic-scenario evaluation, and fixed-seed stress evaluation.
-- Presentation: clean 64-second rescue video plus keyframe storyboard uses six concise captions, sparse one-line overlays, contact dots, closer grasp/cap framing, uncap, drop-risk, and 4ms vial-saved markers, opening badges, a 100% pass card, cap-angle arc, and 4N/9x callout.
+- Presentation: clean 62-second rescue video plus keyframe storyboard uses six concise captions, sparse one-line overlays, contact dots, closer grasp/cap framing, uncap, drop-risk, and 4ms vial-saved markers, opening badges, a 100% pass card, cap-angle arc, and 4N/9x callout.
 - Innovation: compact safety-critical dexterity benchmark with multi-object medication actions, clinic-transfer scenario coverage, and dataset export.

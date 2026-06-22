@@ -1,23 +1,23 @@
 1
-00:00:00,000 --> 00:00:10,000
+00:00:00,000 --> 00:00:09,000
 Five fingers grip the fragile vial.
 
 2
-00:00:10,000 --> 00:00:22,000
+00:00:09,000 --> 00:00:20,000
 Residual policy corrects approach.
 
 3
-00:00:22,000 --> 00:00:36,000
+00:00:20,000 --> 00:00:34,000
 Cap twists 214 deg with contact balanced.
 
 4
-00:00:36,000 --> 00:00:48,000
+00:00:34,000 --> 00:00:46,000
 4N shove and 9x load create one drop-risk beat.
 
 5
-00:00:48,000 --> 00:00:56,000
+00:00:46,000 --> 00:00:54,000
 4ms tactile reflex catches slip at 0.35 mm.
 
 6
-00:00:56,000 --> 00:01:04,000
+00:00:54,000 --> 00:01:02,000
 100% pass: 30 skills, 11 criteria, 96 stress.
