@@ -14,7 +14,8 @@ mm, deliver the vial to a sterile pod, operate three care tools, and export a
 machine-readable evidence pack. The regenerated demo is a clean 64-second
 concise rescue run: six short captions, one sparse claim per phase, dot-based
 five-finger contact, closer grasp/cap framing, a high-contrast drop-risk/4ms-save
-beat, opening evidence badges, and a closing 100% pass card. Real-world relevance remains available as a supporting
+beat with red/green frames, opening evidence badges, and a closing 100% pass
+card. Real-world relevance remains available as a supporting
 technical artifact in `dataset/clinic_scenario_eval.json`, which maps the same
 generated run to 12 clinic-transfer scenarios.
 
@@ -49,7 +50,7 @@ reflex latency, stable five-finger contact, and 0.35 mm recovered slip.
 | Dexterity | The task requires thumb opposition, five active fingertip contacts, in-hand cap rotation over 200 degrees, contact balancing, a 4N shove hold, a 9x load hold, and slip recovery under 1.2 mm. |
 | Task design | Medication triage is a practical real-world scenario with fragile-object handling, safety-cap manipulation, sterile delivery, audit confirmation, multiple care-tool actions, and 12 named clinic-transfer checks. |
 | Engineering quality | The submission includes a metrics schema, policy card, 30/30 skill-suite replay, 12/12 clinic-scenario replay, stress replay, trajectory trace, contact timeline, label CSV, sensor manifest, narrative beat JSON, SRT captions, rubric scorecard, manifest, and a validator. |
-| Presentation | `media/demo.mp4` is a clean 64-second rescue demo within the official 1-3 minute window. It uses six concise captions, sparse one-line overlays, a dot-based five-finger contact indicator, opening badges, a closing 100% pass card, closer grasp/cap framing, an uncap marker, a drop-risk marker, a 4ms vial-saved marker, a cap-angle arc, and a 4N/9x disturbance callout. `media/keyframes.png` gives an eight-panel storyboard with concise subtitles, and `JUDGE_BRIEF.md` provides the short scoring entry point. |
+| Presentation | `media/demo.mp4` is a clean 64-second rescue demo within the official 1-3 minute window. It uses six concise captions, sparse one-line overlays, a dot-based five-finger contact indicator, opening badges, a closing 100% pass card, closer grasp/cap framing, an uncap marker, a red drop-risk frame, a green 4ms vial-saved frame, a cap-angle arc, and a 4N/9x disturbance callout. `media/keyframes.png` gives an eight-panel storyboard with concise subtitles, and `JUDGE_BRIEF.md` provides the short scoring entry point. |
 
 ## Quantitative Evidence
 
@@ -94,8 +95,8 @@ reflex latency, stable five-finger contact, and 0.35 mm recovered slip.
 - Clean 64-second generated rescue video with six concise captions, sparse
   one-line overlays, contact dots, closer grasp/cap framing, five-finger grip,
   214-degree cap twist,
-  drop-risk and 4ms vial-saved markers, opening evidence badges, a closing 100%
-  pass card, cap-angle arc, 4N/9x disturbance callout, active fingers, cap
+  red drop-risk and green 4ms vial-saved frames, opening evidence badges, a
+  closing 100% pass card, cap-angle arc, 4N/9x disturbance callout, active fingers, cap
   angle, slip, care-tool states, and policy confidence.
 - Generated keyframe storyboard summarizing the 64-second demo in eight readable
   panels with per-panel subtitles.
@@ -122,7 +123,7 @@ For a fast review, inspect these files in order:
    subtitles for each scoring moment.
 2. `media/demo.mp4` - generated 64-second video with six concise captions,
    sparse one-line overlays, contact dots, closer grasp/cap framing, uncap,
-   drop-risk, and 4ms vial-saved markers, opening badges, a closing 100% pass
+   red drop-risk and green 4ms vial-saved frames, opening badges, a closing 100% pass
    card, phase labels, cap-angle arc, and 4N/9x disturbance callout.
 3. `JUDGE_BRIEF.md` - short rubric mapping and numeric evidence.
 4. `dataset/narrative_beats.json` - video-to-rubric map for reviewers reading

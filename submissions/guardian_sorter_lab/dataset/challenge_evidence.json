@@ -4,9 +4,9 @@
   "scoreboard_description": "Five-finger grip, 214 deg cap twist, 4ms slip catch, 30/30 skills, 96/96 stress pass.",
   "one_sentence": "Vision+tactile fragile-vial rescue with five-finger grip, 214 degree cap twist, 4ms slip catch, 4N/9x disturbance hold, 30/30 care-skill variants, 11/11 criteria, and 96/96 stress-rollout success.",
   "judge_front_matter": [
-    "The demo is a clean 64-second rescue run with six short captions and one high-contrast drop-risk/save beat.",
+    "The demo is a clean 64-second rescue run with six short captions, a red drop-risk frame, and a green 4ms saved frame.",
     "The keyframe storyboard summarizes the full task in eight readable panels with short subtitles.",
-    "The video keeps one measurable claim on screen per phase so the rescue beat is quick to follow.",
+    "The video keeps one measurable claim on screen per phase while the risk/save beat gets a clear visual highlight.",
     "Five tactile fingers grasp a fragile vial with thumb opposition.",
     "In-hand cap rotation exceeds 200 degrees while the vial remains stabilized.",
     "A learned vision+tactile residual policy corrects visual-servo error and recovers slip.",
@@ -84,7 +84,7 @@
     "9x load",
     "multi-object medication triage",
     "six concise demo-video captions",
-    "high-contrast drop-risk rescue beat",
+    "red-green drop-risk rescue highlight",
     "30/30 care-skill suite",
     "100 percent stress pass",
     "12/12 clinic-transfer scenarios"
