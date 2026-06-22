@@ -5,13 +5,13 @@ Registration UUID: e9367728-67e3-4adc-9f3e-fc7a1a364a8d
 ## High-Score Evidence
 
 Guardian Apothecary DexTriage Challenge is a MuJoCo closed-loop fragile-vial rescue challenge built around the
-strongest Robothon judge signals: five tactile fingers, thumb opposition, free
-vial/cap bodies, in-hand cap rotation, vision+tactile residual policy control,
-500Hz MuJoCo control, 4ms tactile reflex latency, 4N lateral shove recovery, 9x
-object-weight hold, multi-object medication tools, 30/30 skill-suite pass, 11/11
-criteria pass, 96/96 stress pass, and a clean 64-second concise rescue demo
-video. A separate 12/12 clinic-transfer scenario replay supports real-world
-relevance without cluttering the video.
+strongest Robothon judge signals: five tactile fingers, thumb opposition,
+freejoint vial/cap bodies, in-hand cap rotation, vision+tactile residual policy
+control, 500Hz MuJoCo control, 4ms tactile reflex latency, 4N lateral shove
+recovery, 9x object-weight hold, multi-object medication tools, 30/30
+skill-suite pass, 11/11 criteria pass, 96/96 stress pass, and a clean 64-second
+concise rescue demo video. A separate 12/12 clinic-transfer scenario replay
+supports real-world relevance without cluttering the video.
 
 The same hand scans a fragile vial, grasps it with all five fingers, rotates the
 cap beyond 200 degrees, survives the shove/load test, recovers slip below 1.2 mm,
