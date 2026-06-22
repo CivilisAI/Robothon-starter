@@ -1,0 +1,36 @@
+{
+  "project": "Guardian Apothecary DexTriage Challenge",
+  "uuid": "e9367728-67e3-4adc-9f3e-fc7a1a364a8d",
+  "policy_type": "learned_tactile_residual_grasp_policy",
+  "training_method": "least-squares behavioral cloning from randomized tactile grasp perturbation labels",
+  "training_samples": 6717,
+  "validation_samples": 1475,
+  "validation": {
+    "mean_absolute_error": 0.022843,
+    "per_output_mae": {
+      "palm_correction_gain": 0.006593,
+      "grip_force": 0.037353,
+      "cap_torque": 0.051307,
+      "recovery_gain": 0.013539,
+      "policy_confidence": 0.005422
+    }
+  },
+  "feature_names": [
+    "progress",
+    "vial_error_m",
+    "cap_error_rad",
+    "slip_mm",
+    "active_fingers_norm",
+    "contact_balance",
+    "disturbance",
+    "sin_phase",
+    "cos_phase"
+  ],
+  "output_names": [
+    "palm_correction_gain",
+    "grip_force",
+    "cap_torque",
+    "recovery_gain",
+    "policy_confidence"
+  ]
+}
