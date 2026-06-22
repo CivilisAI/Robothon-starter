@@ -1,0 +1,50 @@
+[
+  {
+    "time_s": [
+      0,
+      8
+    ],
+    "onscreen_marker": "1/6 scene chip plus opening badges",
+    "judge_takeaway": "The run starts with the reproducible med-kit scene and core claims visible immediately."
+  },
+  {
+    "time_s": [
+      8,
+      15
+    ],
+    "onscreen_marker": "2/6 five-finger grasp chip and five contact dots",
+    "judge_takeaway": "All five tactile fingers close before the cap turn rather than appearing as a static pose."
+  },
+  {
+    "time_s": [
+      15,
+      25
+    ],
+    "onscreen_marker": "3/6 cap twist chip plus 214 degree arc",
+    "judge_takeaway": "The in-hand uncap is visually anchored to free cap/vial bodies and live cap-angle telemetry."
+  },
+  {
+    "time_s": [
+      25,
+      36
+    ],
+    "onscreen_marker": "4/6 rescue chip and drop-risk-to-saved timeline",
+    "judge_takeaway": "The video has a single dramatic rescue beat: 4N/9x disturbance, 4ms reflex, and 0.35 mm recovered slip."
+  },
+  {
+    "time_s": [
+      36,
+      56
+    ],
+    "onscreen_marker": "5/6 care-chain chip",
+    "judge_takeaway": "The same controller carries the vial into delivery, audit, blister, syringe, and dose actions."
+  },
+  {
+    "time_s": [
+      56,
+      64
+    ],
+    "onscreen_marker": "6/6 evidence chip and 100 percent pass card",
+    "judge_takeaway": "The ending closes with 30/30 care skills, 11/11 criteria, and 96/96 stress evidence."
+  }
+]

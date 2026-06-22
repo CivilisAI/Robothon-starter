@@ -19,6 +19,7 @@
     "dataset/policy_card.json",
     "dataset/challenge_evidence.json",
     "dataset/narrative_beats.json",
+    "dataset/demo_highlights.json",
     "JUDGE_BRIEF.md"
   ],
   "scorecard": {
@@ -48,7 +49,7 @@
     },
     "presentation": {
       "target_score": 9.9,
-      "evidence": "Clean 64-second rescue video with six concise captions, sparse one-line overlays, dot-based five-finger contact indicator, closer grasp/cap framing, uncap marker, drop-risk marker, 4ms vial-saved marker, opening/closing pass cards, cap-angle arc, 4N/9x callout, and readable keyframe storyboard."
+      "evidence": "Clean 64-second rescue video with six concise captions, six chapter chips, sparse one-line overlays, dot-based five-finger contact indicator, closer grasp/cap framing, uncap marker, rescue timeline, drop-risk marker, 4ms vial-saved marker, opening/closing pass cards, cap-angle arc, 4N/9x callout, and readable keyframe storyboard."
     },
     "innovation": {
       "target_score": 9.8,

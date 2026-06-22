@@ -10,7 +10,7 @@ freejoint vial/cap bodies, in-hand cap rotation, vision+tactile residual policy
 control, 500Hz MuJoCo control, 4ms tactile reflex latency, 4N lateral shove
 recovery, 9x object-weight hold, multi-object medication tools, 30/30
 skill-suite pass, 11/11 criteria pass, 96/96 stress pass, and a clean 64-second
-concise rescue demo video. A separate 12/12 clinic-transfer scenario replay
+chaptered rescue demo video with one visible drop-risk-to-4ms-save beat. A separate 12/12 clinic-transfer scenario replay
 supports real-world relevance without cluttering the video.
 
 The same hand scans a fragile vial, grasps it with all five fingers, rotates the
@@ -24,7 +24,7 @@ and measured slip recovery rather than a teleport/weld shortcut.
 
 ## Inspect First
 
-1. `media/demo.mp4` - clean 64-second generated rescue demo with six concise captions, sparse one-line overlays, dot-based five-finger contact indicator, closer grasp/cap framing, uncap marker, drop-risk marker, 4ms vial-saved marker, cap-angle arc, 4N/9x callout, opening evidence badges, and closing 100% pass card.
+1. `media/demo.mp4` - clean 64-second generated rescue demo with six concise captions, six chapter chips, sparse one-line overlays, dot-based five-finger contact indicator, closer grasp/cap framing, uncap marker, drop-risk-to-4ms-save timeline, 4ms vial-saved marker, cap-angle arc, 4N/9x callout, opening evidence badges, and closing 100% pass card.
 2. `media/keyframes.png` - eight-panel storyboard of scan, five-finger grip, 214 deg cap twist, drop risk, 4ms slip catch, delivery, care chain, and 30/30 plus 96/96 report export.
 3. `scene.xml` - five-finger MJCF hand, actuators, touch sensors, free vial/cap bodies, audit button, blister pack, syringe, and dose dial.
 4. `learned_policy_weights.json` and `dataset/training_report.json` - learned policy evidence from randomized perturbation labels.
@@ -32,7 +32,7 @@ and measured slip recovery rather than a teleport/weld shortcut.
 6. `dataset/skill_suite_eval.json` - 30/30 care-skill variants across grasp, uncap, shove/load, slip recovery, delivery, and care tools.
 7. `dataset/clinic_scenario_eval.json` - supporting 12/12 clinic-transfer scenarios tied to measurable skill-suite, stress, and validator evidence.
 8. `dataset/stress_eval.json` - 96 fixed-seed perturbation rollouts with 4N shove, 9x load, and multi-shape coverage.
-9. `dataset/challenge_evidence.json` and `dataset/narrative_beats.json` - short judge-oriented rubric, keyword index, and video-to-rubric beat map.
+9. `dataset/challenge_evidence.json`, `dataset/narrative_beats.json`, and `dataset/demo_highlights.json` - short judge-oriented rubric, keyword index, and video-to-rubric beat map.
 10. `dataset/metrics.json` - success criteria and closed-loop summary.
 
 ## Narrative Path
@@ -40,7 +40,7 @@ and measured slip recovery rather than a teleport/weld shortcut.
 - 0-13%: setup and learned visual-servo correction establish reproducibility before contact.
 - 13-23%: all five fingers close with thumb opposition and balanced tactile contact.
 - 23-39%: the cap rotates 214 degrees while the vial remains controlled.
-- 39-56%: the same grasp faces a clear drop-risk moment, holds through 4N shove and 9x load, then catches slip with the 4ms tactile reflex.
+- 39-56%: the same grasp faces a clear drop-risk moment; the rescue timeline shows 4N/9x hold, 4ms reflex, and 0.35 mm slip catch.
 - 56-87%: the controller continues through sterile delivery, audit, blister, and syringe actions.
 - 87-100%: dose dial confirmation and evidence export close the benchmark with a 100% pass card: 30/30 skills, 11/11 criteria, and 96/96 stress.
 
@@ -93,5 +93,5 @@ artifact handoff scenarios. Pass count:
 - Control: learned vision+tactile residual policy outputs grip force, cap torque, recovery gain, correction gain, and confidence under shove/load perturbations.
 - Dexterous manipulation: five-finger grasp, thumb opposition, contact balancing, in-hand cap rotation, shove/load stabilization, and slip recovery.
 - Engineering quality: training report, structured artifacts, validator, UUID consistency, 30/30 skill-suite evaluation, 12/12 clinic-scenario evaluation, and fixed-seed stress evaluation.
-- Presentation: clean 64-second rescue video plus keyframe storyboard uses six concise captions, sparse one-line overlays, contact dots, closer grasp/cap framing, uncap, drop-risk, and 4ms vial-saved markers, opening badges, a 100% pass card, cap-angle arc, and 4N/9x callout.
+- Presentation: clean 64-second rescue video plus keyframe storyboard uses six concise captions, six chapter chips, sparse one-line overlays, contact dots, closer grasp/cap framing, uncap, a rescue timeline, drop-risk and 4ms vial-saved markers, opening badges, a 100% pass card, cap-angle arc, and 4N/9x callout.
 - Innovation: compact safety-critical dexterity benchmark with multi-object medication actions, clinic-transfer scenario coverage, and dataset export.

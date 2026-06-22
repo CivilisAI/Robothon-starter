@@ -21,6 +21,7 @@
     "dataset/policy_card.json",
     "dataset/challenge_evidence.json",
     "dataset/narrative_beats.json",
+    "dataset/demo_highlights.json",
     "JUDGE_BRIEF.md"
   ],
   "closed_loop_summary": {

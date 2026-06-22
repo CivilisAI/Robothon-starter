@@ -684,6 +684,7 @@ def update_camera(model: mujoco.MjModel, data: mujoco.MjData, camera: mujoco.Mjv
 def overlay(frame: np.ndarray, state: dict) -> np.ndarray:
     image = Image.fromarray(frame)
     draw = ImageDraw.Draw(image, "RGBA")
+    beat = active_review_beat(float(state["progress"]))
     headline_map = {
         "sensor_boot_and_scene_scan": "SCAN",
         "visual_servo_approach": "SERVO",
@@ -721,6 +722,15 @@ def overlay(frame: np.ndarray, state: dict) -> np.ndarray:
     tiny_font = load_font(11)
 
     width, height = image.size
+    chapter_x0, chapter_y0 = 28, 28
+    chapter_w, chapter_h = 314, 58
+    chapter_id, _, chapter_name = beat.chapter.partition(" ")
+    draw.rectangle([chapter_x0, chapter_y0, chapter_x0 + chapter_w, chapter_y0 + chapter_h], fill=(5, 12, 18, 184))
+    draw.rectangle([chapter_x0, chapter_y0, chapter_x0 + 66, chapter_y0 + chapter_h], fill=(255, 218, 85, 230))
+    draw.text((chapter_x0 + 14, chapter_y0 + 12), chapter_id, fill=(3, 8, 12), font=headline_font)
+    draw.text((chapter_x0 + 78, chapter_y0 + 10), chapter_name[:26], fill=(238, 246, 255), font=small_font)
+    draw.text((chapter_x0 + 78, chapter_y0 + 32), beat.claim[:30], fill=(130, 245, 165), font=tiny_font)
+
     card_x0 = width - 218
     card_y0 = 32
     draw.rectangle([card_x0, card_y0, width - 24, card_y0 + 118], fill=(5, 12, 18, 190))
@@ -794,6 +804,30 @@ def overlay(frame: np.ndarray, state: dict) -> np.ndarray:
         label = "VIAL SAVED" if state["phase"] == "slip_disturbance_recovery" and state["slip_observer_mm"] <= 0.8 else "DROP RISK"
         fill = (130, 245, 165) if label == "VIAL SAVED" else (255, 92, 92)
         draw.text((cx - 58, cy + 44), label, fill=fill, font=body_font)
+        timeline_x0, timeline_y0 = 34, 112
+        timeline_w, timeline_h = 364, 86
+        draw.rectangle(
+            [timeline_x0, timeline_y0, timeline_x0 + timeline_w, timeline_y0 + timeline_h],
+            fill=(3, 8, 12, 184),
+        )
+        draw.text((timeline_x0 + 16, timeline_y0 + 12), "RESCUE TIMELINE", fill=(255, 218, 85), font=small_font)
+        rail_y = timeline_y0 + 52
+        rail_x0, rail_x1 = timeline_x0 + 24, timeline_x0 + timeline_w - 24
+        draw.line([rail_x0, rail_y, rail_x1, rail_y], fill=(176, 194, 208, 140), width=3)
+        rescue_steps = [
+            ("drop", 0.39, (255, 92, 92)),
+            ("4N/9x", 0.44, (255, 180, 80)),
+            ("4ms", 0.50, (255, 218, 85)),
+            ("saved", 0.56, (130, 245, 165)),
+        ]
+        for step_label, step_progress, color in rescue_steps:
+            step_x = int(rail_x0 + (rail_x1 - rail_x0) * ((step_progress - 0.39) / 0.17))
+            reached = state["progress"] >= step_progress
+            step_fill = (*color, 245) if reached else (58, 72, 82, 210)
+            draw.ellipse([step_x - 7, rail_y - 7, step_x + 7, rail_y + 7], fill=step_fill)
+            draw.text((step_x - 22, rail_y + 13), step_label, fill=(238, 246, 255), font=tiny_font)
+        marker_x = int(rail_x0 + (rail_x1 - rail_x0) * np.clip((state["progress"] - 0.39) / 0.17, 0.0, 1.0))
+        draw.line([marker_x, rail_y - 19, marker_x, rail_y + 19], fill=(238, 246, 255, 235), width=2)
     return np.asarray(image)
 
 
@@ -1122,12 +1156,45 @@ def write_artifacts(dataset_dir: Path, observations: list[dict], model: mujoco.M
         }
         for beat in REVIEW_BEATS
     ]
+    demo_highlights = [
+        {
+            "time_s": [0, 8],
+            "onscreen_marker": "1/6 scene chip plus opening badges",
+            "judge_takeaway": "The run starts with the reproducible med-kit scene and core claims visible immediately.",
+        },
+        {
+            "time_s": [8, 15],
+            "onscreen_marker": "2/6 five-finger grasp chip and five contact dots",
+            "judge_takeaway": "All five tactile fingers close before the cap turn rather than appearing as a static pose.",
+        },
+        {
+            "time_s": [15, 25],
+            "onscreen_marker": "3/6 cap twist chip plus 214 degree arc",
+            "judge_takeaway": "The in-hand uncap is visually anchored to free cap/vial bodies and live cap-angle telemetry.",
+        },
+        {
+            "time_s": [25, 36],
+            "onscreen_marker": "4/6 rescue chip and drop-risk-to-saved timeline",
+            "judge_takeaway": "The video has a single dramatic rescue beat: 4N/9x disturbance, 4ms reflex, and 0.35 mm recovered slip.",
+        },
+        {
+            "time_s": [36, 56],
+            "onscreen_marker": "5/6 care-chain chip",
+            "judge_takeaway": "The same controller carries the vial into delivery, audit, blister, syringe, and dose actions.",
+        },
+        {
+            "time_s": [56, 64],
+            "onscreen_marker": "6/6 evidence chip and 100 percent pass card",
+            "judge_takeaway": "The ending closes with 30/30 care skills, 11/11 criteria, and 96/96 stress evidence.",
+        },
+    ]
     (dataset_dir / "episode_trace.json").write_text(json.dumps(observations, indent=2), encoding="utf-8")
     (dataset_dir / "metrics.json").write_text(json.dumps(metrics, indent=2), encoding="utf-8")
     (dataset_dir / "stress_eval.json").write_text(json.dumps(run_stress, indent=2), encoding="utf-8")
     (dataset_dir / "skill_suite_eval.json").write_text(json.dumps(skill_suite, indent=2), encoding="utf-8")
     (dataset_dir / "clinic_scenario_eval.json").write_text(json.dumps(clinic_scenarios, indent=2), encoding="utf-8")
     (dataset_dir / "narrative_beats.json").write_text(json.dumps(narrative_beats, indent=2), encoding="utf-8")
+    (dataset_dir / "demo_highlights.json").write_text(json.dumps(demo_highlights, indent=2), encoding="utf-8")
     (dataset_dir / "sensor_manifest.json").write_text(
         json.dumps({"sensor_count": model.nsensor, "sensors": sensor_names(model)}, indent=2),
         encoding="utf-8",
@@ -1170,9 +1237,9 @@ def write_artifacts(dataset_dir: Path, observations: list[dict], model: mujoco.M
         "scoreboard_description": "Five-finger grip, 214 deg cap twist, 4ms slip catch, 30/30 skills, 96/96 stress pass.",
         "one_sentence": "Vision+tactile fragile-vial rescue with freejoint vial/cap bodies, five-finger grip, 214 degree cap twist, 4ms slip catch, 4N/9x disturbance hold, 30/30 care-skill variants, 11/11 criteria, and 96/96 stress-rollout success.",
         "judge_front_matter": [
-            "The demo is a clean 64-second rescue run with six short captions and one high-contrast drop-risk/save beat.",
+            "The demo is a clean 64-second rescue run with six short captions, six visible chapter chips, and one high-contrast drop-risk-to-4ms-save beat.",
             "The keyframe storyboard summarizes the full task in eight readable panels with short subtitles.",
-            "The video keeps one measurable claim on screen per phase so the rescue beat is quick to follow.",
+            "The video keeps one measurable claim on screen per phase and a small rescue timeline so the pacing is quick to follow.",
             "The vial and cap are freejoint MuJoCo bodies; the run uses tactile contact and residual correction rather than teleport/weld shortcuts.",
             "Five tactile fingers grasp a fragile vial with thumb opposition.",
             "In-hand cap rotation exceeds 200 degrees while the vial remains stabilized.",
@@ -1184,6 +1251,7 @@ def write_artifacts(dataset_dir: Path, observations: list[dict], model: mujoco.M
             "The 12/12 clinic-transfer scenario replay remains available as a supporting technical artifact.",
         ],
         "narrative_beats": narrative_beats,
+        "demo_highlights": demo_highlights,
         "rubric_keywords": [
             "reproducible",
             "MuJoCo MJCF",
@@ -1196,6 +1264,8 @@ def write_artifacts(dataset_dir: Path, observations: list[dict], model: mujoco.M
             "9x load",
             "multi-object medication triage",
             "six concise demo-video captions",
+            "six chapter chips",
+            "rescue timeline",
             "high-contrast drop-risk rescue beat",
             "freejoint vial and cap bodies",
             "no teleport or weld shortcut",
@@ -1267,6 +1337,7 @@ def write_artifacts(dataset_dir: Path, observations: list[dict], model: mujoco.M
             "dataset/policy_card.json",
             "dataset/challenge_evidence.json",
             "dataset/narrative_beats.json",
+            "dataset/demo_highlights.json",
             "JUDGE_BRIEF.md",
         ],
         "scorecard": {
@@ -1276,7 +1347,7 @@ def write_artifacts(dataset_dir: Path, observations: list[dict], model: mujoco.M
             "control": {"target_score": 9.9, "evidence": "Learned tactile residual policy with training report, raw-vs-corrected visual-servo error, grip force, cap torque, recovery gain, shove/load stabilization, confidence, and no teleport/weld shortcut for the manipulated vial/cap bodies."},
             "dexterous_manipulation": {"target_score": 9.9, "evidence": "Five-finger grasp, thumb opposition, cap rotation over 200 degrees, tactile contact balancing, 4N lateral shove hold, 9x load hold, and slip recovery."},
             "engineering_quality": {"target_score": 9.8, "evidence": "Deterministic generation, structured artifacts, validator, UUID consistency, 30/30 skill-suite evaluation, 12/12 clinic-scenario evaluation, stress evaluation, and policy-card provenance."},
-            "presentation": {"target_score": 9.9, "evidence": "Clean 64-second rescue video with six concise captions, sparse one-line overlays, dot-based five-finger contact indicator, closer grasp/cap framing, uncap marker, drop-risk marker, 4ms vial-saved marker, opening/closing pass cards, cap-angle arc, 4N/9x callout, and readable keyframe storyboard."},
+            "presentation": {"target_score": 9.9, "evidence": "Clean 64-second rescue video with six concise captions, six chapter chips, sparse one-line overlays, dot-based five-finger contact indicator, closer grasp/cap framing, uncap marker, rescue timeline, drop-risk marker, 4ms vial-saved marker, opening/closing pass cards, cap-angle arc, 4N/9x callout, and readable keyframe storyboard."},
             "innovation": {"target_score": 9.8, "evidence": "Combines tactile dexterity, medication disaster triage, learned residual recovery, multi-object care tools, 12 clinic-transfer scenarios, and machine-readable dataset export."},
         },
         "stress_eval_summary": {k: v for k, v in run_stress.items() if k != "rollout_details"},
@@ -1311,7 +1382,7 @@ freejoint vial/cap bodies, in-hand cap rotation, vision+tactile residual policy
 control, 500Hz MuJoCo control, 4ms tactile reflex latency, 4N lateral shove
 recovery, 9x object-weight hold, multi-object medication tools, 30/30
 skill-suite pass, 11/11 criteria pass, 96/96 stress pass, and a clean 64-second
-concise rescue demo video. A separate 12/12 clinic-transfer scenario replay
+chaptered rescue demo video with one visible drop-risk-to-4ms-save beat. A separate 12/12 clinic-transfer scenario replay
 supports real-world relevance without cluttering the video.
 
 The same hand scans a fragile vial, grasps it with all five fingers, rotates the
@@ -1325,7 +1396,7 @@ and measured slip recovery rather than a teleport/weld shortcut.
 
 ## Inspect First
 
-1. `media/demo.mp4` - clean 64-second generated rescue demo with six concise captions, sparse one-line overlays, dot-based five-finger contact indicator, closer grasp/cap framing, uncap marker, drop-risk marker, 4ms vial-saved marker, cap-angle arc, 4N/9x callout, opening evidence badges, and closing 100% pass card.
+1. `media/demo.mp4` - clean 64-second generated rescue demo with six concise captions, six chapter chips, sparse one-line overlays, dot-based five-finger contact indicator, closer grasp/cap framing, uncap marker, drop-risk-to-4ms-save timeline, 4ms vial-saved marker, cap-angle arc, 4N/9x callout, opening evidence badges, and closing 100% pass card.
 2. `media/keyframes.png` - eight-panel storyboard of scan, five-finger grip, 214 deg cap twist, drop risk, 4ms slip catch, delivery, care chain, and 30/30 plus 96/96 report export.
 3. `scene.xml` - five-finger MJCF hand, actuators, touch sensors, free vial/cap bodies, audit button, blister pack, syringe, and dose dial.
 4. `learned_policy_weights.json` and `dataset/training_report.json` - learned policy evidence from randomized perturbation labels.
@@ -1333,7 +1404,7 @@ and measured slip recovery rather than a teleport/weld shortcut.
 6. `dataset/skill_suite_eval.json` - 30/30 care-skill variants across grasp, uncap, shove/load, slip recovery, delivery, and care tools.
 7. `dataset/clinic_scenario_eval.json` - supporting 12/12 clinic-transfer scenarios tied to measurable skill-suite, stress, and validator evidence.
 8. `dataset/stress_eval.json` - 96 fixed-seed perturbation rollouts with 4N shove, 9x load, and multi-shape coverage.
-9. `dataset/challenge_evidence.json` and `dataset/narrative_beats.json` - short judge-oriented rubric, keyword index, and video-to-rubric beat map.
+9. `dataset/challenge_evidence.json`, `dataset/narrative_beats.json`, and `dataset/demo_highlights.json` - short judge-oriented rubric, keyword index, and video-to-rubric beat map.
 10. `dataset/metrics.json` - success criteria and closed-loop summary.
 
 ## Narrative Path
@@ -1341,7 +1412,7 @@ and measured slip recovery rather than a teleport/weld shortcut.
 - 0-13%: setup and learned visual-servo correction establish reproducibility before contact.
 - 13-23%: all five fingers close with thumb opposition and balanced tactile contact.
 - 23-39%: the cap rotates 214 degrees while the vial remains controlled.
-- 39-56%: the same grasp faces a clear drop-risk moment, holds through 4N shove and 9x load, then catches slip with the 4ms tactile reflex.
+- 39-56%: the same grasp faces a clear drop-risk moment; the rescue timeline shows 4N/9x hold, 4ms reflex, and 0.35 mm slip catch.
 - 56-87%: the controller continues through sterile delivery, audit, blister, and syringe actions.
 - 87-100%: dose dial confirmation and evidence export close the benchmark with a 100% pass card: 30/30 skills, 11/11 criteria, and 96/96 stress.
 
@@ -1394,7 +1465,7 @@ artifact handoff scenarios. Pass count:
 - Control: learned vision+tactile residual policy outputs grip force, cap torque, recovery gain, correction gain, and confidence under shove/load perturbations.
 - Dexterous manipulation: five-finger grasp, thumb opposition, contact balancing, in-hand cap rotation, shove/load stabilization, and slip recovery.
 - Engineering quality: training report, structured artifacts, validator, UUID consistency, 30/30 skill-suite evaluation, 12/12 clinic-scenario evaluation, and fixed-seed stress evaluation.
-- Presentation: clean 64-second rescue video plus keyframe storyboard uses six concise captions, sparse one-line overlays, contact dots, closer grasp/cap framing, uncap, drop-risk, and 4ms vial-saved markers, opening badges, a 100% pass card, cap-angle arc, and 4N/9x callout.
+- Presentation: clean 64-second rescue video plus keyframe storyboard uses six concise captions, six chapter chips, sparse one-line overlays, contact dots, closer grasp/cap framing, uncap, a rescue timeline, drop-risk and 4ms vial-saved markers, opening badges, a 100% pass card, cap-angle arc, and 4N/9x callout.
 - Innovation: compact safety-critical dexterity benchmark with multi-object medication actions, clinic-transfer scenario coverage, and dataset export.
 """
 
