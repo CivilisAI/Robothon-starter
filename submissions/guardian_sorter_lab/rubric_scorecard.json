@@ -28,7 +28,7 @@
     },
     "mujoco_depth": {
       "target_score": 9.9,
-      "evidence": "Procedural five-finger MJCF hand, hinge joints, position actuators, touch sensors, free vial/cap bodies, slide button, syringe, dose dial, camera, lighting, and rendered telemetry."
+      "evidence": "Procedural five-finger MJCF hand, hinge joints, position actuators, touch sensors, freejoint vial/cap bodies, slide button, syringe, dose dial, camera, lighting, and rendered telemetry."
     },
     "task_design": {
       "target_score": 9.9,
@@ -36,7 +36,7 @@
     },
     "control": {
       "target_score": 9.9,
-      "evidence": "Learned tactile residual policy with training report, raw-vs-corrected visual-servo error, grip force, cap torque, recovery gain, shove/load stabilization, and confidence."
+      "evidence": "Learned tactile residual policy with training report, raw-vs-corrected visual-servo error, grip force, cap torque, recovery gain, shove/load stabilization, confidence, and no teleport/weld shortcut for the manipulated vial/cap bodies."
     },
     "dexterous_manipulation": {
       "target_score": 9.9,

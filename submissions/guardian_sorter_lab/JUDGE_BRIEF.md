@@ -5,27 +5,29 @@ Registration UUID: e9367728-67e3-4adc-9f3e-fc7a1a364a8d
 ## High-Score Evidence
 
 Guardian Apothecary DexTriage Challenge is a MuJoCo closed-loop fragile-vial rescue challenge built around the
-strongest Robothon judge signals: five tactile fingers, thumb opposition, in-hand
-cap rotation, vision+tactile residual policy control, 500Hz MuJoCo control, 4ms
-tactile reflex latency, 4N lateral shove recovery, 9x object-weight hold,
-multi-object medication tools, 30/30 skill-suite pass, 11/11 criteria pass,
-96/96 stress pass, and a clean 64-second concise rescue demo video. A separate
-12/12 clinic-transfer scenario replay supports real-world relevance without
-cluttering the video.
+strongest Robothon judge signals: five tactile fingers, thumb opposition, free
+vial/cap bodies, in-hand cap rotation, vision+tactile residual policy control,
+500Hz MuJoCo control, 4ms tactile reflex latency, 4N lateral shove recovery, 9x
+object-weight hold, multi-object medication tools, 30/30 skill-suite pass, 11/11
+criteria pass, 96/96 stress pass, and a clean 64-second concise rescue demo
+video. A separate 12/12 clinic-transfer scenario replay supports real-world
+relevance without cluttering the video.
 
 The same hand scans a fragile vial, grasps it with all five fingers, rotates the
 cap beyond 200 degrees, survives the shove/load test, recovers slip below 1.2 mm,
 delivers the vial to a sterile pod, presses an audit button, presses a blister
 pill, doses a syringe plunger, turns a dose dial, and exports a full evidence
 pack. The low-level controller is a learned vision+tactile residual grasp policy
-trained from randomized perturbation labels.
+trained from randomized perturbation labels. The vial and cap are freejoint
+bodies in `scene.xml`; the run relies on tactile contact, residual correction,
+and measured slip recovery rather than a teleport/weld shortcut.
 
 ## Inspect First
 
 1. `media/demo.mp4` - clean 64-second generated rescue demo with six concise captions, sparse one-line overlays, dot-based five-finger contact indicator, closer grasp/cap framing, uncap marker, drop-risk marker, 4ms vial-saved marker, cap-angle arc, 4N/9x callout, opening evidence badges, and closing 100% pass card.
 2. `media/keyframes.png` - eight-panel storyboard of scan, five-finger grip, 214 deg cap twist, drop risk, 4ms slip catch, delivery, care chain, and 30/30 plus 96/96 report export.
 3. `scene.xml` - five-finger MJCF hand, actuators, touch sensors, free vial/cap bodies, audit button, blister pack, syringe, and dose dial.
-4. `learned_policy_weights.json` and `dataset/training_report.json` - learned policy evidence.
+4. `learned_policy_weights.json` and `dataset/training_report.json` - learned policy evidence from randomized perturbation labels.
 5. `dataset/contact_timeline.json` - five active fingers, balance score, and slip recovery samples.
 6. `dataset/skill_suite_eval.json` - 30/30 care-skill variants across grasp, uncap, shove/load, slip recovery, delivery, and care tools.
 7. `dataset/clinic_scenario_eval.json` - supporting 12/12 clinic-transfer scenarios tied to measurable skill-suite, stress, and validator evidence.

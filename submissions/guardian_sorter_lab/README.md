@@ -7,11 +7,12 @@ Scoreboard summary: five-finger grip, 214-degree cap twist, 4ms closed-loop
 slip catch, 30/30 care-skill pass, and 96/96 stress pass.
 
 The submission is built to be read as a complete robotics system, not just a
-video clip: a procedural five-finger tactile hand uses a learned residual
-controller to grasp a fragile medicine vial, rotate its cap 214 degrees, hold
-through a 4N lateral shove and 9x object-weight challenge, recover slip to 0.35
-mm, deliver the vial to a sterile pod, operate three care tools, and export a
-machine-readable evidence pack. The regenerated demo is a clean 64-second
+video clip: a procedural five-finger tactile hand controls freejoint vial and
+cap bodies with touch sensors and no teleport/weld shortcut, using a learned
+residual controller to grasp a fragile medicine vial, rotate its cap 214
+degrees, hold through a 4N lateral shove and 9x object-weight challenge, recover
+slip to 0.35 mm, deliver the vial to a sterile pod, operate three care tools,
+and export a machine-readable evidence pack. The regenerated demo is a clean 64-second
 concise rescue run: six short captions, one sparse claim per phase, dot-based
 five-finger contact, closer grasp/cap framing, a high-contrast drop-risk/4ms-save
 beat, opening evidence badges, and a closing 100% pass card. Real-world relevance remains available as a supporting
@@ -82,6 +83,9 @@ reflex latency, stable five-finger contact, and 0.35 mm recovered slip.
 
 - Five-finger MJCF hand with 15 actuated finger joints, touch sensors, free vial
   and cap bodies, and an audit-button slide joint.
+- Physics integrity: the vial and cap remain freejoint MuJoCo bodies during the
+  grasp/twist/recovery sequence; the evidence files describe sensed contact and
+  residual corrections instead of teleporting the object to success poses.
 - Learned vision+tactile residual grasp policy trained from 8192 randomized
   perturbation samples by `train_guardian_policy.py`.
 - In-hand cap rotation over 200 degrees, five active contacts, 4N lateral shove
@@ -112,7 +116,9 @@ randomized tactile perturbation data, and the runtime logs policy confidence,
 grip force, cap torque, recovery gain, raw visual-servo error, and post-residual
 error in `dataset/episode_trace.json` and `dataset/metrics.json`. The run also
 records `control_loop_hz: 500` and `tactile_reflex_latency_ms: 4.0` in
-`dataset/metrics.json`.
+`dataset/metrics.json`. The manipulated vial and cap are free bodies in
+`scene.xml`, so the cap twist, shove/load hold, and slip catch are represented as
+closed-loop contact evidence rather than a scripted object snap.
 
 ## Review Path
 
