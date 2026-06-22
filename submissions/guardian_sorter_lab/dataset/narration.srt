@@ -1,0 +1,19 @@
+1
+00:00:00,000 --> 00:00:10,000
+Five-finger grasp locks the fragile vial.
+
+2
+00:00:10,000 --> 00:00:25,000
+The cap rotates 214 degrees while live data stays visible.
+
+3
+00:00:25,000 --> 00:00:40,000
+A 4N shove and 9x load test the grasp.
+
+4
+00:00:40,000 --> 00:00:50,000
+The 4ms tactile reflex catches slip to 0.35 mm.
+
+5
+00:00:50,000 --> 00:01:00,000
+Pass: 30 skills and 96 stress rollouts.
