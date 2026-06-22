@@ -1,0 +1,106 @@
+{
+  "policy_type": "learned_tactile_residual_grasp_policy",
+  "training_method": "least-squares behavioral cloning from randomized tactile grasp perturbation labels",
+  "training_samples": 6717,
+  "validation_samples": 1475,
+  "feature_names": [
+    "progress",
+    "vial_error_m",
+    "cap_error_rad",
+    "slip_mm",
+    "active_fingers_norm",
+    "contact_balance",
+    "disturbance",
+    "sin_phase",
+    "cos_phase"
+  ],
+  "output_names": [
+    "palm_correction_gain",
+    "grip_force",
+    "cap_torque",
+    "recovery_gain",
+    "policy_confidence"
+  ],
+  "coef": [
+    [
+      -0.00125729,
+      0.01394763,
+      -0.00937651,
+      -4.43e-05,
+      0.0012681
+    ],
+    [
+      2.23850348,
+      0.06529111,
+      -0.08458905,
+      0.02008858,
+      0.00300225
+    ],
+    [
+      0.01971588,
+      -0.0263357,
+      0.22557783,
+      0.00322257,
+      -0.00290615
+    ],
+    [
+      3.98e-06,
+      0.00863651,
+      9.07e-05,
+      0.0240262,
+      -0.00602964
+    ],
+    [
+      -0.01031444,
+      0.6466614,
+      -0.07600175,
+      -0.01213235,
+      0.06283134
+    ],
+    [
+      0.1038101,
+      0.08865289,
+      0.03027154,
+      -0.10556939,
+      0.23002032
+    ],
+    [
+      0.0746589,
+      -0.06957261,
+      -0.11751073,
+      0.47427565,
+      -0.04205021
+    ],
+    [
+      -0.00439281,
+      -0.0190296,
+      -0.03331114,
+      0.00057983,
+      -0.00212074
+    ],
+    [
+      -0.02057611,
+      -0.08001789,
+      -0.15673713,
+      0.00296613,
+      -0.00864901
+    ]
+  ],
+  "intercept": [
+    0.45884388,
+    0.28430513,
+    0.2431128,
+    0.36144795,
+    0.66311563
+  ],
+  "validation": {
+    "mean_absolute_error": 0.022843,
+    "per_output_mae": {
+      "palm_correction_gain": 0.006593,
+      "grip_force": 0.037353,
+      "cap_torque": 0.051307,
+      "recovery_gain": 0.013539,
+      "policy_confidence": 0.005422
+    }
+  }
+}
