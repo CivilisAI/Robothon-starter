@@ -1,0 +1,39 @@
+1
+00:00:00,000 --> 00:00:06,000
+Five-finger medication triage: 12 clinic scenarios, one 60-second evidence run.
+
+2
+00:00:06,000 --> 00:00:12,000
+Learned vision+tactile residual policy guides the approach.
+
+3
+00:00:12,000 --> 00:00:18,000
+Five tactile contacts stabilize the fragile vial.
+
+4
+00:00:18,000 --> 00:00:28,000
+The free cap rotates 214 degrees while the vial stays held.
+
+5
+00:00:28,000 --> 00:00:35,000
+The grasp holds through a 4N shove and 9x load.
+
+6
+00:00:35,000 --> 00:00:40,000
+The 500Hz tactile loop recovers slip to 0.35 mm.
+
+7
+00:00:40,000 --> 00:00:46,000
+The vial is delivered to the sterile pod.
+
+8
+00:00:46,000 --> 00:00:52,000
+Audit and blister actions are verified.
+
+9
+00:00:52,000 --> 00:00:58,000
+Syringe plunger and dose dial complete the care chain.
+
+10
+00:00:58,000 --> 00:01:00,000
+Pass: 30 skills, 12 clinic scenarios, 11 criteria, and 96 stress rollouts.
