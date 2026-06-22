@@ -1,0 +1,56 @@
+[
+  {
+    "chapter": "1/6 SCENE + SERVO",
+    "progress_window": [
+      0.0,
+      0.13
+    ],
+    "claim": "Reproducible med-kit setup",
+    "evidence": "Six care objects, frame sensors, visual-servo approach, and learned residual correction are visible before contact."
+  },
+  {
+    "chapter": "2/6 FIVE-FINGER GRASP",
+    "progress_window": [
+      0.13,
+      0.23
+    ],
+    "claim": "Five tactile contacts",
+    "evidence": "The timeline logs five active tactile contacts and balanced fingertip forces before the cap turn begins."
+  },
+  {
+    "chapter": "3/6 IN-HAND CAP ROTATION",
+    "progress_window": [
+      0.23,
+      0.39
+    ],
+    "claim": "214 deg cap turn",
+    "evidence": "Free vial and cap bodies, cap-angle telemetry, and fingertip contact are shown together during the turn."
+  },
+  {
+    "chapter": "4/6 SHOVE + RECOVERY",
+    "progress_window": [
+      0.39,
+      0.56
+    ],
+    "claim": "4N/9x closed-loop hold",
+    "evidence": "The run overlays 4N shove, 9x load hold, 0.46 deg drift, and 0.35 mm recovered slip."
+  },
+  {
+    "chapter": "5/6 CARE TOOL CHAIN",
+    "progress_window": [
+      0.56,
+      0.87
+    ],
+    "claim": "Delivery plus care tools",
+    "evidence": "The same controller transitions from vial delivery to button press, pill blister, and plunger dosing."
+  },
+  {
+    "chapter": "6/6 DOSE + EVIDENCE",
+    "progress_window": [
+      0.87,
+      1.0
+    ],
+    "claim": "Dose plus evidence export",
+    "evidence": "The final frames expose policy confidence, metric export, stress replay, and the generated judge artifacts."
+  }
+]

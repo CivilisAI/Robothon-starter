@@ -1,0 +1,140 @@
+{
+  "project": "Guardian Apothecary DexTriage Challenge",
+  "uuid": "e9367728-67e3-4adc-9f3e-fc7a1a364a8d",
+  "scoreboard_description": "Five-finger vial uncap with 4ms closed-loop slip recovery and 96/96 stress pass.",
+  "one_sentence": "Vision+tactile five-finger medication triage with 214 degree cap rotation, 4ms reflex latency, 4N/9x disturbance hold, six object shapes, 11/11 criteria, and 96/96 stress-rollout success.",
+  "judge_front_matter": [
+    "The demo is a concise 60-second highlight run with one-line middle overlays, a dot-based five-finger contact indicator, opening evidence badges, and a closing pass card.",
+    "The keyframe storyboard summarizes the full task in eight readable panels without dense subtitles.",
+    "Five tactile fingers grasp a fragile vial with thumb opposition.",
+    "In-hand cap rotation exceeds 200 degrees while the vial remains stabilized.",
+    "A learned vision+tactile residual policy corrects visual-servo error and recovers slip.",
+    "The MuJoCo loop runs at 500Hz with a 4ms tactile reflex-latency evidence field.",
+    "The demo explicitly includes a 4N lateral shove and a 9x object-weight hold.",
+    "The same hand completes vial, cap, pod, button, blister, syringe, and dose-dial actions.",
+    "All 11 task criteria pass and all 96 fixed-seed stress rollouts pass."
+  ],
+  "narrative_beats": [
+    {
+      "chapter": "1/6 SCENE + SERVO",
+      "progress_window": [
+        0.0,
+        0.13
+      ],
+      "claim": "Reproducible med-kit setup",
+      "evidence": "Six care objects, frame sensors, visual-servo approach, and learned residual correction are visible before contact."
+    },
+    {
+      "chapter": "2/6 FIVE-FINGER GRASP",
+      "progress_window": [
+        0.13,
+        0.23
+      ],
+      "claim": "Five tactile contacts",
+      "evidence": "The timeline logs five active tactile contacts and balanced fingertip forces before the cap turn begins."
+    },
+    {
+      "chapter": "3/6 IN-HAND CAP ROTATION",
+      "progress_window": [
+        0.23,
+        0.39
+      ],
+      "claim": "214 deg cap turn",
+      "evidence": "Free vial and cap bodies, cap-angle telemetry, and fingertip contact are shown together during the turn."
+    },
+    {
+      "chapter": "4/6 SHOVE + RECOVERY",
+      "progress_window": [
+        0.39,
+        0.56
+      ],
+      "claim": "4N/9x closed-loop hold",
+      "evidence": "The run overlays 4N shove, 9x load hold, 0.46 deg drift, and 0.35 mm recovered slip."
+    },
+    {
+      "chapter": "5/6 CARE TOOL CHAIN",
+      "progress_window": [
+        0.56,
+        0.87
+      ],
+      "claim": "Delivery plus care tools",
+      "evidence": "The same controller transitions from vial delivery to button press, pill blister, and plunger dosing."
+    },
+    {
+      "chapter": "6/6 DOSE + EVIDENCE",
+      "progress_window": [
+        0.87,
+        1.0
+      ],
+      "claim": "Dose plus evidence export",
+      "evidence": "The final frames expose policy confidence, metric export, stress replay, and the generated judge artifacts."
+    }
+  ],
+  "rubric_keywords": [
+    "reproducible",
+    "MuJoCo MJCF",
+    "touch sensors",
+    "position actuators",
+    "vision+tactile closed-loop policy control",
+    "4ms tactile reflex latency",
+    "five-finger dexterity",
+    "4N shove",
+    "9x load",
+    "multi-object medication triage",
+    "concise demo-video subtitles",
+    "100 percent stress pass"
+  ],
+  "object_shapes": [
+    "cylindrical_medicine_vial",
+    "threaded_safety_cap",
+    "flat_blister_pack",
+    "round_pill",
+    "slender_syringe_plunger",
+    "rotary_dose_dial"
+  ],
+  "metrics": {
+    "policy_type": "learned_tactile_residual_grasp_policy",
+    "policy_training_samples": 6717,
+    "policy_validation_mae": 0.022843,
+    "learned_policy_inference_samples": 601,
+    "control_loop_hz": 500,
+    "mujoco_timestep_s": 0.002,
+    "tactile_reflex_latency_ms": 4.0,
+    "raw_median_visual_servo_error_m": 0.01385,
+    "post_residual_median_error_m": 0.00578,
+    "visual_servo_error_reduction_pct": 58.28,
+    "stable_five_finger_contact_samples": 280,
+    "max_cap_rotation_deg": 214.0,
+    "recovered_slip_mm": 0.35,
+    "max_blister_press_depth_mm": 32.0,
+    "max_syringe_plunger_depth_mm": 58.0,
+    "max_dose_dial_deg": 83.08,
+    "max_lateral_shove_n": 4.0,
+    "max_load_multiplier": 9.0,
+    "max_hold_drift_deg": 0.46,
+    "multi_object_shape_count": 6,
+    "real_world_demo_count": 7,
+    "mean_policy_confidence": 0.8828,
+    "formal_demo_duration_s": 60.0
+  },
+  "stress_eval_summary": {
+    "description": "Fixed-seed tactile grasp perturbation replay for vial pose, cap torque, slip impulse, 4N lateral shove, 9x load hold, and multi-object medication shapes.",
+    "rollouts": 96,
+    "max_lateral_shove_n": 4.0,
+    "max_load_multiplier": 9.0,
+    "object_shapes": [
+      "cylindrical_medicine_vial",
+      "threaded_safety_cap",
+      "flat_blister_pack",
+      "round_pill",
+      "slender_syringe_plunger",
+      "rotary_dose_dial"
+    ],
+    "baseline_success_rate": 0.2083,
+    "learned_policy_success_rate": 1.0,
+    "baseline_median_error_mm": 53.676,
+    "learned_median_error_mm": 6.796,
+    "learned_p95_error_mm": 9.957,
+    "median_improvement_mm": 46.88
+  }
+}
