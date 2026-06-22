@@ -1,0 +1,31 @@
+1
+00:00:00,000 --> 00:00:08,000
+Fragile vial rescue: grasp, uncap, recover, deliver.
+
+2
+00:00:08,000 --> 00:00:16,000
+Learned vision+tactile residual policy guides the approach.
+
+3
+00:00:16,000 --> 00:00:26,000
+Five tactile contacts stabilize the fragile vial.
+
+4
+00:00:26,000 --> 00:00:38,000
+The cap rotates 214 degrees while the vial stays held.
+
+5
+00:00:38,000 --> 00:00:46,000
+A 4N shove tries to knock the vial loose.
+
+6
+00:00:46,000 --> 00:00:52,000
+The 4ms tactile reflex catches the slip.
+
+7
+00:00:52,000 --> 00:01:00,000
+Sterile delivery and care-tool checks complete.
+
+8
+00:01:00,000 --> 00:01:04,000
+Dose ready: 30 skills, 11 criteria, 96 stress rollouts.
