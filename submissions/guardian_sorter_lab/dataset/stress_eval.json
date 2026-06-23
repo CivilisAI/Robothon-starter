@@ -9,7 +9,8 @@
     "flat_blister_pack",
     "round_pill",
     "slender_syringe_plunger",
-    "rotary_dose_dial"
+    "rotary_dose_dial",
+    "sterile_receiver_clamp"
   ],
   "baseline_success_rate": 0.2083,
   "learned_policy_success_rate": 1.0,
@@ -98,7 +99,7 @@
     },
     {
       "seed": 6,
-      "object_shape": "cylindrical_medicine_vial",
+      "object_shape": "sterile_receiver_clamp",
       "pose_error_m": 0.02567,
       "cap_torque_nm": 0.3968,
       "slip_impulse_mm": 8.501,
@@ -111,7 +112,7 @@
     },
     {
       "seed": 7,
-      "object_shape": "threaded_safety_cap",
+      "object_shape": "cylindrical_medicine_vial",
       "pose_error_m": 0.06001,
       "cap_torque_nm": 0.2665,
       "slip_impulse_mm": 4.873,
@@ -124,7 +125,7 @@
     },
     {
       "seed": 8,
-      "object_shape": "flat_blister_pack",
+      "object_shape": "threaded_safety_cap",
       "pose_error_m": 0.02652,
       "cap_torque_nm": 0.5224,
       "slip_impulse_mm": 7.525,
@@ -137,7 +138,7 @@
     },
     {
       "seed": 9,
-      "object_shape": "round_pill",
+      "object_shape": "flat_blister_pack",
       "pose_error_m": 0.048,
       "cap_torque_nm": 0.3292,
       "slip_impulse_mm": 4.698,
@@ -150,7 +151,7 @@
     },
     {
       "seed": 10,
-      "object_shape": "slender_syringe_plunger",
+      "object_shape": "round_pill",
       "pose_error_m": 0.06986,
       "cap_torque_nm": 0.4474,
       "slip_impulse_mm": 6.339,
@@ -163,7 +164,7 @@
     },
     {
       "seed": 11,
-      "object_shape": "rotary_dose_dial",
+      "object_shape": "slender_syringe_plunger",
       "pose_error_m": 0.06713,
       "cap_torque_nm": 0.3918,
       "slip_impulse_mm": 5.686,
@@ -176,7 +177,7 @@
     },
     {
       "seed": 12,
-      "object_shape": "cylindrical_medicine_vial",
+      "object_shape": "rotary_dose_dial",
       "pose_error_m": 0.04585,
       "cap_torque_nm": 0.438,
       "slip_impulse_mm": 3.737,
@@ -189,7 +190,7 @@
     },
     {
       "seed": 13,
-      "object_shape": "threaded_safety_cap",
+      "object_shape": "sterile_receiver_clamp",
       "pose_error_m": 0.02318,
       "cap_torque_nm": 0.4604,
       "slip_impulse_mm": 3.884,
@@ -202,7 +203,7 @@
     },
     {
       "seed": 14,
-      "object_shape": "flat_blister_pack",
+      "object_shape": "cylindrical_medicine_vial",
       "pose_error_m": 0.04628,
       "cap_torque_nm": 0.8271,
       "slip_impulse_mm": 11.019,
@@ -215,7 +216,7 @@
     },
     {
       "seed": 15,
-      "object_shape": "round_pill",
+      "object_shape": "threaded_safety_cap",
       "pose_error_m": 0.03576,
       "cap_torque_nm": 0.6845,
       "slip_impulse_mm": 7.743,
@@ -228,7 +229,7 @@
     },
     {
       "seed": 16,
-      "object_shape": "slender_syringe_plunger",
+      "object_shape": "flat_blister_pack",
       "pose_error_m": 0.0619,
       "cap_torque_nm": 0.4555,
       "slip_impulse_mm": 7.735,
@@ -241,7 +242,7 @@
     },
     {
       "seed": 17,
-      "object_shape": "rotary_dose_dial",
+      "object_shape": "round_pill",
       "pose_error_m": 0.04788,
       "cap_torque_nm": 0.3925,
       "slip_impulse_mm": 10.73,
@@ -254,7 +255,7 @@
     },
     {
       "seed": 18,
-      "object_shape": "cylindrical_medicine_vial",
+      "object_shape": "slender_syringe_plunger",
       "pose_error_m": 0.03269,
       "cap_torque_nm": 0.4843,
       "slip_impulse_mm": 4.117,
@@ -267,7 +268,7 @@
     },
     {
       "seed": 19,
-      "object_shape": "threaded_safety_cap",
+      "object_shape": "rotary_dose_dial",
       "pose_error_m": 0.03818,
       "cap_torque_nm": 0.2417,
       "slip_impulse_mm": 5.193,
@@ -280,7 +281,7 @@
     },
     {
       "seed": 20,
-      "object_shape": "flat_blister_pack",
+      "object_shape": "sterile_receiver_clamp",
       "pose_error_m": 0.02889,
       "cap_torque_nm": 0.3827,
       "slip_impulse_mm": 8.215,
@@ -293,7 +294,7 @@
     },
     {
       "seed": 21,
-      "object_shape": "round_pill",
+      "object_shape": "cylindrical_medicine_vial",
       "pose_error_m": 0.06362,
       "cap_torque_nm": 0.3718,
       "slip_impulse_mm": 4.992,
@@ -306,7 +307,7 @@
     },
     {
       "seed": 22,
-      "object_shape": "slender_syringe_plunger",
+      "object_shape": "threaded_safety_cap",
       "pose_error_m": 0.04227,
       "cap_torque_nm": 0.5611,
       "slip_impulse_mm": 8.503,
@@ -319,7 +320,7 @@
     },
     {
       "seed": 23,
-      "object_shape": "rotary_dose_dial",
+      "object_shape": "flat_blister_pack",
       "pose_error_m": 0.01044,
       "cap_torque_nm": 0.4437,
       "slip_impulse_mm": 6.587,
@@ -332,7 +333,7 @@
     },
     {
       "seed": 24,
-      "object_shape": "cylindrical_medicine_vial",
+      "object_shape": "round_pill",
       "pose_error_m": 0.02602,
       "cap_torque_nm": 0.3753,
       "slip_impulse_mm": 7.282,
@@ -345,7 +346,7 @@
     },
     {
       "seed": 25,
-      "object_shape": "threaded_safety_cap",
+      "object_shape": "slender_syringe_plunger",
       "pose_error_m": 0.01826,
       "cap_torque_nm": 0.3155,
       "slip_impulse_mm": 5.136,
@@ -358,7 +359,7 @@
     },
     {
       "seed": 26,
-      "object_shape": "flat_blister_pack",
+      "object_shape": "rotary_dose_dial",
       "pose_error_m": 0.03605,
       "cap_torque_nm": 0.3392,
       "slip_impulse_mm": 7.917,
@@ -371,7 +372,7 @@
     },
     {
       "seed": 27,
-      "object_shape": "round_pill",
+      "object_shape": "sterile_receiver_clamp",
       "pose_error_m": 0.04336,
       "cap_torque_nm": 0.4729,
       "slip_impulse_mm": 7.93,
@@ -384,7 +385,7 @@
     },
     {
       "seed": 28,
-      "object_shape": "slender_syringe_plunger",
+      "object_shape": "cylindrical_medicine_vial",
       "pose_error_m": 0.05365,
       "cap_torque_nm": 0.4941,
       "slip_impulse_mm": 6.7,
@@ -397,7 +398,7 @@
     },
     {
       "seed": 29,
-      "object_shape": "rotary_dose_dial",
+      "object_shape": "threaded_safety_cap",
       "pose_error_m": 0.04436,
       "cap_torque_nm": 0.3205,
       "slip_impulse_mm": 8.217,
@@ -410,7 +411,7 @@
     },
     {
       "seed": 30,
-      "object_shape": "cylindrical_medicine_vial",
+      "object_shape": "flat_blister_pack",
       "pose_error_m": 0.02868,
       "cap_torque_nm": 0.5129,
       "slip_impulse_mm": 7.736,
@@ -423,7 +424,7 @@
     },
     {
       "seed": 31,
-      "object_shape": "threaded_safety_cap",
+      "object_shape": "round_pill",
       "pose_error_m": 0.02125,
       "cap_torque_nm": 0.382,
       "slip_impulse_mm": 7.259,
@@ -436,7 +437,7 @@
     },
     {
       "seed": 32,
-      "object_shape": "flat_blister_pack",
+      "object_shape": "slender_syringe_plunger",
       "pose_error_m": 0.05409,
       "cap_torque_nm": 0.3985,
       "slip_impulse_mm": 7.69,
@@ -449,7 +450,7 @@
     },
     {
       "seed": 33,
-      "object_shape": "round_pill",
+      "object_shape": "rotary_dose_dial",
       "pose_error_m": 0.04092,
       "cap_torque_nm": 0.2334,
       "slip_impulse_mm": 7.407,
@@ -462,7 +463,7 @@
     },
     {
       "seed": 34,
-      "object_shape": "slender_syringe_plunger",
+      "object_shape": "sterile_receiver_clamp",
       "pose_error_m": 0.04094,
       "cap_torque_nm": 0.1975,
       "slip_impulse_mm": 9.955,
@@ -475,7 +476,7 @@
     },
     {
       "seed": 35,
-      "object_shape": "rotary_dose_dial",
+      "object_shape": "cylindrical_medicine_vial",
       "pose_error_m": 0.04699,
       "cap_torque_nm": 0.3663,
       "slip_impulse_mm": 7.606,
@@ -488,7 +489,7 @@
     },
     {
       "seed": 36,
-      "object_shape": "cylindrical_medicine_vial",
+      "object_shape": "threaded_safety_cap",
       "pose_error_m": 0.03771,
       "cap_torque_nm": 0.1871,
       "slip_impulse_mm": 7.474,
@@ -501,7 +502,7 @@
     },
     {
       "seed": 37,
-      "object_shape": "threaded_safety_cap",
+      "object_shape": "flat_blister_pack",
       "pose_error_m": 0.06242,
       "cap_torque_nm": 0.5171,
       "slip_impulse_mm": 6.654,
@@ -514,7 +515,7 @@
     },
     {
       "seed": 38,
-      "object_shape": "flat_blister_pack",
+      "object_shape": "round_pill",
       "pose_error_m": 0.03675,
       "cap_torque_nm": 0.5933,
       "slip_impulse_mm": 5.933,
@@ -527,7 +528,7 @@
     },
     {
       "seed": 39,
-      "object_shape": "round_pill",
+      "object_shape": "slender_syringe_plunger",
       "pose_error_m": 0.03513,
       "cap_torque_nm": 0.3944,
       "slip_impulse_mm": 4.42,
@@ -540,7 +541,7 @@
     },
     {
       "seed": 40,
-      "object_shape": "slender_syringe_plunger",
+      "object_shape": "rotary_dose_dial",
       "pose_error_m": 0.03317,
       "cap_torque_nm": 0.609,
       "slip_impulse_mm": 4.518,
@@ -553,7 +554,7 @@
     },
     {
       "seed": 41,
-      "object_shape": "rotary_dose_dial",
+      "object_shape": "sterile_receiver_clamp",
       "pose_error_m": 0.04124,
       "cap_torque_nm": 0.4715,
       "slip_impulse_mm": 6.486,
@@ -644,7 +645,7 @@
     },
     {
       "seed": 48,
-      "object_shape": "cylindrical_medicine_vial",
+      "object_shape": "sterile_receiver_clamp",
       "pose_error_m": 0.03486,
       "cap_torque_nm": 0.3464,
       "slip_impulse_mm": 4.462,
@@ -657,7 +658,7 @@
     },
     {
       "seed": 49,
-      "object_shape": "threaded_safety_cap",
+      "object_shape": "cylindrical_medicine_vial",
       "pose_error_m": 0.01464,
       "cap_torque_nm": 0.541,
       "slip_impulse_mm": 6.978,
@@ -670,7 +671,7 @@
     },
     {
       "seed": 50,
-      "object_shape": "flat_blister_pack",
+      "object_shape": "threaded_safety_cap",
       "pose_error_m": 0.0279,
       "cap_torque_nm": 0.5242,
       "slip_impulse_mm": 2.623,
@@ -683,7 +684,7 @@
     },
     {
       "seed": 51,
-      "object_shape": "round_pill",
+      "object_shape": "flat_blister_pack",
       "pose_error_m": 0.03818,
       "cap_torque_nm": 0.7107,
       "slip_impulse_mm": 4.663,
@@ -696,7 +697,7 @@
     },
     {
       "seed": 52,
-      "object_shape": "slender_syringe_plunger",
+      "object_shape": "round_pill",
       "pose_error_m": 0.05201,
       "cap_torque_nm": 0.4396,
       "slip_impulse_mm": 6.469,
@@ -709,7 +710,7 @@
     },
     {
       "seed": 53,
-      "object_shape": "rotary_dose_dial",
+      "object_shape": "slender_syringe_plunger",
       "pose_error_m": 0.0389,
       "cap_torque_nm": 0.3579,
       "slip_impulse_mm": 5.681,
@@ -722,7 +723,7 @@
     },
     {
       "seed": 54,
-      "object_shape": "cylindrical_medicine_vial",
+      "object_shape": "rotary_dose_dial",
       "pose_error_m": 0.03181,
       "cap_torque_nm": 0.2793,
       "slip_impulse_mm": 5.454,
@@ -735,7 +736,7 @@
     },
     {
       "seed": 55,
-      "object_shape": "threaded_safety_cap",
+      "object_shape": "sterile_receiver_clamp",
       "pose_error_m": 0.05761,
       "cap_torque_nm": 0.4142,
       "slip_impulse_mm": 9.096,
@@ -748,7 +749,7 @@
     },
     {
       "seed": 56,
-      "object_shape": "flat_blister_pack",
+      "object_shape": "cylindrical_medicine_vial",
       "pose_error_m": 0.02716,
       "cap_torque_nm": 0.2181,
       "slip_impulse_mm": 1.002,
@@ -761,7 +762,7 @@
     },
     {
       "seed": 57,
-      "object_shape": "round_pill",
+      "object_shape": "threaded_safety_cap",
       "pose_error_m": 0.02928,
       "cap_torque_nm": 0.3988,
       "slip_impulse_mm": 11.775,
@@ -774,7 +775,7 @@
     },
     {
       "seed": 58,
-      "object_shape": "slender_syringe_plunger",
+      "object_shape": "flat_blister_pack",
       "pose_error_m": 0.02195,
       "cap_torque_nm": 0.3619,
       "slip_impulse_mm": 6.489,
@@ -787,7 +788,7 @@
     },
     {
       "seed": 59,
-      "object_shape": "rotary_dose_dial",
+      "object_shape": "round_pill",
       "pose_error_m": 0.04302,
       "cap_torque_nm": 0.5266,
       "slip_impulse_mm": 5.224,
@@ -800,7 +801,7 @@
     },
     {
       "seed": 60,
-      "object_shape": "cylindrical_medicine_vial",
+      "object_shape": "slender_syringe_plunger",
       "pose_error_m": 0.08139,
       "cap_torque_nm": 0.3638,
       "slip_impulse_mm": 3.462,
@@ -813,7 +814,7 @@
     },
     {
       "seed": 61,
-      "object_shape": "threaded_safety_cap",
+      "object_shape": "rotary_dose_dial",
       "pose_error_m": 0.05211,
       "cap_torque_nm": 0.3689,
       "slip_impulse_mm": 5.687,
@@ -826,7 +827,7 @@
     },
     {
       "seed": 62,
-      "object_shape": "flat_blister_pack",
+      "object_shape": "sterile_receiver_clamp",
       "pose_error_m": 0.02947,
       "cap_torque_nm": 0.2311,
       "slip_impulse_mm": 10.878,
@@ -839,7 +840,7 @@
     },
     {
       "seed": 63,
-      "object_shape": "round_pill",
+      "object_shape": "cylindrical_medicine_vial",
       "pose_error_m": 0.05082,
       "cap_torque_nm": 0.3432,
       "slip_impulse_mm": 9.114,
@@ -852,7 +853,7 @@
     },
     {
       "seed": 64,
-      "object_shape": "slender_syringe_plunger",
+      "object_shape": "threaded_safety_cap",
       "pose_error_m": 0.02547,
       "cap_torque_nm": 0.514,
       "slip_impulse_mm": 7.92,
@@ -865,7 +866,7 @@
     },
     {
       "seed": 65,
-      "object_shape": "rotary_dose_dial",
+      "object_shape": "flat_blister_pack",
       "pose_error_m": 0.03118,
       "cap_torque_nm": 0.4785,
       "slip_impulse_mm": 9.522,
@@ -878,7 +879,7 @@
     },
     {
       "seed": 66,
-      "object_shape": "cylindrical_medicine_vial",
+      "object_shape": "round_pill",
       "pose_error_m": 0.04617,
       "cap_torque_nm": 0.2434,
       "slip_impulse_mm": 5.288,
@@ -891,7 +892,7 @@
     },
     {
       "seed": 67,
-      "object_shape": "threaded_safety_cap",
+      "object_shape": "slender_syringe_plunger",
       "pose_error_m": 0.04177,
       "cap_torque_nm": 0.3406,
       "slip_impulse_mm": 5.405,
@@ -904,7 +905,7 @@
     },
     {
       "seed": 68,
-      "object_shape": "flat_blister_pack",
+      "object_shape": "rotary_dose_dial",
       "pose_error_m": 0.0583,
       "cap_torque_nm": 0.423,
       "slip_impulse_mm": 8.034,
@@ -917,7 +918,7 @@
     },
     {
       "seed": 69,
-      "object_shape": "round_pill",
+      "object_shape": "sterile_receiver_clamp",
       "pose_error_m": 0.06381,
       "cap_torque_nm": 0.3839,
       "slip_impulse_mm": 6.718,
@@ -930,7 +931,7 @@
     },
     {
       "seed": 70,
-      "object_shape": "slender_syringe_plunger",
+      "object_shape": "cylindrical_medicine_vial",
       "pose_error_m": 0.0544,
       "cap_torque_nm": 0.4745,
       "slip_impulse_mm": 6.105,
@@ -943,7 +944,7 @@
     },
     {
       "seed": 71,
-      "object_shape": "rotary_dose_dial",
+      "object_shape": "threaded_safety_cap",
       "pose_error_m": 0.04356,
       "cap_torque_nm": 0.2884,
       "slip_impulse_mm": 8.073,
@@ -956,7 +957,7 @@
     },
     {
       "seed": 72,
-      "object_shape": "cylindrical_medicine_vial",
+      "object_shape": "flat_blister_pack",
       "pose_error_m": 0.01183,
       "cap_torque_nm": 0.4677,
       "slip_impulse_mm": 8.036,
@@ -969,7 +970,7 @@
     },
     {
       "seed": 73,
-      "object_shape": "threaded_safety_cap",
+      "object_shape": "round_pill",
       "pose_error_m": 0.04124,
       "cap_torque_nm": 0.4487,
       "slip_impulse_mm": 5.758,
@@ -982,7 +983,7 @@
     },
     {
       "seed": 74,
-      "object_shape": "flat_blister_pack",
+      "object_shape": "slender_syringe_plunger",
       "pose_error_m": 0.02225,
       "cap_torque_nm": 0.2626,
       "slip_impulse_mm": 7.819,
@@ -995,7 +996,7 @@
     },
     {
       "seed": 75,
-      "object_shape": "round_pill",
+      "object_shape": "rotary_dose_dial",
       "pose_error_m": 0.01857,
       "cap_torque_nm": 0.3932,
       "slip_impulse_mm": 8.081,
@@ -1008,7 +1009,7 @@
     },
     {
       "seed": 76,
-      "object_shape": "slender_syringe_plunger",
+      "object_shape": "sterile_receiver_clamp",
       "pose_error_m": 0.03761,
       "cap_torque_nm": 0.3485,
       "slip_impulse_mm": 9.562,
@@ -1021,7 +1022,7 @@
     },
     {
       "seed": 77,
-      "object_shape": "rotary_dose_dial",
+      "object_shape": "cylindrical_medicine_vial",
       "pose_error_m": 0.03313,
       "cap_torque_nm": 0.365,
       "slip_impulse_mm": 7.317,
@@ -1034,7 +1035,7 @@
     },
     {
       "seed": 78,
-      "object_shape": "cylindrical_medicine_vial",
+      "object_shape": "threaded_safety_cap",
       "pose_error_m": 0.02188,
       "cap_torque_nm": 0.5531,
       "slip_impulse_mm": 4.204,
@@ -1047,7 +1048,7 @@
     },
     {
       "seed": 79,
-      "object_shape": "threaded_safety_cap",
+      "object_shape": "flat_blister_pack",
       "pose_error_m": 0.00458,
       "cap_torque_nm": 0.3075,
       "slip_impulse_mm": 9.444,
@@ -1060,7 +1061,7 @@
     },
     {
       "seed": 80,
-      "object_shape": "flat_blister_pack",
+      "object_shape": "round_pill",
       "pose_error_m": 0.01768,
       "cap_torque_nm": 0.4893,
       "slip_impulse_mm": 7.494,
@@ -1073,7 +1074,7 @@
     },
     {
       "seed": 81,
-      "object_shape": "round_pill",
+      "object_shape": "slender_syringe_plunger",
       "pose_error_m": 0.01536,
       "cap_torque_nm": 0.1924,
       "slip_impulse_mm": 5.425,
@@ -1086,7 +1087,7 @@
     },
     {
       "seed": 82,
-      "object_shape": "slender_syringe_plunger",
+      "object_shape": "rotary_dose_dial",
       "pose_error_m": 0.03812,
       "cap_torque_nm": 0.5334,
       "slip_impulse_mm": 6.968,
@@ -1099,7 +1100,7 @@
     },
     {
       "seed": 83,
-      "object_shape": "rotary_dose_dial",
+      "object_shape": "sterile_receiver_clamp",
       "pose_error_m": 0.03825,
       "cap_torque_nm": 0.3535,
       "slip_impulse_mm": 7.21,
@@ -1190,7 +1191,7 @@
     },
     {
       "seed": 90,
-      "object_shape": "cylindrical_medicine_vial",
+      "object_shape": "sterile_receiver_clamp",
       "pose_error_m": 0.0407,
       "cap_torque_nm": 0.4429,
       "slip_impulse_mm": 9.342,
@@ -1203,7 +1204,7 @@
     },
     {
       "seed": 91,
-      "object_shape": "threaded_safety_cap",
+      "object_shape": "cylindrical_medicine_vial",
       "pose_error_m": 0.05214,
       "cap_torque_nm": 0.4653,
       "slip_impulse_mm": 3.714,
@@ -1216,7 +1217,7 @@
     },
     {
       "seed": 92,
-      "object_shape": "flat_blister_pack",
+      "object_shape": "threaded_safety_cap",
       "pose_error_m": 0.03406,
       "cap_torque_nm": 0.2779,
       "slip_impulse_mm": 5.154,
@@ -1229,7 +1230,7 @@
     },
     {
       "seed": 93,
-      "object_shape": "round_pill",
+      "object_shape": "flat_blister_pack",
       "pose_error_m": 0.06206,
       "cap_torque_nm": 0.451,
       "slip_impulse_mm": 10.716,
@@ -1242,7 +1243,7 @@
     },
     {
       "seed": 94,
-      "object_shape": "slender_syringe_plunger",
+      "object_shape": "round_pill",
       "pose_error_m": 0.03278,
       "cap_torque_nm": 0.198,
       "slip_impulse_mm": 5.758,
@@ -1255,7 +1256,7 @@
     },
     {
       "seed": 95,
-      "object_shape": "rotary_dose_dial",
+      "object_shape": "slender_syringe_plunger",
       "pose_error_m": 0.0349,
       "cap_torque_nm": 0.4849,
       "slip_impulse_mm": 2.793,

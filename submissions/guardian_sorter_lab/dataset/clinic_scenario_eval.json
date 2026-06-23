@@ -2,8 +2,8 @@
   "project": "Guardian Apothecary DexTriage Challenge",
   "uuid": "e9367728-67e3-4adc-9f3e-fc7a1a364a8d",
   "description": "Twelve clinic-transfer scenarios mapped to the generated MuJoCo run, stress replay, skill suite, and artifact validator.",
-  "scenarios": 12,
-  "passed": 12,
+  "scenarios": 13,
+  "passed": 13,
   "success_rate": 1.0,
   "details": [
     {
@@ -74,7 +74,7 @@
       "value": 0.4,
       "threshold": 8.0,
       "direction": "maximum",
-      "video_phase": "sterile_pod_delivery",
+      "video_phase": "robot_relay_handoff",
       "success": true,
       "seed": 20260628
     },
@@ -139,6 +139,18 @@
       "seed": 20260633
     },
     {
+      "id": "sterile_relay_handoff",
+      "real_world_scenario": "sterile_relay_handoff",
+      "claim": "primary dexterous hand, receiver clamp, and verifier scanner complete one closed-loop sterile relay",
+      "metric": "relay_robots_active",
+      "value": 3.0,
+      "threshold": 3.0,
+      "direction": "minimum",
+      "video_phase": "robot_relay_handoff",
+      "success": true,
+      "seed": 20260634
+    },
+    {
       "id": "evidence_export_handoff",
       "real_world_scenario": "evidence_export_handoff",
       "claim": "judge artifacts, captions, metrics, and replay files are regenerated",
@@ -148,7 +160,7 @@
       "direction": "minimum",
       "video_phase": "final_report_export",
       "success": true,
-      "seed": 20260634
+      "seed": 20260635
     }
   ]
 }

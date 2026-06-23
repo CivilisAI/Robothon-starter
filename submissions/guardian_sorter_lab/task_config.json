@@ -1,17 +1,18 @@
 {
   "project_name": "Guardian Apothecary DexTriage Challenge",
-  "public_description": "Fragile-vial rescue with five-finger uncap, 4ms recovery, 30/30 skill pass, and 96/96 stress pass.",
+  "public_description": "Five-finger grasp with 214-degree cap rotation, 4ms recovery, three-robot sterile relay, 30/30 skill pass, and 96/96 stress pass.",
   "robot_platform": "Procedural five-finger tactile hand in MuJoCo",
-  "task": "Closed-loop medication disaster triage with five-finger grasp, cap rotation, 4N lateral shove, 9x load hold, slip recovery, sterile pod delivery, audit confirmation, blister press, syringe dosing, and dose dial confirmation",
+  "task": "Closed-loop medication disaster triage with five-finger grasp, cap rotation, 4N lateral shove, 9x load hold, slip recovery, three-robot sterile relay handoff, audit confirmation, blister press, syringe dosing, and dose dial confirmation",
   "score_signals": [
-    "11/11 task criteria pass",
+    "12/12 task criteria pass",
     "30/30 fixed-seed care-skill variants pass",
     "96/96 fixed-seed stress rollouts pass",
     "214 degree in-hand cap rotation",
     "4ms tactile reflex latency",
     "500Hz MuJoCo closed-loop control",
     "0.35 mm recovered slip",
-    "12/12 supporting clinic-transfer scenarios pass"
+    "Three-robot sterile relay handoff verified",
+    "13/13 supporting clinic-transfer scenarios pass"
   ],
   "success_conditions": {
     "minimum_active_fingers": 5,
@@ -27,6 +28,10 @@
     "minimum_real_world_demo_count": 12,
     "minimum_object_shape_count": 6,
     "minimum_policy_training_samples": 6000,
+    "minimum_relay_robots_active": 3,
+    "maximum_handoff_alignment_mm": 1.2,
+    "minimum_receiver_contacts": 2,
+    "minimum_verifier_scan_deg": 60,
     "minimum_stress_success_rate": 0.95
   },
   "objects": [
@@ -57,6 +62,14 @@
     {
       "name": "dose_dial",
       "label": "rotary_dose_confirmation"
+    },
+    {
+      "name": "receiver_robot",
+      "label": "sterile_receiver_clamp"
+    },
+    {
+      "name": "verifier_scanner",
+      "label": "handoff_verification_gate"
     }
   ],
   "phases": [
@@ -66,7 +79,7 @@
     "in_hand_cap_rotation",
     "force_load_stability_test",
     "slip_disturbance_recovery",
-    "sterile_pod_delivery",
+    "robot_relay_handoff",
     "audit_button_press",
     "blister_pack_press",
     "syringe_plunger_dose",

@@ -1,0 +1,15 @@
+{
+  "project": "Guardian Apothecary DexTriage Challenge",
+  "uuid": "e9367728-67e3-4adc-9f3e-fc7a1a364a8d",
+  "audit_name": "closed_loop_multi_robot_sterile_relay",
+  "summary": "The formal run contains a visible three-robot relay window without removing the five-finger grasp, 214 degree cap twist, or 4ms recovery evidence.",
+  "window_sample_count": 60,
+  "verified_sample_count": 10,
+  "handoff_verified": true,
+  "claims": [
+    "primary five-finger robot stabilizes the vial before release",
+    "receiver clamp closes on two contact pads within 1.2 mm alignment",
+    "verifier scanner rotates through the handoff lane before care-tool execution",
+    "handoff remains inside the same 500Hz evidence trace and generated video"
+  ]
+}

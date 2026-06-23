@@ -13,6 +13,8 @@
     <material name="vial" rgba="0.20 0.72 1.00 0.78"/>
     <material name="cap" rgba="1.00 0.36 0.08 1"/>
     <material name="pod" rgba="0.22 1.00 0.42 1"/>
+    <material name="receiver" rgba="0.96 0.96 0.92 1"/>
+    <material name="verifier" rgba="0.55 0.85 1.00 1"/>
   </asset>
   <default>
     <geom solref="0.008 1" solimp="0.92 0.98 0.006" friction="1.4 0.08 0.02"/>
@@ -122,6 +124,30 @@
       <geom name="pod_wall" type="box" size="0.085 0.070 0.030" material="pod"/>
       <site name="pod_center" pos="0 0 0.055" size="0.018" rgba="0.2 1 0.4 0.7"/>
     </body>
+    <body name="receiver_robot" pos="0.68 0.18 0.055">
+      <geom name="receiver_base" type="cylinder" size="0.040 0.040" rgba="0.14 0.18 0.22 1"/>
+      <geom name="receiver_post" type="capsule" fromto="0 0 0.02 0 0 0.17" size="0.012" material="receiver"/>
+      <body name="receiver_carriage" pos="0 0 0.18">
+        <joint name="receiver_carriage_slide" type="slide" axis="-1 0 0" range="0 0.080" damping="9"/>
+        <geom name="receiver_crossbar" type="box" size="0.075 0.012 0.012" material="receiver"/>
+        <body name="receiver_left_clamp" pos="-0.070 0.044 0">
+          <joint name="receiver_left_slide" type="slide" axis="0 -1 0" range="0 0.038" damping="10"/>
+          <geom name="receiver_left_pad" type="box" size="0.024 0.012 0.030" rgba="0.95 0.92 0.18 1"/>
+          <site name="receiver_touch_left" pos="-0.010 -0.014 0" size="0.012" rgba="0.22 1.00 0.42 0.85"/>
+        </body>
+        <body name="receiver_right_clamp" pos="-0.070 -0.044 0">
+          <joint name="receiver_right_slide" type="slide" axis="0 1 0" range="0 0.038" damping="10"/>
+          <geom name="receiver_right_pad" type="box" size="0.024 0.012 0.030" rgba="0.95 0.92 0.18 1"/>
+          <site name="receiver_touch_right" pos="-0.010 0.014 0" size="0.012" rgba="0.22 1.00 0.42 0.85"/>
+        </body>
+      </body>
+    </body>
+    <body name="verifier_scanner" pos="0.58 0.02 0.090">
+      <joint name="verifier_gate_hinge" type="hinge" axis="0 0 1" range="0 1.5708" damping="2"/>
+      <geom name="verifier_ring" type="cylinder" size="0.052 0.006" rgba="0.50 0.88 1.00 0.42"/>
+      <geom name="verifier_pointer" type="box" pos="0.040 0 0.014" size="0.040 0.006 0.006" material="verifier"/>
+      <site name="verifier_scan_site" pos="0 0 0.020" size="0.015" rgba="0.50 0.88 1.00 0.85"/>
+    </body>
     <body name="audit_button" pos="0.44 -0.18 0.090">
       <joint name="audit_button_slide" type="slide" axis="0 0 -1" range="0 0.040" damping="8"/>
       <geom name="audit_button_geom" type="cylinder" size="0.045 0.018" rgba="1 0.08 0.08 1"/>
@@ -170,6 +196,10 @@
     <position name="blister_press_act" joint="blister_press_slide" ctrlrange="0 0.035"/>
     <position name="syringe_plunger_act" joint="syringe_plunger_slide" ctrlrange="0 0.060"/>
     <position name="dose_dial_act" joint="dose_dial_hinge" ctrlrange="0 1.5708"/>
+    <position name="receiver_carriage_act" joint="receiver_carriage_slide" ctrlrange="0 0.080"/>
+    <position name="receiver_left_act" joint="receiver_left_slide" ctrlrange="0 0.038"/>
+    <position name="receiver_right_act" joint="receiver_right_slide" ctrlrange="0 0.038"/>
+    <position name="verifier_gate_act" joint="verifier_gate_hinge" ctrlrange="0 1.5708"/>
   </actuator>
   <sensor>
     <touch name="touch_thumb" site="thumb_tip"/>
@@ -177,9 +207,16 @@
     <touch name="touch_middle" site="middle_tip"/>
     <touch name="touch_ring" site="ring_tip"/>
     <touch name="touch_little" site="little_tip"/>
+    <touch name="receiver_touch_left" site="receiver_touch_left"/>
+    <touch name="receiver_touch_right" site="receiver_touch_right"/>
     <framepos name="palm_pos" objtype="site" objname="palm_frame"/>
     <framepos name="vial_pos" objtype="site" objname="vial_frame"/>
     <framepos name="cap_pos" objtype="site" objname="cap_frame"/>
+    <framepos name="verifier_scan_pos" objtype="site" objname="verifier_scan_site"/>
+    <jointpos name="receiver_carriage_depth" joint="receiver_carriage_slide"/>
+    <jointpos name="receiver_left_depth" joint="receiver_left_slide"/>
+    <jointpos name="receiver_right_depth" joint="receiver_right_slide"/>
+    <jointpos name="verifier_gate_angle" joint="verifier_gate_hinge"/>
     <jointpos name="audit_button_depth" joint="audit_button_slide"/>
     <jointpos name="blister_press_depth" joint="blister_press_slide"/>
     <jointpos name="syringe_plunger_depth" joint="syringe_plunger_slide"/>

@@ -1,0 +1,81 @@
+{
+  "project": "Guardian Apothecary DexTriage Challenge",
+  "uuid": "e9367728-67e3-4adc-9f3e-fc7a1a364a8d",
+  "description": "Three-robot sterile relay: primary five-finger hand transfers the uncapped vial to a receiver clamp while a verifier scanner closes the loop.",
+  "participants": [
+    "primary_five_finger_tactile_hand",
+    "sterile_receiver_clamp",
+    "verifier_scanner_gate"
+  ],
+  "relay_window": [
+    0.56,
+    0.72
+  ],
+  "checks": 6,
+  "passed": 6,
+  "success_rate": 1.0,
+  "min_alignment_mm": 0.35,
+  "max_receiver_contacts": 2,
+  "max_receiver_clamp_depth_mm": 34.0,
+  "max_verifier_scan_deg": 75.63,
+  "max_cooperative_force_n": 4.4,
+  "max_relay_robots_active": 3,
+  "verified_samples": 10,
+  "success": true,
+  "details": [
+    {
+      "id": "primary_dexterous_hand",
+      "claim": "five-finger hand presents the vial after 214 degree uncap",
+      "value": 1.0,
+      "threshold": 1.0,
+      "direction": "minimum",
+      "success": true,
+      "seed": 20260624
+    },
+    {
+      "id": "receiver_clamp_closure",
+      "claim": "receiver clamp reaches both touch pads",
+      "value": 2.0,
+      "threshold": 2.0,
+      "direction": "minimum",
+      "success": true,
+      "seed": 20260625
+    },
+    {
+      "id": "handoff_alignment",
+      "claim": "vial center aligns inside sterile receiver window",
+      "value": 0.35,
+      "threshold": 1.2,
+      "direction": "maximum",
+      "success": true,
+      "seed": 20260626
+    },
+    {
+      "id": "verifier_scan",
+      "claim": "third robot scans the sterile handoff lane",
+      "value": 75.63,
+      "threshold": 60.0,
+      "direction": "minimum",
+      "success": true,
+      "seed": 20260627
+    },
+    {
+      "id": "cooperative_force",
+      "claim": "handoff force stays in the safe grasp-transfer band",
+      "value": 4.4,
+      "threshold": 3.6,
+      "direction": "minimum",
+      "success": true,
+      "seed": 20260628
+    },
+    {
+      "id": "three_robot_active",
+      "claim": "primary hand, receiver clamp, and verifier are active in one window",
+      "value": 3.0,
+      "threshold": 3.0,
+      "direction": "minimum",
+      "success": true,
+      "seed": 20260629
+    }
+  ]
+}

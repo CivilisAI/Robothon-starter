@@ -36,13 +36,13 @@
     "evidence": "The run overlays 4N shove, 9x load hold, 0.46 deg drift, and 0.35 mm recovered slip."
   },
   {
-    "chapter": "5/6 CARE TOOL CHAIN",
+    "chapter": "5/6 THREE-ROBOT RELAY",
     "progress_window": [
       0.56,
-      0.87
+      0.88
     ],
-    "claim": "Delivery plus care tools",
-    "evidence": "The same controller transitions from vial delivery to button press, pill blister, and plunger dosing."
+    "claim": "Sterile relay plus care tools",
+    "evidence": "The primary hand transfers the saved vial into a receiver clamp while a verifier scanner confirms alignment before the care-tool chain."
   },
   {
     "chapter": "6/6 DOSE + EVIDENCE",

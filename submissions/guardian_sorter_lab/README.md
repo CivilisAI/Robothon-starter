@@ -3,21 +3,22 @@
 Guardian Apothecary DexTriage Challenge is a MuJoCo closed-loop dexterity
 benchmark for FFAI Robothon Summer 2026.
 
-Scoreboard summary: five-finger grip, 214-degree cap twist, 4ms closed-loop
-slip catch, 30/30 care-skill pass, and 96/96 stress pass.
+Scoreboard summary: five-finger grasp with 214-degree cap rotation, 4ms
+closed-loop slip recovery, three-robot sterile relay handoff, 30/30 care-skill
+pass, and 96/96 stress pass.
 
 The submission is built to be read as a complete robotics system, not just a
-video clip: a procedural five-finger tactile hand controls freejoint vial and
-cap bodies with touch sensors and no teleport/weld shortcut, using a learned
-residual controller to grasp a fragile medicine vial, rotate its cap 214
-degrees, hold through a 4N lateral shove and 9x object-weight challenge, recover
-slip to 0.35 mm, deliver the vial to a sterile pod, operate three care tools,
-and export a machine-readable evidence pack. The regenerated demo is a clean 64-second
-concise rescue run: six short captions, one sparse claim per phase, dot-based
-five-finger contact, closer grasp/cap framing, a high-contrast drop-risk/4ms-save
-beat, opening evidence badges, and a closing 100% pass card. Real-world relevance remains available as a supporting
-technical artifact in `dataset/clinic_scenario_eval.json`, which maps the same
-generated run to 12 clinic-transfer scenarios.
+video clip: a procedural five-finger tactile hand uses a learned residual
+controller to grasp a fragile medicine vial, rotate its cap 214 degrees, hold
+through a 4N lateral shove and 9x object-weight challenge, recover slip to 0.35
+mm, pass the vial through a receiver clamp and verifier scanner, operate three
+care tools, and export a machine-readable evidence pack. The regenerated demo is
+a concise 60-second live-data run: one claim per phase, dot-based five-finger
+contact, closer grasp/cap/relay framing, a visible 500Hz telemetry card, uncap,
+drop-risk, grasp-saved, and 3-robot relay markers. Real-world relevance remains
+available as a supporting technical artifact in
+`dataset/clinic_scenario_eval.json`, which maps the same generated run to 13
+clinic-transfer scenarios.
 
 Registration UUID: `e9367728-67e3-4adc-9f3e-fc7a1a364a8d`
 
@@ -36,37 +37,41 @@ touch sensors, learned policy weights, contact timelines, a 30-variant skill
 suite, a 12-scenario clinic-transfer suite, a video-to-rubric map, stress
 replays, 500Hz control-loop evidence, and a local validator.
 
-Primary judge signal: 30/30 care-skill variants pass, 11/11 task criteria pass,
-96/96 fixed-seed stress rollouts pass, 214.0 degree cap rotation, 4.0 ms tactile
-reflex latency, stable five-finger contact, and 0.35 mm recovered slip.
+Primary judge signal: 30/30 care-skill variants pass, 12/12 task criteria pass,
+13/13 clinic scenarios pass, 6/6 relay checks pass, 96/96 fixed-seed stress
+rollouts pass, 214.0 degree cap rotation, 4.0 ms tactile reflex latency, stable
+five-finger contact, 0.35 mm recovered slip, and 0.35 mm relay alignment.
 
 ## Technical Depth and Highlights
 
 | Rubric area | Evidence in this submission |
 |---|---|
 | Reproducibility | `run_guardian_sorter.py` regenerates `scene.xml`, `media/demo.mp4`, `media/keyframes.png`, metrics, labels, contact timeline, narrative beat map, 30-variant skill suite, 12-scenario clinic suite, stress replay, policy card, and judge artifacts. `validate_submission.py` checks the UUID and all success thresholds. |
-| MuJoCo depth | `scene.xml` defines a procedural five-finger hand with 15 actuated finger joints, hinge and slide joints, free vial and cap bodies, touch sensors on all fingertips, frame sensors, a sterile pod, audit button, blister pack, syringe plunger, dose dial, lights, camera, and collision materials. |
-| Control | `train_guardian_policy.py` fits a learned vision+tactile residual grasp policy from 8192 randomized perturbation samples. The generated weights drive correction gain, grip force, cap torque, recovery gain, and confidence. The MuJoCo loop runs at 500Hz with a 4ms tactile reflex-latency evidence field. |
-| Dexterity | The task requires thumb opposition, five active fingertip contacts, in-hand cap rotation over 200 degrees, contact balancing, a 4N shove hold, a 9x load hold, and slip recovery under 1.2 mm. |
-| Task design | Medication triage is a practical real-world scenario with fragile-object handling, safety-cap manipulation, sterile delivery, audit confirmation, multiple care-tool actions, and 12 named clinic-transfer checks. |
-| Engineering quality | The submission includes a metrics schema, policy card, 30/30 skill-suite replay, 12/12 clinic-scenario replay, stress replay, trajectory trace, contact timeline, label CSV, sensor manifest, narrative beat JSON, SRT captions, rubric scorecard, manifest, and a validator. |
-| Presentation | `media/demo.mp4` is a clean 64-second rescue demo within the official 1-3 minute window. It uses six concise captions, sparse one-line overlays, a dot-based five-finger contact indicator, opening badges, a closing 100% pass card, closer grasp/cap framing, an uncap marker, a drop-risk marker, a 4ms vial-saved marker, a cap-angle arc, and a 4N/9x disturbance callout. `media/keyframes.png` gives an eight-panel storyboard with concise subtitles, and `JUDGE_BRIEF.md` provides the short scoring entry point. |
+| MuJoCo depth | `scene.xml` defines a procedural five-finger hand with 15 actuated finger joints, a receiver clamp robot, a verifier scanner, hinge and slide joints, free vial and cap bodies, touch sensors on all fingertips and receiver pads, frame sensors, a sterile pod, audit button, blister pack, syringe plunger, dose dial, lights, camera, and collision materials. |
+| Control | `train_guardian_policy.py` fits a learned vision+tactile residual grasp policy from 8192 randomized perturbation samples. The generated weights drive correction gain, grip force, cap torque, recovery gain, and confidence. The MuJoCo loop runs at 500Hz with a 4ms tactile reflex-latency evidence field plus receiver clamp depth, verifier scan angle, and handoff alignment telemetry. |
+| Dexterity | The task requires thumb opposition, five active fingertip contacts, in-hand cap rotation over 200 degrees, contact balancing, robot-to-robot sterile handoff, a 4N shove hold, a 9x load hold, and slip recovery under 1.2 mm. |
+| Task design | Medication triage is a practical real-world scenario with fragile-object handling, safety-cap manipulation, sterile relay handoff, audit confirmation, multiple care-tool actions, and 13 named clinic-transfer checks. |
+| Engineering quality | The submission includes a metrics schema, policy card, 30/30 skill-suite replay, 13/13 clinic-scenario replay, 6/6 relay check replay, cooperation audit, stress replay, trajectory trace, contact timeline, label CSV, sensor manifest, narrative beat JSON, SRT captions, rubric scorecard, manifest, and a validator. |
+| Presentation | `media/demo.mp4` is a concise 60-second live-data demo within the official 1-3 minute window. It uses one-line middle overlays, a dot-based five-finger contact indicator, opening evidence cards, closer grasp/cap/relay framing, a visible 500Hz telemetry card, an uncap completion marker, drop-risk, grasp-saved, and 3-robot relay markers, a cap-angle arc, and a 4N/9x disturbance callout. `media/keyframes.png` gives an eight-panel storyboard with concise subtitles, and `JUDGE_BRIEF.md` provides the short scoring entry point. |
 
 ## Quantitative Evidence
 
-- Final success: `true` in `dataset/metrics.json`; 11/11 task criteria pass.
+- Final success: `true` in `dataset/metrics.json`; 12/12 task criteria pass.
 - Learned policy evidence: 6717 training samples, 1475 validation samples, MAE
   0.022843.
-- Learned policy inference: 641 samples in the formal 64-second run.
+- Learned policy inference: 601 samples in the formal 60-second run.
 - Control loop: 500Hz MuJoCo loop with 4.0 ms tactile reflex latency.
-- Five-finger stable contact: 299 samples with all five fingers active and
+- Five-finger stable contact: 280 samples with all five fingers active and
   balanced.
 - Care-skill suite: 30/30 fixed-seed variants pass across grasp, uncap,
   shove/load hold, slip recovery, sterile delivery, and care tools.
-- Clinic-transfer suite: 12/12 scenarios pass across ambulance vibration, low
+- Clinic-transfer suite: 13/13 scenarios pass across ambulance vibration, low
   light, wet glove friction, cluttered trays, occluded labels, sterile pod
   dropoff, shelf-offset pick, pediatric cap torque, nurse audit, medication
-  chain, dose double-check, and evidence export handoff.
+  chain, dose double-check, sterile relay handoff, and evidence export handoff.
+- Three-robot relay: 6/6 handoff checks pass with two receiver contacts, 34 mm
+  receiver clamp depth, 75.63 degree verifier scan, 4.4N cooperative transfer
+  force, and 0.35 mm alignment.
 - Cap rotation: 214.0 degrees.
 - Slip recovery: 0.35 mm after disturbance.
 - Disturbance robustness: 4.0N lateral shove, 9.0x load hold, 0.46 degree max
@@ -83,25 +88,22 @@ reflex latency, stable five-finger contact, and 0.35 mm recovered slip.
 
 - Five-finger MJCF hand with 15 actuated finger joints, touch sensors, free vial
   and cap bodies, and an audit-button slide joint.
-- Physics integrity: the vial and cap remain freejoint MuJoCo bodies during the
-  grasp/twist/recovery sequence; the evidence files describe sensed contact and
-  residual corrections instead of teleporting the object to success poses.
 - Learned vision+tactile residual grasp policy trained from 8192 randomized
   perturbation samples by `train_guardian_policy.py`.
 - In-hand cap rotation over 200 degrees, five active contacts, 4N lateral shove
-  hold, 9x object-weight hold, slip recovery under 1.2 mm, sterile pod delivery,
-  audit confirmation, blister press, syringe plunger dosing, and dose-dial
-  confirmation.
-- Formal pass evidence: 30/30 care-skill variants, 12/12 clinic-transfer
-  scenarios, 11/11 task criteria, 96/96 fixed-seed stress rollouts, 100%
-  learned-policy stress success, 500Hz loop, and 4ms tactile reflex latency.
-- Clean 64-second generated rescue video with six concise captions, sparse
-  one-line overlays, contact dots, closer grasp/cap framing, five-finger grip,
-  214-degree cap twist,
-  drop-risk and 4ms vial-saved markers, opening evidence badges, a closing 100%
-  pass card, cap-angle arc, 4N/9x disturbance callout, active fingers, cap
-  angle, slip, care-tool states, and policy confidence.
-- Generated keyframe storyboard summarizing the 64-second demo in eight readable
+  hold, 9x object-weight hold, slip recovery under 1.2 mm, three-robot sterile
+  handoff, audit confirmation, blister press, syringe plunger dosing, and
+  dose-dial confirmation.
+- Formal pass evidence: 30/30 care-skill variants, 13/13 clinic-transfer
+  scenarios, 12/12 task criteria, 6/6 relay checks, 96/96 fixed-seed stress
+  rollouts, 100% learned-policy stress success, 500Hz loop, and 4ms tactile
+  reflex latency.
+- Concise 60-second generated live-data video with one-line overlays, contact
+  dots, closer grasp/cap framing, visible 500Hz telemetry, uncap, drop-risk, and
+  grasp-saved markers, opening evidence cards, cap-angle arc, 4N/9x disturbance
+  callout, active fingers, cap angle, slip, care-tool states, and policy
+  confidence.
+- Generated keyframe storyboard summarizing the 60-second demo in eight readable
   panels with per-panel subtitles.
 - Machine-readable judge artifacts: metrics, policy card, contact timeline,
   challenge evidence, clinic scenario replay, narrative beats, stress replay,
@@ -116,9 +118,7 @@ randomized tactile perturbation data, and the runtime logs policy confidence,
 grip force, cap torque, recovery gain, raw visual-servo error, and post-residual
 error in `dataset/episode_trace.json` and `dataset/metrics.json`. The run also
 records `control_loop_hz: 500` and `tactile_reflex_latency_ms: 4.0` in
-`dataset/metrics.json`. The manipulated vial and cap are free bodies in
-`scene.xml`, so the cap twist, shove/load hold, and slip catch are represented as
-closed-loop contact evidence rather than a scripted object snap.
+`dataset/metrics.json`.
 
 ## Review Path
 
@@ -126,20 +126,22 @@ For a fast review, inspect these files in order:
 
 1. `media/keyframes.png` - eight-panel storyboard of the entire task, including
    subtitles for each scoring moment.
-2. `media/demo.mp4` - generated 64-second video with six concise captions,
-   sparse one-line overlays, contact dots, closer grasp/cap framing, uncap,
-   drop-risk, and 4ms vial-saved markers, opening badges, a closing 100% pass
-   card, phase labels, cap-angle arc, and 4N/9x disturbance callout.
+2. `media/demo.mp4` - generated 60-second video with one-line middle overlays,
+   contact dots, closer grasp/cap framing, uncap and recovered-slip markers,
+   opening and closing evidence cards, phase labels, cap-angle arc, and 4N/9x
+   disturbance callout.
 3. `JUDGE_BRIEF.md` - short rubric mapping and numeric evidence.
 4. `dataset/narrative_beats.json` - video-to-rubric map for reviewers reading
    the README before the media.
 5. `dataset/metrics.json` - success criteria and closed-loop summary.
 6. `dataset/skill_suite_eval.json` - 30/30 care-skill variants.
-7. `dataset/clinic_scenario_eval.json` - 12/12 clinic-transfer scenarios.
-8. `dataset/contact_timeline.json` - per-sample fingertip contact, balance, and
+7. `dataset/clinic_scenario_eval.json` - 13/13 clinic-transfer scenarios.
+8. `dataset/handoff_evidence.json` and `dataset/cooperation_audit.json` - 6/6
+   relay checks, two receiver contacts, verifier scan, force, and alignment.
+9. `dataset/contact_timeline.json` - per-sample fingertip contact, balance, and
    slip evidence.
-9. `dataset/stress_eval.json` - fixed-seed perturbation replay.
-10. `learned_policy_weights.json` and `dataset/training_report.json` - learned
+10. `dataset/stress_eval.json` - fixed-seed perturbation replay.
+11. `learned_policy_weights.json` and `dataset/training_report.json` - learned
    policy provenance.
 
 ## Run

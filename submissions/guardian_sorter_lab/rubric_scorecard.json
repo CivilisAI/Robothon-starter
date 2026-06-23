@@ -16,6 +16,8 @@
     "dataset/stress_eval.json",
     "dataset/skill_suite_eval.json",
     "dataset/clinic_scenario_eval.json",
+    "dataset/handoff_evidence.json",
+    "dataset/cooperation_audit.json",
     "dataset/policy_card.json",
     "dataset/challenge_evidence.json",
     "dataset/narrative_beats.json",
@@ -24,35 +26,35 @@
   "scorecard": {
     "runnability": {
       "target_score": 9.9,
-      "evidence": "One command regenerates MJCF scene, video, metrics, labels, 30-variant skill suite, 12-scenario clinic replay, 96-rollout stress replay, and judge artifacts."
+      "evidence": "One command regenerates MJCF scene, video, metrics, labels, 30-variant skill suite, 13-scenario clinic replay, three-robot handoff evidence, 96-rollout stress replay, and judge artifacts."
     },
     "mujoco_depth": {
       "target_score": 9.9,
-      "evidence": "Procedural five-finger MJCF hand, hinge joints, position actuators, touch sensors, freejoint vial/cap bodies, slide button, syringe, dose dial, camera, lighting, and rendered telemetry."
+      "evidence": "Procedural five-finger MJCF hand, receiver clamp robot, verifier scanner, hinge/slide joints, position actuators, touch sensors, free vial/cap bodies, slide button, syringe, dose dial, camera, lighting, and rendered telemetry."
     },
     "task_design": {
       "target_score": 9.9,
-      "evidence": "Medication disaster-triage challenge: scan, five-finger grasp, cap rotation, 4N shove, 9x load hold, slip recovery, pod delivery, audit button, blister press, syringe dosing, dose dial, and 12 clinic-transfer scenarios."
+      "evidence": "Medication disaster-triage challenge: scan, five-finger grasp, cap rotation, 4N shove, 9x load hold, slip recovery, three-robot sterile relay, audit button, blister press, syringe dosing, dose dial, and supporting clinic-transfer scenarios."
     },
     "control": {
       "target_score": 9.9,
-      "evidence": "Learned tactile residual policy with training report, raw-vs-corrected visual-servo error, grip force, cap torque, recovery gain, shove/load stabilization, confidence, and no teleport/weld shortcut for the manipulated vial/cap bodies."
+      "evidence": "Learned tactile residual policy with training report, raw-vs-corrected visual-servo error, grip force, cap torque, recovery gain, shove/load stabilization, receiver clamp depth, verifier scan, and confidence."
     },
     "dexterous_manipulation": {
       "target_score": 9.9,
-      "evidence": "Five-finger grasp, thumb opposition, cap rotation over 200 degrees, tactile contact balancing, 4N lateral shove hold, 9x load hold, and slip recovery."
+      "evidence": "Five-finger grasp, thumb opposition, cap rotation over 200 degrees, tactile contact balancing, robot-to-robot handoff, 4N lateral shove hold, 9x load hold, and slip recovery."
     },
     "engineering_quality": {
       "target_score": 9.8,
-      "evidence": "Deterministic generation, structured artifacts, validator, UUID consistency, 30/30 skill-suite evaluation, 12/12 clinic-scenario evaluation, stress evaluation, and policy-card provenance."
+      "evidence": "Deterministic generation, structured artifacts, validator, UUID consistency, 30/30 skill-suite evaluation, 13/13 clinic-scenario evaluation, handoff evidence, stress evaluation, and policy-card provenance."
     },
     "presentation": {
       "target_score": 9.9,
-      "evidence": "Clean 64-second rescue video with six concise captions, sparse one-line overlays, dot-based five-finger contact indicator, closer grasp/cap framing, uncap marker, drop-risk marker, 4ms vial-saved marker, opening/closing pass cards, cap-angle arc, 4N/9x callout, and readable keyframe storyboard."
+      "evidence": "Concise 60-second live-data video with one-line overlays, dot-based five-finger contact indicator, closer grasp/cap/relay framing, 500Hz telemetry card, uncap highlight marker, shove risk marker, grasp-saved recovery marker, three-robot relay callout, cap-angle arc, 4N/9x callout, readable keyframe storyboard, and five concise SRT captions."
     },
     "innovation": {
       "target_score": 9.8,
-      "evidence": "Combines tactile dexterity, medication disaster triage, learned residual recovery, multi-object care tools, 12 clinic-transfer scenarios, and machine-readable dataset export."
+      "evidence": "Combines tactile dexterity, medication disaster triage, learned residual recovery, three-robot sterile relay, multi-object care tools, 13 clinic-transfer scenarios, and machine-readable dataset export."
     }
   },
   "stress_eval_summary": {
@@ -66,7 +68,8 @@
       "flat_blister_pack",
       "round_pill",
       "slender_syringe_plunger",
-      "rotary_dose_dial"
+      "rotary_dose_dial",
+      "sterile_receiver_clamp"
     ],
     "baseline_success_rate": 0.2083,
     "learned_policy_success_rate": 1.0,
@@ -102,8 +105,33 @@
     "project": "Guardian Apothecary DexTriage Challenge",
     "uuid": "e9367728-67e3-4adc-9f3e-fc7a1a364a8d",
     "description": "Twelve clinic-transfer scenarios mapped to the generated MuJoCo run, stress replay, skill suite, and artifact validator.",
-    "scenarios": 12,
-    "passed": 12,
+    "scenarios": 13,
+    "passed": 13,
     "success_rate": 1.0
+  },
+  "handoff_evidence_summary": {
+    "project": "Guardian Apothecary DexTriage Challenge",
+    "uuid": "e9367728-67e3-4adc-9f3e-fc7a1a364a8d",
+    "description": "Three-robot sterile relay: primary five-finger hand transfers the uncapped vial to a receiver clamp while a verifier scanner closes the loop.",
+    "participants": [
+      "primary_five_finger_tactile_hand",
+      "sterile_receiver_clamp",
+      "verifier_scanner_gate"
+    ],
+    "relay_window": [
+      0.56,
+      0.72
+    ],
+    "checks": 6,
+    "passed": 6,
+    "success_rate": 1.0,
+    "min_alignment_mm": 0.35,
+    "max_receiver_contacts": 2,
+    "max_receiver_clamp_depth_mm": 34.0,
+    "max_verifier_scan_deg": 75.63,
+    "max_cooperative_force_n": 4.4,
+    "max_relay_robots_active": 3,
+    "verified_samples": 10,
+    "success": true
   }
 }

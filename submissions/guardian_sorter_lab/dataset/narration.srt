@@ -1,23 +1,19 @@
 1
 00:00:00,000 --> 00:00:10,000
-Five fingers grip the fragile vial.
+Five-finger grasp locks the fragile vial.
 
 2
-00:00:10,000 --> 00:00:22,000
-Residual policy corrects approach.
+00:00:10,000 --> 00:00:25,000
+The cap rotates 214 degrees while live data stays visible.
 
 3
-00:00:22,000 --> 00:00:36,000
-Cap twists 214 deg with contact balanced.
+00:00:25,000 --> 00:00:40,000
+A 4N shove and 9x load test the grasp.
 
 4
-00:00:36,000 --> 00:00:48,000
-4N shove and 9x load create one drop-risk beat.
+00:00:40,000 --> 00:00:50,000
+The 4ms tactile reflex catches slip to 0.35 mm.
 
 5
-00:00:48,000 --> 00:00:56,000
-4ms tactile reflex catches slip at 0.35 mm.
-
-6
-00:00:56,000 --> 00:01:04,000
-100% pass: 30 skills, 11 criteria, 96 stress.
+00:00:50,000 --> 00:01:00,000
+Pass: three-robot relay, 30 skills, and 96 stress rollouts.

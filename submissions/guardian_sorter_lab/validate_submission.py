@@ -26,6 +26,8 @@ REQUIRED_FILES = [
     "dataset/stress_eval.json",
     "dataset/skill_suite_eval.json",
     "dataset/clinic_scenario_eval.json",
+    "dataset/handoff_evidence.json",
+    "dataset/cooperation_audit.json",
     "dataset/policy_card.json",
     "dataset/challenge_evidence.json",
     "dataset/narrative_beats.json",
@@ -52,6 +54,8 @@ def main() -> int:
     stress = load_json("dataset/stress_eval.json")
     skill_suite = load_json("dataset/skill_suite_eval.json")
     clinic_scenarios = load_json("dataset/clinic_scenario_eval.json")
+    handoff = load_json("dataset/handoff_evidence.json")
+    cooperation = load_json("dataset/cooperation_audit.json")
     policy_card = load_json("dataset/policy_card.json")
     challenge = load_json("dataset/challenge_evidence.json")
     narrative = load_json("dataset/narrative_beats.json")
@@ -65,6 +69,8 @@ def main() -> int:
         training.get("uuid"),
         skill_suite.get("uuid"),
         clinic_scenarios.get("uuid"),
+        handoff.get("uuid"),
+        cooperation.get("uuid"),
         policy_card.get("uuid"),
         challenge.get("uuid"),
         manifest.get("uuid"),
@@ -111,6 +117,16 @@ def main() -> int:
         raise SystemExit("Hold drift too high under shove/load challenge")
     if summary.get("multi_object_shape_count", 0) < 6:
         raise SystemExit("Too few object shapes in the care challenge")
+    if not summary.get("robot_to_robot_handoff_verified"):
+        raise SystemExit("Three-robot relay handoff was not verified")
+    if summary.get("max_relay_robots_active", 0) < 3:
+        raise SystemExit("Relay did not activate three robot participants")
+    if summary.get("min_handoff_alignment_mm", 99) > 1.2:
+        raise SystemExit("Relay handoff alignment did not meet threshold")
+    if summary.get("max_receiver_contacts", 0) < 2:
+        raise SystemExit("Receiver clamp did not register two contacts")
+    if summary.get("max_verifier_scan_deg", 0) < 60:
+        raise SystemExit("Verifier scanner did not sweep through the handoff lane")
     if stress.get("learned_policy_success_rate", 0.0) < 0.95:
         raise SystemExit("Stress replay success rate below target")
     if skill_suite.get("variants", 0) < 30:
@@ -125,6 +141,10 @@ def main() -> int:
         raise SystemExit("Clinic-scenario suite did not pass all scenarios")
     if summary.get("clinic_scenarios_passed", 0) < 12 or summary.get("clinic_scenario_success_rate", 0.0) < 1.0:
         raise SystemExit("Clinic-scenario metrics missing from closed-loop summary")
+    if not handoff.get("success") or handoff.get("passed", 0) < handoff.get("checks", 0):
+        raise SystemExit("Handoff evidence did not pass all checks")
+    if not cooperation.get("handoff_verified"):
+        raise SystemExit("Cooperation audit did not verify the handoff")
     if not all(
         criteria.get(name)
         for name in [
@@ -136,6 +156,7 @@ def main() -> int:
             "slip_recovered_under_1_2_mm",
             "vial_delivered_to_sterile_pod",
             "audit_button_pressed",
+            "three_robot_relay_handoff",
         ]
     ):
         raise SystemExit(f"Criteria missing: {criteria}")
@@ -189,6 +210,12 @@ def main() -> int:
                 "max_lateral_shove_n": summary.get("max_lateral_shove_n"),
                 "max_load_multiplier": summary.get("max_load_multiplier"),
                 "multi_object_shape_count": summary.get("multi_object_shape_count"),
+                "robot_to_robot_handoff_verified": summary.get("robot_to_robot_handoff_verified"),
+                "min_handoff_alignment_mm": summary.get("min_handoff_alignment_mm"),
+                "max_receiver_contacts": summary.get("max_receiver_contacts"),
+                "max_verifier_scan_deg": summary.get("max_verifier_scan_deg"),
+                "relay_checks_passed": handoff.get("passed"),
+                "relay_checks_total": handoff.get("checks"),
                 "stress_success": stress.get("learned_policy_success_rate"),
                 "stress_rollouts_passed": stress_passed,
                 "stress_rollouts_total": stress_rollouts,
